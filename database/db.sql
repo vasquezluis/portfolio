@@ -1,0 +1,12 @@
+-- TABLE TASKS
+CREATE TABLE IF NOT EXISTS portfolio (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(200) NOT NULL,
+  description VARCHAR(300),
+  image VARCHAR(200),
+  link_1 VARCHAR (150),
+  link_2 VARCHAR (150),
+  tech_1 VARCHAR(50),
+  tech_2 VARCHAR(50),
+  tech_3 VARCHAR(50)
+);
