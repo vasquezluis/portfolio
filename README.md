@@ -1,7 +1,7 @@
 "portfolio project - Luis Vasquez" 
 
 # install modules
-## git install
+## npm install
 
 # run project on localhost
 ## npm run dev
