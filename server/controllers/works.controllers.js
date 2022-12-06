@@ -6,7 +6,7 @@ export const getWork = async (req, res) => {
       params: { id },
     } = req;
 
-    const [result] = await pool.query("SELECT * FROM portfolio WHERE id = ?", [
+    const [result] = await pool.query("SELECT * FROM works WHERE id = ?", [
       id,
     ]);
 
@@ -22,7 +22,7 @@ export const getWork = async (req, res) => {
 
 export const getWorks = async (req, res) => {
   try {
-    const [result] = await pool.query("SELECT * FROM portfolio");
+    const [result] = await pool.query("SELECT * FROM works");
 
     res.json(result);
   } catch (error) {
@@ -30,13 +30,13 @@ export const getWorks = async (req, res) => {
   }
 };
 
-export const createWork = async (req, res) => {
+export const createWorks = async (req, res) => {
   try {
     const data = req.body;
     const dataValues = Object.values(req.body);
 
     const [result] = await pool.query(
-      "INSERT INTO portfolio VALUES (null, ?,?,?,?,?,?,?,?)",
+      "INSERT INTO works VALUES (null, ?,?,?,?,?,?,?,?)",
       dataValues
     );
 
@@ -49,14 +49,14 @@ export const createWork = async (req, res) => {
   }
 };
 
-export const updateWork = async (req, res) => {
+export const updateWorks = async (req, res) => {
   try {
     const {
       params: { id },
     } = req;
     const { body } = req;
 
-    const [result] = await pool.query("UPDATE portfolio SET ? WHERE id = ?", [
+    const [result] = await pool.query("UPDATE works SET ? WHERE id = ?", [
       body,
       id,
     ]);
@@ -67,13 +67,13 @@ export const updateWork = async (req, res) => {
   }
 };
 
-export const deleteWork = async (req, res) => {
+export const deleteWorks = async (req, res) => {
   try {
     const {
       params: { id },
     } = req;
 
-    const [result] = await pool.query("DELETE FROM portfolio WHERE id = ?", [
+    const [result] = await pool.query("DELETE FROM works WHERE id = ?", [
       id,
     ]);
 
