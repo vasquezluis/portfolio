@@ -6,9 +6,7 @@ export const getWork = async (req, res) => {
       params: { id },
     } = req;
 
-    const [result] = await pool.query("SELECT * FROM works WHERE id = ?", [
-      id,
-    ]);
+    const [result] = await pool.query("SELECT * FROM works WHERE id = ?", [id]);
 
     if (result.length === 0) {
       return res.status(404).json({ message: `Work ${id} not found` });
@@ -36,7 +34,7 @@ export const createWorks = async (req, res) => {
     const dataValues = Object.values(req.body);
 
     const [result] = await pool.query(
-      "INSERT INTO works VALUES (null, ?,?,?,?,?,?,?,?)",
+      "INSERT INTO works VALUES (null, ?,?,?,?,?,?,?,?,?)",
       dataValues
     );
 
@@ -61,6 +59,10 @@ export const updateWorks = async (req, res) => {
       id,
     ]);
 
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: `Work ${id} not found` });
+    }
+
     res.json(result);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -73,9 +75,7 @@ export const deleteWorks = async (req, res) => {
       params: { id },
     } = req;
 
-    const [result] = await pool.query("DELETE FROM works WHERE id = ?", [
-      id,
-    ]);
+    const [result] = await pool.query("DELETE FROM works WHERE id = ?", [id]);
 
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: `Work ${id} not found` });
