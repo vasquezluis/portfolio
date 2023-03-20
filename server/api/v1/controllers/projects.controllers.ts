@@ -2,28 +2,58 @@ import { Request, Response } from "express";
 import { response } from "../../../common/response";
 import createHttpError from "http-errors";
 
-import { getProjects, createProject } from "../services/projects.services";
+import {
+  getProjects,
+  createProject,
+  getProject,
+  getProjectByName,
+  updateProject,
+  deleteProject,
+} from "../services/projects.services";
 
-// export const getItem = async (req: Request, res: Response) => {
-//   try {
-//     const {
-//       params: { id },
-//     } = req;
+export const getItem = async (req: Request, res: Response) => {
+  try {
+    const {
+      params: { id },
+    } = req;
 
-//     const [result] = await pool.query(
-//       "SELECT * FROM personal_projects WHERE id = ? DESC",
-//       [id]
-//     );
+    const result: any = await getProject(id);
 
-//     if (result.length === 0) {
-//       return res.status(404).json({ message: `Project ${id} not found` });
-//     }
+    if (!result) {
+      return response.error(
+        res,
+        new createHttpError.NotFound(`Project ${id} not found`)
+      );
+    }
 
-//     res.json(result);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
+    response.success(res, 200, `Project ${id}`, result);
+  } catch (error) {
+    if (error instanceof Error) {
+      return response.error(res, error);
+    }
+  }
+};
+
+export const getItemByQueryName = async (req: Request, res: Response) => {
+  try {
+    const name: any = req.query.name;
+
+    const result: any = await getProjectByName(name);
+
+    if (!result) {
+      return response.error(
+        res,
+        new createHttpError.NotFound(`Project ${name} not found`)
+      );
+    }
+
+    response.success(res, 200, `Project ${name}`, result);
+  } catch (error) {
+    if (error instanceof Error) {
+      return response.error(res, error);
+    }
+  }
+};
 
 export const getItems = async (req: Request, res: Response) => {
   try {
@@ -51,44 +81,44 @@ export const createItem = async (req: Request, res: Response) => {
   }
 };
 
-// export const updateProjects = async (req, res) => {
-//   try {
-//     const {
-//       params: { id },
-//     } = req;
-//     const { body } = req;
+export const updateItem = async (req: Request, res: Response) => {
+  try {
+    const {
+      params: { id },
+    } = req;
+    const { body } = req;
 
-//     const [result] = await pool.query("UPDATE personal_projects SET ? WHERE id = ?", [
-//       body,
-//       id,
-//     ]);
+    const result = await updateProject(id, body);
 
-//     if (result.affectedRows === 0) {
-//       return res.status(404).json({ message: `Project ${id} not found` });
-//     }
+    if (!result) {
+      response.error(
+        res,
+        new createHttpError.NotFound(`Project ${id} not found!`)
+      );
+    } else {
+      response.success(res, 201, "Project updated!", result);
+    }
+  } catch (error) {
+    return response.error(res, error);
+  }
+};
 
-//     res.json(result);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
+export const deleteItem = async (req: Request, res: Response) => {
+  try {
+    const {
+      params: { id },
+    } = req;
 
-// export const deleteProjects = async (req, res) => {
-//   try {
-//     const {
-//       params: { id },
-//     } = req;
-
-//     const [result] = await pool.query("DELETE FROM personal_projects WHERE id = ?", [
-//       id,
-//     ]);
-
-//     if (result.affectedRows === 0) {
-//       return res.status(404).json({ message: `Project ${id} not found` });
-//     }
-
-//     return res.sendStatus(204);
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
+    const result = await deleteProject(id);
+    if (!result) {
+      response.error(
+        res,
+        new createHttpError.NotFound(`Project ${id} not found!`)
+      );
+    } else {
+      response.success(res, 204, "Project deleted!", result);
+    }
+  } catch (error) {
+    return response.error(res, error);
+  }
+};
