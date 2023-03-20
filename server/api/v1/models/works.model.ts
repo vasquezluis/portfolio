@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import { Works } from "../interfaces/works.interface";
 
-// * accreditation schema based on accreditation interface
+// * works schema based on works interface
 
 const WorksSchema = new Schema<Works>(
   {
