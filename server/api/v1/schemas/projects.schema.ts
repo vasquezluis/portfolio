@@ -21,21 +21,72 @@ export const CreateProjectSchema = z.object({
       })
       .url()
       .min(1),
-    link_1: z
-      .string({
-        required_error: "link_1 is required",
-        invalid_type_error: "link_1 must be a string",
+    link_1: z.object({
+      url: z.string({
+        required_error: "image is required",
+        invalid_type_error: "image must be a string",
+      }),
+      icon: z
+        .string({
+          required_error: "icon is required",
+          invalid_type_error: "icon must be a string",
+        })
+        .url(),
+    }),
+    link_2: z
+      .object({
+        url: z.string({
+          required_error: "image is required",
+          invalid_type_error: "image must be a string",
+        }),
+        icon: z
+          .string({
+            required_error: "icon is required",
+            invalid_type_error: "icon must be a string",
+          })
+          .url(),
       })
-      .min(1),
-    link_2: z.string().optional(),
-    tech_1: z
-      .string({
-        required_error: "tech_1 is required",
-        invalid_type_error: "tech_1 must be a string",
+      .optional(),
+    tech_1: z.object({
+      name: z.string({
+        required_error: "name is required",
+        invalid_type_error: "name must be a string",
+      }),
+      icon: z
+        .string({
+          required_error: "icon is required",
+          invalid_type_error: "icon must be a string",
+        })
+        .url(),
+    }),
+    tech_2: z
+      .object({
+        name: z.string({
+          required_error: "name is required",
+          invalid_type_error: "name must be a string",
+        }),
+        icon: z
+          .string({
+            required_error: "icon is required",
+            invalid_type_error: "icon must be a string",
+          })
+          .url(),
       })
-      .min(1),
-    tech_2: z.string().optional(),
-    tech_3: z.string().optional(),
+      .optional(),
+    tech_3: z
+      .object({
+        name: z.string({
+          required_error: "name is required",
+          invalid_type_error: "name must be a string",
+        }),
+        icon: z
+          .string({
+            required_error: "icon is required",
+            invalid_type_error: "icon must be a string",
+          })
+          .url(),
+      })
+      .optional(),
     type: z
       .string({
         required_error: "type is required",
