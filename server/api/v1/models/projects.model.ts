@@ -18,7 +18,7 @@ const ProjectsSchema = new Schema<Projects>(
       required: true,
     },
     link_1: {
-      name: {
+      url: {
         type: String,
       },
       icon: {
@@ -26,7 +26,7 @@ const ProjectsSchema = new Schema<Projects>(
       },
     },
     link_2: {
-      name: {
+      url: {
         type: String,
       },
       icon: {
@@ -59,6 +59,9 @@ const ProjectsSchema = new Schema<Projects>(
     },
     type: {
       type: String,
+    },
+    active: {
+      type: Boolean,
     },
   },
   { timestamps: true, versionKey: false }
