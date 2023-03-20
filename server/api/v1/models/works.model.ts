@@ -1,9 +1,9 @@
 import { Schema, model } from "mongoose";
-import { Projects } from "../interfaces/projects.interface";
+import { Works } from "../interfaces/works.interface";
 
 // * accreditation schema based on accreditation interface
 
-const ProjectsSchema = new Schema<Projects>(
+const WorksSchema = new Schema<Works>(
   {
     title: {
       type: String,
@@ -68,5 +68,5 @@ const ProjectsSchema = new Schema<Projects>(
 );
 
 //* model creation
-const ProjectModel = model("projects", ProjectsSchema);
-export default ProjectModel;
+const WorkModel = model("works", WorksSchema);
+export default WorkModel;

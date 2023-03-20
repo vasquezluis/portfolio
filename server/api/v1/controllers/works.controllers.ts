@@ -1,15 +1,14 @@
 import { Request, Response } from "express";
 import { response } from "../../../common/response";
 import createHttpError from "http-errors";
-
 import {
-  getProjects,
-  createProject,
-  getProject,
-  getProjectByName,
-  updateProject,
-  deleteProject,
-} from "../services/projects.services";
+  createWork,
+  deleteWork,
+  getWork,
+  getWorkByName,
+  getWorks,
+  updateWork,
+} from "../services/works.services";
 
 export const getItem = async (req: Request, res: Response) => {
   try {
@@ -17,16 +16,16 @@ export const getItem = async (req: Request, res: Response) => {
       params: { id },
     } = req;
 
-    const result: any = await getProject(id);
+    const result: any = await getWork(id);
 
     if (!result) {
       return response.error(
         res,
-        new createHttpError.NotFound(`Project ${id} not found`)
+        new createHttpError.NotFound(`Work ${id} not found`)
       );
     }
 
-    response.success(res, 200, `Project ${id}`, result);
+    response.success(res, 200, `Work ${id}`, result);
   } catch (error) {
     if (error instanceof Error) {
       return response.error(res, error);
@@ -37,17 +36,18 @@ export const getItem = async (req: Request, res: Response) => {
 export const getItemByQueryName = async (req: Request, res: Response) => {
   try {
     const name: any = req.query.name;
+    console.log(name);
 
-    const result: any = await getProjectByName(name);
+    const result: any = await getWorkByName(name);
 
     if (!result) {
       return response.error(
         res,
-        new createHttpError.NotFound(`Project ${name} not found`)
+        new createHttpError.NotFound(`Work ${name} not found`)
       );
     }
 
-    response.success(res, 200, `Project ${name}`, result);
+    response.success(res, 200, `Work ${name}`, result);
   } catch (error) {
     if (error instanceof Error) {
       return response.error(res, error);
@@ -57,9 +57,9 @@ export const getItemByQueryName = async (req: Request, res: Response) => {
 
 export const getItems = async (req: Request, res: Response) => {
   try {
-    const result = await getProjects();
+    const result = await getWorks();
 
-    response.success(res, 200, "List of projects", result);
+    response.success(res, 200, "List of works", result);
   } catch (error) {
     if (error instanceof Error) {
       return response.error(res, error);
@@ -69,11 +69,11 @@ export const getItems = async (req: Request, res: Response) => {
 
 export const createItem = async (req: Request, res: Response) => {
   try {
-    const project = req.body;
+    const work = req.body;
 
-    const result = await createProject(project);
+    const result = await createWork(work);
 
-    response.success(res, 201, "Project created!", result);
+    response.success(res, 201, "Work created!", result);
   } catch (error) {
     if (error instanceof Error) {
       return response.error(res, error);
@@ -88,15 +88,15 @@ export const updateItem = async (req: Request, res: Response) => {
     } = req;
     const { body } = req;
 
-    const result = await updateProject(id, body);
+    const result = await updateWork(id, body);
 
     if (!result) {
       response.error(
         res,
-        new createHttpError.NotFound(`Project ${id} not found!`)
+        new createHttpError.NotFound(`Work ${id} not found!`)
       );
     } else {
-      response.success(res, 201, "Project updated!", result);
+      response.success(res, 201, "Work updated!", result);
     }
   } catch (error) {
     return response.error(res, error);
@@ -109,14 +109,14 @@ export const deleteItem = async (req: Request, res: Response) => {
       params: { id },
     } = req;
 
-    const result = await deleteProject(id);
+    const result = await deleteWork(id);
     if (!result) {
       response.error(
         res,
-        new createHttpError.NotFound(`Project ${id} not found!`)
+        new createHttpError.NotFound(`Work ${id} not found!`)
       );
     } else {
-      response.success(res, 204, "Project deleted!", result);
+      response.success(res, 201, "Work deleted!", result);
     }
   } catch (error) {
     return response.error(res, error);

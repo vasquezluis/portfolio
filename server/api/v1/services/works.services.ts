@@ -1,9 +1,9 @@
-import ProjectModel from "../models/projects.model";
-import { Projects } from "../interfaces/projects.interface";
+import WorkModel from "../models/works.model";
+import { Works } from "../interfaces/works.interface";
 
-export const getProject = async (id: string) => {
+export const getWork = async (id: string) => {
   try {
-    const response = await ProjectModel.findById(id);
+    const response = await WorkModel.findById(id);
 
     return response;
   } catch (error) {
@@ -13,9 +13,9 @@ export const getProject = async (id: string) => {
   }
 };
 
-export const getProjectByName = async (name: string) => {
+export const getWorkByName = async (name: string) => {
   try {
-    const response = await ProjectModel.findOne({ title: name });
+    const response = await WorkModel.findOne({ title: name });
 
     return response;
   } catch (error) {
@@ -25,9 +25,9 @@ export const getProjectByName = async (name: string) => {
   }
 };
 
-export const getProjects = async () => {
+export const getWorks = async () => {
   try {
-    const response = await ProjectModel.find({});
+    const response = await WorkModel.find({});
 
     return response;
   } catch (error) {
@@ -37,11 +37,11 @@ export const getProjects = async () => {
   }
 };
 
-export const createProject = async (project: Projects) => {
+export const createWork = async (work: Works) => {
   try {
-    let newProject = { ...project, active: true };
+    let newWork = { ...work, active: true };
 
-    const response = await ProjectModel.create(newProject);
+    const response = await WorkModel.create(newWork);
 
     return response;
   } catch (error) {
@@ -51,9 +51,9 @@ export const createProject = async (project: Projects) => {
   }
 };
 
-export const updateProject = async (id: string, body: any) => {
+export const updateWork = async (id: string, body: any) => {
   try {
-    const response = await ProjectModel.findByIdAndUpdate(id, body, {
+    const response = await WorkModel.findByIdAndUpdate(id, body, {
       new: true,
     });
 
@@ -65,9 +65,9 @@ export const updateProject = async (id: string, body: any) => {
   }
 };
 
-export const deleteProject = async (id: string) => {
+export const deleteWork = async (id: string) => {
   try {
-    const response = await ProjectModel.findByIdAndUpdate(
+    const response = await WorkModel.findByIdAndUpdate(
       id,
       {
         active: false,

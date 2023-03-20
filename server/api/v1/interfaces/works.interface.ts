@@ -1,8 +1,8 @@
 /**
- * * projects interface <contract>
+ * * works interface <contract>
  */
 
-export interface Projects {
+export interface Works {
   title: string;
   description: string;
   image: string;

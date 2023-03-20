@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const CreateProjectSchema = z.object({
+export const CreateWorkSchema = z.object({
   body: z.object({
     title: z
       .string({
