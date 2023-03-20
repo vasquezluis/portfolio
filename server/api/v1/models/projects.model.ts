@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import { Projects } from "../interfaces/projects.interface";
 
-// * accreditation schema based on accreditation interface
+// * projects schema based on projects interface
 
 const ProjectsSchema = new Schema<Projects>(
   {
