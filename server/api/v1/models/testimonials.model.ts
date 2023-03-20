@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import { Testimonials } from "../interfaces/testimonials.interface";
 
-// * testimonials schema based on accreditation interface
+// * testimonials schema based on testimonials interface
 
 const TestimonialsSchema = new Schema<Testimonials>(
   {
