@@ -1,21 +1,12 @@
-import About from "./components/About";
-import ContactForm from "./components/ContactForm";
-import Hero from "./components/Home";
-import NavBar from "./components/NavBar";
-import Skills from "./components/Skills";
-import Works from "./components/Works";
+import './App.css'
+import SideBar from './components/Sidebar'
 
-function App() {
+function App () {
   return (
-    <>
-      <NavBar />
-      <Hero />
-      <About />
-      <Skills />
-      <Works />
-      <ContactForm />
-    </>
-  );
+    <main>
+      <SideBar />
+    </main>
+  )
 }
 
-export default App;
+export default App
