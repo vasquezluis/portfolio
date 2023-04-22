@@ -1,11 +1,8 @@
-import './App.css'
-import SideBar from './components/Sidebar'
+import Index from './pages/Index'
 
 function App () {
   return (
-    <main>
-      <SideBar />
-    </main>
+    <Index />
   )
 }
 
