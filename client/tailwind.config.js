@@ -6,6 +6,12 @@ export default {
     extend: {
       fontFamily: {
         burtons: 'burtons'
+      },
+      colors: {
+        raisingBlack: '#1E1E24',
+        seaShell: '#F7EBE8',
+        jett: '#444140',
+        atomicTangerine: '#FFA987'
       }
     }
   },

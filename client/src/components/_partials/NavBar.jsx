@@ -1,17 +1,17 @@
-import { BsFillMoonStarsFill } from 'react-icons/bs'
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 
 function NavBar ({ darkMode, setDarkMode }) {
-  const myString = '<dev />'
+  const myString = '{dev: true}'
 
   return (
-    <nav className='py-10 mb-12 flex justify-between'>
-      <h1 className='text-xl font-burtons'>{myString}</h1>
+    <nav className='py-10 mb-12 flex justify-between' id='nav'>
+      <h1 className='text-xl font-burtons dark:text-seaShell'>{myString}</h1>
       <ul className='flex items-center'>
         <li>
-          <BsFillMoonStarsFill className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)} />
+          {darkMode ? (<BsFillSunFill className='dark:text-seaShell cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)} />) : (<BsFillMoonStarsFill className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)} />)}
         </li>
         <li>
-          <a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-4' href='#'>Resume</a>
+          <a className='bg-jett dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white px-4 py-2 rounded-md ml-4' href='/curriculum.pdf' target='_blank' rel='noopener noreferrer'>Resume</a>
         </li>
       </ul>
     </nav>
