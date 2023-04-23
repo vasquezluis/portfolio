@@ -20,7 +20,7 @@ const technologiesInfo = [
 
   {
     side: 'Database',
-    technology: 'Mongodb'
+    technology: 'MongoDB'
   }
 ]
 

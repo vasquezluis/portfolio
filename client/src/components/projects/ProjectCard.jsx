@@ -1,4 +1,4 @@
-function WorkCard ({
+function ProjectCard ({
   image,
   title,
   description,
@@ -96,4 +96,4 @@ function WorkCard ({
   )
 }
 
-export default WorkCard
+export default ProjectCard
