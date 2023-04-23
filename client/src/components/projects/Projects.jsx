@@ -1,10 +1,10 @@
-import WorkCard from './WorkCard'
+import WorkCard from '../works/WorkCard'
 
-function Portfolio () {
+function Projects () {
   return (
     <>
       <div className='pt-16 pb-4 text-center'>
-        <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold py-1 dark:text-seaShell'>Portfolio</h3>
+        <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold py-1 dark:text-seaShell'>Projects</h3>
         <p className='text-md py-2 leading-8 dark:text-seaShell'>
           Listing all the work I've done, using all
           <span className='font-bold dark:font-normal text-raisingBlack dark:text-atomicTangerine'> technologies</span> I know and a
@@ -43,4 +43,4 @@ function Portfolio () {
   )
 }
 
-export default Portfolio
+export default Projects

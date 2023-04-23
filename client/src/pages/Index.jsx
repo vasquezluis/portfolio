@@ -3,16 +3,16 @@ import { useState } from 'react'
 import NavBar from '../components/_partials/NavBar'
 import Hero from '../components/hero/Hero'
 import Poster from '../components/poster/Poster'
-import Services from '../components/services/Services'
+import Technologies from '../components/technologies/Technologies'
 import Portfolio from '../components/works/Portfolio'
-import ProjectCard from '../components/projects/ProjectCard'
+import Projects from '../components/projects/Projects'
 
 function Index () {
   const [darkMode, setDarkMode] = useState(false)
 
   return (
     <div className={darkMode ? 'dark' : ''}>
-      <main className='bg-white dark:bg-gray-900 lg:flex justify-center'>
+      <main className='bg-white dark:bg-raisingBlack lg:flex justify-center'>
         <div className='lg:w-[1500px] px-5 md:px-20 lg:px-40'>
           <section className='min-h-screen'>
             <NavBar
@@ -22,15 +22,21 @@ function Index () {
             <Hero />
             <Poster />
           </section>
-          <section className='min-h-screen'>
-            <Services />
+          <section>
+            <Technologies />
           </section>
-          <section className='min-h-screen'>
+          <section>
             <Portfolio />
           </section>
-          <section className='min-h-screen'>
-            <ProjectCard />
+          <section className='pb-10'>
+            <Projects />
           </section>
+
+          {/* <button className='bg-jett dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white font-bold py-2 px-4 rounded-full fixed bottom-5 right-2 z-10'> */}
+          <a className='bg-transparent dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white font-bold rounded-full fixed bottom-5 right-2 lg:right-72 z-10' href='#nav'>
+            <img className='w-14 h-14' src='/ArrowUp.svg' alt='arrow up' />
+          </a>
+          {/* </button> */}
         </div>
       </main>
     </div>
