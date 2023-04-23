@@ -11,7 +11,7 @@ function NavBar ({ darkMode, setDarkMode }) {
           {darkMode ? (<BsFillSunFill className='dark:text-seaShell cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)} />) : (<BsFillMoonStarsFill className='cursor-pointer text-2xl' onClick={() => setDarkMode(!darkMode)} />)}
         </li>
         <li>
-          <a className='bg-jett dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white px-4 py-2 rounded-md ml-4' href='/curriculum.pdf' target='_blank' rel='noopener noreferrer'>Resume</a>
+          <a className='bg-jett dark:bg-gradient-to-r from-blue-400 to-blue-700 text-white px-4 py-2 rounded-md ml-4' href='/curriculum.pdf' target='_blank' rel='noopener noreferrer'>Resume</a>
         </li>
       </ul>
     </nav>
