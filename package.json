@@ -6,10 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only ./server",
     "build": "tsc",
-    "start": "npm run build && node ./dist/index.js",
-    "start:client": "cd client && npm start",
-    "dev:client": "cd client && npm run dev",
-    "build:client": "cd client && npm run build"
+    "start": "npm run build && node ./dist/index.js"
   },
   "repository": {
     "type": "git",
