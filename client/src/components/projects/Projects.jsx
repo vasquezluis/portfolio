@@ -9,8 +9,8 @@ function Projects () {
     select: (items) => items.reverse()
   })
 
-  if (isLoading) return 'Loading 😩..'
-  if (isError) return 'Error 💔: ' + error.message
+  if (isLoading) return <p>Loading projects 😩... </p>
+  else if (isError) return <p>Error 💔 {error.message} </p>
 
   return (
     <>
@@ -26,7 +26,7 @@ function Projects () {
         {/* <div className='max-w-md rounded overflow-hidden shadow-lg'> */}
 
         {
-          projects.map(item => (
+          projects && projects.map(item => (
             <ProjectCard
               key={item._id}
               image={item.image}

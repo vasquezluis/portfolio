@@ -9,8 +9,8 @@ function Portfolio () {
     select: (items) => items.reverse()
   })
 
-  if (isLoading) return 'Loading...'
-  if (isError) return 'Error: ' + error.message
+  if (isLoading) return <p>Loading works 😩... </p>
+  else if (isError) return <p>Error 💔 {error.message} </p>
 
   return (
     <>
@@ -25,7 +25,7 @@ function Portfolio () {
       <div className='flex flex-col gap-2 lg:gap-5 lg:flex-row lg:flex-nowrap'>
         {/* <div className='max-w-md rounded overflow-hidden shadow-lg'> */}
 
-        {works.map(item => (
+        {works && works.map(item => (
           <WorkCard
             key={item._id}
             image={item.image}
@@ -39,30 +39,6 @@ function Portfolio () {
           />
         ))}
 
-        {/* <WorkCard
-          image='web1'
-          title='PELISPELIS'
-          description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eveniet architecto dolore, voluptatum nisi, expedita placeat molestiae nostrum esse eos quasi delectus, dicta itaque. Amet aspernatur explicabo quas alias molestiae!'
-          tech1='React'
-          tech2='Mongodb'
-          tech3='Tailwind'
-        />
-        <WorkCard
-          image='web2'
-          title='Peluqueria San Martin'
-          description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eveniet architecto dolore, voluptatum nisi, expedita placeat molestiae nostrum esse eos quasi delectus, dicta itaque. Amet aspernatur explicabo quas alias molestiae!'
-          tech1='React'
-          tech2='MySQL'
-          tech3='Express'
-        />
-        <WorkCard
-          image='web1'
-          title='Dulceria Juan x2'
-          description='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eveniet architecto dolore, voluptatum nisi, expedita placeat molestiae nostrum esse eos quasi delectus, dicta itaque. Amet aspernatur explicabo quas alias molestiae!'
-          tech1='React'
-          tech2='Mongodb'
-          tech3='Express'
-        /> */}
         {/* </div> */}
       </div>
     </>
