@@ -3,6 +3,10 @@ import { response } from "../../../common/response";
 
 const router = Router();
 
+router.get("/", (req: Request, res: Response) => {
+  res.redirect("/api/v1");
+});
+
 router.get("/api/v1/", ({ headers: { host } }: Request, res: Response) => {
   const menu: { [key: string]: string } = {
     works: `https://${host}/api/v1/works`,
