@@ -12,7 +12,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use(cors({ origin: "https://main--vasquezluis.netlify.app/" }));
+app.use(cors());
 
 app.use(indexRouter);
 app.use(projectsRouter);
