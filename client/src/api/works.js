@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const worksAPI = axios.create({
-  baseURL: 'https://portfolio-jwgt.onrender.com/api/v1/works/'
+  // baseURL: 'https://portfolio-jwgt.onrender.com/api/v1/works/'
+  baseURL: 'https://portfolio-production-db9a.up.railway.app/api/v1/works/'
 })
 
 export const getItems = async () => {
