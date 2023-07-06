@@ -33,7 +33,7 @@ function Index () {
           </section>
 
           {/* <button className='bg-jett dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white font-bold py-2 px-4 rounded-full fixed bottom-5 right-2 z-10'> */}
-          <a className='bg-transparent dark:bg-gradient-to-r from-red-500 to-atomicTangerine text-white font-bold rounded-full fixed bottom-5 right-2 lg:right-72 z-10' href='#nav'>
+          <a className='bg-transparent dark:bg-gradient-to-r from-green-500 to-blue text-white font-bold rounded-full fixed bottom-5 right-2 lg:right-72 z-10' href='#nav'>
             <img className='w-14 h-14' src='/ArrowUp.svg' alt='arrow up' />
           </a>
           {/* </button> */}
