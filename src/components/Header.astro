@@ -1,0 +1,62 @@
+---
+import HeaderMovil from "./HeaderMovil"
+
+const Links = [
+	{ href: "#informacion", label: "Información" },
+	{ href: "#portafolio", label: "Portafolio" },
+	{ href: "#experiencia", label: "Experiencia" },
+	{ href: "#habilidades", label: "Habilidades" },
+	{ href: "#estudios", label: "Estudios" },
+]
+---
+
+<header class="relative mx-auto max-w-screen-lg px-3 py-6">
+	<div class="flex flex-row items-center justify-between">
+		<!-- logo -->
+		<div>
+			<a href="/"
+				><div
+					class="flex items-center bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-xl font-bold text-transparent"
+				>
+					<svg
+						class="mr-1 h-10 w-10 stroke-cyan-600"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+						stroke="currentColor"
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M7 8l-4 4l4 4"></path>
+						<path d="M17 8l4 4l-4 4"></path>
+						<path d="M14 4l-4 16"></path>
+					</svg>
+					vasquezluis
+				</div></a
+			>
+		</div>
+
+		<HeaderMovil client:visible />
+
+		<!-- menu links -->
+		<nav class="hidden sm:flex">
+			<ul class="flex gap-x-3 font-medium text-gray-200">
+				{
+					Links.map((item) => (
+						<li>
+							<a
+								class="block px-4 py-2 text-end hover:bg-gray-700 hover:text-white"
+								href={item.href}
+							>
+								{item.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+</header>

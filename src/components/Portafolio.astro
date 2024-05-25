@@ -1,0 +1,48 @@
+---
+import Proyecto from "./Proyecto.astro"
+
+const proyecto1Techs = [
+	{ label: "HTML", bg: "bg-rose-400", text_color: "text-rose-900" },
+	{ label: "CSS", bg: "bg-sky-400", text_color: "text-sky-900" },
+	{ label: "JavaScript", bg: "bg-yellow-400", text_color: "text-yellow-900" },
+]
+const proyecto2Techs = [
+	{ label: "Astro.js", bg: "bg-fuchsia-400", text_color: "text-fuchsia-900" },
+	{ label: "Tailwind", bg: "bg-sky-400", text_color: "text-sky-900" },
+	{ label: "TypeScript", bg: "bg-rose-400", text_color: "text-rose-900" },
+]
+const proyecto3Techs = [
+	{ label: "Astro.js", bg: "bg-fuchsia-400", text_color: "text-fuchsia-900" },
+	{ label: "Python", bg: "bg-blue-400", text_color: "text-blue-900" },
+	{ label: "TypeScript", bg: "bg-rose-400", text_color: "text-rose-900" },
+]
+---
+
+<section class="mx-auto max-w-screen-lg px-3 py-6" id="portafolio">
+	<div class="mb-6 text-2xl font-bold">
+		<span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
+			>Proyectos</span
+		>
+		recientes
+	</div>
+	<div class="flex flex-col gap-6">
+		<Proyecto
+			imagenUrl="images/image3.jpg"
+			titulo="Blog para eventos en UVGA"
+			tecnologias={proyecto1Techs}
+			descripcion="Este blog fue creado con el propósito de informar a los estudiantes de la Universidad Valle CA sobre los eventos que se realizan en la institución. "
+		/>
+		<Proyecto
+			imagenUrl="images/image5.jpg"
+			titulo="Mapa 3D del volcán de agua"
+			tecnologias={proyecto2Techs}
+			descripcion="Este proyecto consiste en un mapa 3D del volcán de agua de Panajachel, el cual fue creado con el framework Astro.js. Además, se incluye la libreria Three.js para la creación del mapa 3D. El mapa incluye datos sobre el volcán de agua, como su altura, ubicación, etc. Es 100% interactiva y se puede girar en cualquier dirección. "
+		/>
+		<Proyecto
+			imagenUrl="images/image2.jpg"
+			titulo="Detector de cataratas"
+			tecnologias={proyecto3Techs}
+			descripcion="El proyecto consistió en la creación de un sistema de detección de cataratas utilizando el lenguaje de programación Python. El sistema fue creado con el framework Astro.js y se utilizó la librería OpenCV para el procesamiento de imágenes. El sistema es capaz de detectar cataratas en imágenes de ojos humanos. "
+		/>
+	</div>
+</section>
