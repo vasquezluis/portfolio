@@ -50,7 +50,7 @@ const { imageUrl, title, technologies, description, type } = Astro.props
 			</p>
 		</div>
 		<div class="flex items-center justify-end">
-			<div class={`${type.colorType} rounded-md px-2 py-1 text-xs font-semibold`}>
+			<div class:list={`${type.colorType} rounded-md px-2 py-1 text-xs font-semibold`}>
 				{type.type}
 			</div>
 		</div>
