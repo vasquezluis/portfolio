@@ -6,30 +6,20 @@ import Portafolio from "../components/Portafolio.astro"
 import Experiencia from "../components/Experiencia.astro"
 import Habilidades from "../components/Habilidades.astro"
 import Estudios from "../components/Estudios.astro"
-import Footer from "../components/Footer.astro"
 ---
 
 <Layout title="vasquezluis portafolio">
-	<div class="w-full md:mx-auto md:w-4/6 md:px-36">
-		<!-- header -->
+	<div class="w-full md:mx-auto">
 		<Header />
 
-		<!-- main -->
 		<Main />
 
-		<!-- portafolio -->
-		<Portafolio />
-
-		<!-- experiencia timeline -->
 		<Experiencia />
 
-		<!-- habilidades -->
+		<Portafolio />
+
 		<Habilidades />
 
-		<!-- estudios previos -->
 		<Estudios />
-
-		<!-- Footer -->
-		<Footer />
 	</div>
 </Layout>

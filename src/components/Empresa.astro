@@ -1,0 +1,23 @@
+---
+interface Props {
+	position: string
+	bgColor: string
+	company: string
+	workPosition: string
+	date: string
+}
+
+const { position, bgColor, company, workPosition, date } = Astro.props
+---
+
+<div class:list=`${position} mb-8 flex w-full items-center justify-between`>
+	<div class="order-1 w-5/12"></div>
+	<div class:list=`${bgColor} z-20 order-1 flex h-8 w-8 items-center rounded-full shadow-xl`>
+		<h1 class="mx-auto text-lg font-semibold text-white">1</h1>
+	</div>
+	<div class:list=`${bgColor} order-1 w-5/12 rounded-lg px-6 py-4 shadow-xl`>
+		<h3 class="mb-3 font-bold text-white">{company}</h3>
+		<p class="text-sm leading-snug tracking-wide text-white">Posición: {workPosition}</p>
+		<p class="text-sm leading-snug tracking-wide text-white">Fecha: {date}</p>
+	</div>
+</div>
