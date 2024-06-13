@@ -1,0 +1,78 @@
+---
+import Proyecto from "./Proyecto.astro"
+import DolceComprasImg from "../../public/images/dolce-compras-image.png"
+import IgnitionImg from "../../public/images/ignition-image.png"
+import DUAGTImg from "../../public/images/duagt-image.png"
+
+const projects = [
+	{
+		id: 1,
+		imageUrl: DolceComprasImg,
+		title: "Dashboard para DolceCompras",
+		technologies: [
+			{ label: "Reactjs", bg: "bg-sky-400", text_color: "text-sky-900" },
+			{ label: "Redux", bg: "bg-purple-400", text_color: "text-purple-900" },
+			{ label: "TypeScript", bg: "bg-blue-400", text_color: "text-blue-900" },
+		],
+		description:
+			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utencilios relacionados a heladerías, hecho con Nextjs, Typescript, Tailwind, Firebase authentication y Firebase Realtime Database.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 text-teal-200",
+		},
+	},
+	{
+		id: 2,
+		imageUrl: IgnitionImg,
+		title: "Ignition",
+		technologies: [
+			{ label: "Nextjs", bg: "bg-slate-400", text_color: "text-slate-900" },
+			{ label: "TypeScript", bg: "bg-blue-400", text_color: "text-blue-900" },
+			{ label: "Firebase", bg: "bg-yellow-400", text_color: "text-yellow-900" },
+		],
+		description:
+			"Proyecto de generación de imágenes usando Inteligencia Artificial, frontend en Reactjs + TypeScript, MySQL, NodeJS, AWS S3, AWS Lambdas y AWS Cognito.",
+		type: {
+			type: "Ignition",
+			colorType: "bg-orange-600 text-orange-200",
+		},
+	},
+	{
+		id: 3,
+		imageUrl: DUAGTImg,
+		title: "Escuela virtual",
+		technologies: [
+			{ label: "Moodle", bg: "bg-orange-400", text_color: "text-orange-900" },
+			{ label: "MySQL", bg: "bg-sky-400", text_color: "text-sky-900" },
+		],
+		description:
+			"Proyecto hecho con Moodle para la administración de 3 escuelas en conjunto con la asociación DUA de Guatemala.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 text-teal-200",
+		},
+	},
+]
+---
+
+<section class="mx-auto max-w-screen-lg px-3 py-6" id="portafolio">
+	<div class="mb-6 text-2xl font-bold">
+		<span class="bg-gradient-to-br from-sky-500 to-cyan-400 bg-clip-text text-transparent"
+			>Proyectos</span
+		>
+		recientes
+	</div>
+	<div class="flex flex-col gap-6">
+		{
+			projects.map((item) => (
+				<Proyecto
+					imageUrl={item.imageUrl}
+					title={item.title}
+					technologies={item.technologies}
+					description={item.description}
+					type={item.type}
+				/>
+			))
+		}
+	</div>
+</section>
