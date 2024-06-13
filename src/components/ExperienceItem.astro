@@ -2,11 +2,17 @@
 interface Props {
 	date: string
 	title: string
+	company: {
+		name: string
+		link: string
+	}
 	description: string
-	link: string
+	link?: string
 }
 
-const { date, title, description, link } = Astro.props
+import SocialPill from "./SocialPill.astro"
+
+const { date, title, company, description, link } = Astro.props
 ---
 
 <li class="mb-10 ms-4">
@@ -18,15 +24,15 @@ const { date, title, description, link } = Astro.props
 	<h3 class="mt-2 text-lg font-semibold text-yellow-200">
 		{title}
 	</h3>
+	<a href={company.link} target="_blank" rel="noopener noreferrer">
+		<span class="text-xs text-yellow-200/90">{company.name}</span>
+	</a>
 	<p class="mb-4 text-pretty text-base font-normal text-gray-200">
 		{description}
 	</p>
 	{
 		link && (
-			<a
-				href={link}
-				class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
-			>
+			<SocialPill link={link}>
 				Saber más{" "}
 				<svg
 					class="ms-2 h-3 w-3 rtl:rotate-180"
@@ -43,7 +49,7 @@ const { date, title, description, link } = Astro.props
 						d="M1 5h12m0 0L9 1m4 4L9 9"
 					/>
 				</svg>
-			</a>
+			</SocialPill>
 		)
 	}
 </li>
