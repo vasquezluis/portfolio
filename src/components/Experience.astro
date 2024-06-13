@@ -1,0 +1,43 @@
+---
+import Briefcase from "../Icons/Briefcase.astro"
+import Container from "./Container.astro"
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+	{
+		date: "mayo 2023 - mayo 2024",
+		title: "Trabajo en tal lado",
+		description: "Descripcion del trabajo en tal lado",
+		link: "#",
+	},
+	{
+		date: "febrero 2023 - julio 2023",
+		title: "Trabajo en tal lado",
+		description: "Descripcion del trabajo en tal lado",
+		link: "#",
+	},
+	{
+		date: "enero 2023",
+		title: "Trabajo en tal lado",
+		description: "Descripcion del trabajo en tal lado",
+		link: "#",
+	},
+]
+---
+
+<Container id="experience">
+	<h2 class="mb-6 flex items-center gap-x-2 text-2xl font-semibold">
+		<Briefcase class="size-6" />
+		Experiencia Laboral
+	</h2>
+
+	<ol class="relative ml-3 border-s border-gray-700">
+		{
+			EXPERIENCE.map((exp) => (
+				<li class="mb-10 ms-4">
+					<ExperienceItem {...exp} />
+				</li>
+			))
+		}
+	</ol>
+</Container>

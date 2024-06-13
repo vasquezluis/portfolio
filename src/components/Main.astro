@@ -6,10 +6,11 @@ import Logo from "../Icons/Logo.astro"
 import Linkedin from "../Icons/Linkedin.astro"
 import Github from "../Icons/Github.astro"
 import Mail from "../Icons/Mail.astro"
+import Container from "./Container.astro"
 ---
 
 <main>
-	<section class="mx-auto w-full py-44 lg:w-[740px]">
+	<Container className="pb-20 pt-44">
 		<Logo />
 
 		<h1 class="flex flex-row gap-x-2 pb-10 text-4xl font-bold text-white">
@@ -22,9 +23,9 @@ import Mail from "../Icons/Mail.astro"
 				<Badge>Disponible para trabajar</Badge>
 			</a>
 		</h1>
-		<h2 class="text-wrap text-lg opacity-80">
-			<span>1 año de experiencia</span> en el mundo laboral. <span
-				class="text-yellow-200/90 opacity-80">Desarrollador web.</span
+		<h2 class="text-wrap text-lg">
+			<span>1 año de experiencia</span> en el mundo laboral. <span class="text-yellow-200"
+				>Desarrollador web.</span
 			>
 			<span>De Guatemala.</span>
 			<span class="opacity-85">Especializado en crear aplicaciones únicas.</span>
@@ -39,10 +40,10 @@ import Mail from "../Icons/Mail.astro"
 				<Github class="size-6" />
 				GitHub
 			</SocialPill>
-			<SocialPill link="https://github.com/vasquezluis">
+			<SocialPill link="mailto:lvasquez0127@gmail.com">
 				<Mail class="size-6" />
 				lvasquez0127@gmail.com
 			</SocialPill>
 		</nav>
-	</section>
+	</Container>
 </main>
