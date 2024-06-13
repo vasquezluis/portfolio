@@ -1,3 +1,7 @@
+---
+import Empresa from "./Empresa.astro"
+---
+
 <section class="mx-auto max-w-screen-lg px-3 py-6" id="experiencia">
 	<!-- titulo -->
 	<div class="mb-6 text-2xl font-bold">
@@ -9,33 +13,21 @@
 
 	<!-- timeline -->
 	<div class="wrap exp-timeline relative overflow-hidden md:p-10">
-		<!-- Timeline Item 1 -->
-		<div class="left-timeline mb-8 flex w-full items-center justify-between">
-			<div class="order-1 w-5/12"></div>
-			<div class="z-20 order-1 flex h-8 w-8 items-center rounded-full bg-rose-900 shadow-xl">
-				<h1 class="mx-auto text-lg font-semibold text-white">1</h1>
-			</div>
-			<div class="order-1 w-5/12 rounded-lg bg-rose-900 px-6 py-4 shadow-xl">
-				<h3 class="mb-3 font-bold text-white">Empresa A</h3>
-				<p class="text-sm leading-snug tracking-wide text-white">Posición: Desarrollador Web</p>
-				<p class="text-sm leading-snug tracking-wide text-white">Fecha: Enero 2020 - Actualidad</p>
-			</div>
-		</div>
+		<Empresa
+			position="left-timeline"
+			bgColor="bg-orange-500"
+			company="Ignition"
+			workPosition="Programador web Junior"
+			date="mayo 2023 - mayo 2024"
+		/>
 
-		<!-- Timeline Item 2 -->
-		<div class="right-timeline mb-8 flex w-full flex-row-reverse items-center justify-between">
-			<div class="order-1 w-5/12"></div>
-			<div class="z-20 order-1 flex h-8 w-8 items-center rounded-full bg-indigo-900 shadow-xl">
-				<h1 class="mx-auto text-lg font-semibold text-white">2</h1>
-			</div>
-			<div class="order-1 w-5/12 rounded-lg bg-indigo-900 px-6 py-4 shadow-xl">
-				<h3 class="mb-3 font-bold text-white">Empresa B</h3>
-				<p class="text-sm leading-snug tracking-wide text-white">Posición: Diseñador UX/UI</p>
-				<p class="text-sm leading-snug tracking-wide text-white">
-					Fecha: Junio 2018 - Diciembre 2019
-				</p>
-			</div>
-		</div>
+		<Empresa
+			position="righ-timeline flex-row-reverse"
+			bgColor="bg-green-900"
+			company="Universidad el Valle de Guatemala, CA"
+			workPosition="Profesor auxiliar"
+			date="mayo 2023 - mayo 2024"
+		/>
 
 		<!-- Timeline Item 3 -->
 		<div class="left-timeline mb-8 flex w-full items-center justify-between">
