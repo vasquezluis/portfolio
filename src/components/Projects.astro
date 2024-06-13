@@ -1,0 +1,65 @@
+---
+import Proyect from "./Project.astro"
+import Container from "./Container.astro"
+
+import { TAGS } from "./TagsList.astro"
+import Code from "../icons/Code.astro"
+
+const projects = [
+	{
+		id: 1,
+		imageUrl: "/images/dolce-compras.webp",
+		title: "Dashboard para DolceCompras",
+		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
+		description:
+			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utencilios relacionados a heladerías, hecho con Nextjs, Typescript, Tailwind, Firebase authentication y Firebase Realtime Database.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 text-white",
+		},
+	},
+	{
+		id: 2,
+		imageUrl: "/images/ignition.webp",
+		title: "Ignition",
+		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
+		description:
+			"Proyecto de generación de imágenes usando Inteligencia Artificial, frontend en Reactjs + TypeScript, MySQL, NodeJS, AWS S3, AWS Lambdas y AWS Cognito.",
+		type: {
+			type: "Ignition",
+			colorType: "bg-orange-600 text-white",
+		},
+	},
+	{
+		id: 3,
+		imageUrl: "/images/duagt.webp",
+		title: "Escuela virtual",
+		tags: [TAGS.MOODLE, TAGS.MYSQL],
+		description:
+			"Proyecto hecho con Moodle para la administración de 3 escuelas en conjunto con la asociación DUA de Guatemala.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 white",
+		},
+	},
+]
+---
+
+<Container id="projects">
+	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
+		<Code />
+		Proyectos
+	</h2>
+
+	{
+		projects.map((item) => (
+			<Proyect
+				imageUrl={item.imageUrl}
+				title={item.title}
+				tags={item.tags}
+				description={item.description}
+				type={item.type}
+			/>
+		))
+	}
+</Container>

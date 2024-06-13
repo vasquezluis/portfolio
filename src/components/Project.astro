@@ -1,0 +1,53 @@
+---
+interface TagsProps {
+	label: string
+	class: string
+	icon: any
+}
+
+interface ProjectType {
+	type: string
+	colorType: string
+}
+
+interface Props {
+	imageUrl: any
+	title: string
+	tags: Array<TagsProps>
+	description: string
+	type: ProjectType
+}
+
+const { imageUrl, title, tags, description, type } = Astro.props
+---
+
+<article>
+	<h3 class="mb-2 text-2xl font-semibold text-yellow-200">{title}</h3>
+	<p class="mb-4 text-pretty text-lg">{description}</p>
+	<ul class="mb-3 flex gap-x-2">
+		{
+			tags.map((tag) => (
+				<li>
+					<span
+						class:list={`flex gap-x-2 rounded-full text-xs ${tag.class} items-center justify-center px-2 py-1`}
+					>
+						<tag.icon class="size-6" />
+						{tag.label}
+					</span>
+				</li>
+			))
+		}
+
+		<span
+			class:list={`flex gap-x-2 rounded-full text-xs ${type.colorType} items-center justify-center px-2 py-1`}
+		>
+			{type.type}
+		</span>
+	</ul>
+
+	<img
+		class="rounded shadow-2xl shadow-white/10"
+		src={imageUrl}
+		alt={`Captura de pantalla del proyecto ${imageUrl}`}
+	/>
+</article>
