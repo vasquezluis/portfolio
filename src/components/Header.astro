@@ -9,7 +9,15 @@ const Links = [
 ---
 
 <header class="mx-auto flex w-full items-center justify-center py-5 xl:w-[1120px]">
-	<nav class="flex flex-col gap-x-10 opacity-80 md:flex-row">
-		{Links.map((item) => <a href={item.href}>{item.label}</a>)}
+	<nav
+		class="inline-flex items-center justify-center gap-x-2 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs md:px-4 md:py-2 md:text-base"
+	>
+		{
+			Links.map((item) => (
+				<a href={item.href} class="transition hover:text-sky-500">
+					{item.label}
+				</a>
+			))
+		}
 	</nav>
 </header>
