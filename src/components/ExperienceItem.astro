@@ -21,11 +21,11 @@ const { date, title, company, description, link } = Astro.props
 	>
 	</div>
 	<time class="mb-1 text-sm font-normal leading-none text-sky-200/80">{date}</time>
-	<h3 class="mt-2 text-lg font-semibold text-yellow-200">
+	<h3 class="mt-2 text-lg font-bold text-[#19b4b9]">
 		{title}
 	</h3>
 	<a href={company.link} target="_blank" rel="noopener noreferrer">
-		<span class="text-xs text-yellow-200/90">{company.name}</span>
+		<span class="text-xs text-[#19b4b9]/90">{company.name}</span>
 	</a>
 	<p class="mb-4 text-pretty text-base font-normal text-gray-200">
 		{description}

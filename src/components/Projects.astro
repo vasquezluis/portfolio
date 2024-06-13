@@ -9,7 +9,10 @@ const projects = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
-		title: "Dashboard para DolceCompras",
+		title: {
+			text: "Dashboard para DolceCompras",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
 		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
 		description:
 			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utencilios relacionados a heladerías, hecho con Nextjs, Typescript, Tailwind, Firebase authentication y Firebase Realtime Database.",
@@ -21,22 +24,43 @@ const projects = [
 	{
 		id: 2,
 		imageUrl: "/images/ignition.webp",
-		title: "Ignition",
+		title: {
+			text: "Ignition",
+			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
+		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
 		description:
-			"Proyecto de generación de imágenes usando Inteligencia Artificial, frontend en Reactjs + TypeScript, MySQL, NodeJS, AWS S3, AWS Lambdas y AWS Cognito.",
+			"Proyecto de generación de imágenes usando Inteligencia Artificial y Midjourney, frontend en Reactjs + TypeScript, MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
 		type: {
-			type: "Ignition",
+			type: "Prometheus",
 			colorType: "bg-orange-600 text-white",
 		},
 	},
 	{
 		id: 3,
+		imageUrl: "/images/flamerly.webp",
+		title: {
+			text: "Flamerly",
+			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
+		},
+		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
+		description:
+			"Proyecto tipo asistente virtual basado en APIs de OpenAI. Frontend en Reactjs + Typescript, MYSQL RDS, DJango restframework, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		type: {
+			type: "Prometheus",
+			colorType: "bg-orange-600 text-white",
+		},
+	},
+	{
+		id: 4,
 		imageUrl: "/images/duagt.webp",
-		title: "Escuela virtual",
+		title: {
+			text: "Escuela virtual DUAGT",
+			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
+		},
 		tags: [TAGS.MOODLE, TAGS.MYSQL],
 		description:
-			"Proyecto hecho con Moodle para la administración de 3 escuelas en conjunto con la asociación DUA de Guatemala.",
+			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros y estudiantes.",
 		type: {
 			type: "Freelance",
 			colorType: "bg-teal-600 white",
@@ -51,15 +75,17 @@ const projects = [
 		Proyectos
 	</h2>
 
-	{
-		projects.map((item) => (
-			<Proyect
-				imageUrl={item.imageUrl}
-				title={item.title}
-				tags={item.tags}
-				description={item.description}
-				type={item.type}
-			/>
-		))
-	}
+	<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+		{
+			projects.map((item) => (
+				<Proyect
+					imageUrl={item.imageUrl}
+					title={item.title}
+					tags={item.tags}
+					description={item.description}
+					type={item.type}
+				/>
+			))
+		}
+	</div>
 </Container>
