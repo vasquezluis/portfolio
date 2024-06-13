@@ -9,21 +9,23 @@ import Mail from "../Icons/Mail.astro"
 import Container from "./Container.astro"
 ---
 
-<main>
+<main class="px-2">
 	<Container className="pb-20 pt-44">
 		<Logo />
 
-		<h1 class="flex flex-row gap-x-2 pb-10 text-4xl font-bold text-white">
+		<h1
+			class="flex flex-col gap-x-4 pb-6 text-2xl font-bold text-white md:flex-row md:text-3xl lg:pb-10 lg:text-4xl"
+		>
 			Hola, soy Luis Vásquez<a
 				href="https://www.linkedin.com/in/luis-antonio-vasquez-59093429a/"
 				target="_blank"
 				rel="noopener"
-				class="flex items-center justify-center"
+				class="flex items-center justify-start md:justify-center"
 			>
 				<Badge>Disponible para trabajar</Badge>
 			</a>
 		</h1>
-		<h2 class="text-wrap text-lg">
+		<h2 class="max-w-[700px] text-wrap text-lg lg:text-2xl">
 			<span>1 año de experiencia</span> en el mundo laboral. <span class="text-yellow-200"
 				>Desarrollador web.</span
 			>
@@ -31,17 +33,17 @@ import Container from "./Container.astro"
 			<span class="opacity-85">Especializado en crear aplicaciones únicas.</span>
 		</h2>
 
-		<nav class="mt-8 flex gap-x-4">
+		<nav class="mt-8 flex flex-wrap gap-4">
 			<SocialPill link="https://www.linkedin.com/in/luis-antonio-vasquez-59093429a/">
-				<Linkedin class="size-6" />
+				<Linkedin class="size-4 md:size-6" />
 				Linkedin
 			</SocialPill>
 			<SocialPill link="https://github.com/vasquezluis">
-				<Github class="size-6" />
+				<Github class="size-4 md:size-6" />
 				GitHub
 			</SocialPill>
 			<SocialPill link="mailto:lvasquez0127@gmail.com">
-				<Mail class="size-6" />
+				<Mail class="size-4 md:size-6" />
 				lvasquez0127@gmail.com
 			</SocialPill>
 		</nav>

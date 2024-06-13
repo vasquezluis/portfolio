@@ -1,6 +1,4 @@
 ---
-import HeaderMovil from "./HeaderMovil"
-
 const Links = [
 	{ href: "#info", label: "Información" },
 	{ href: "#portfolio", label: "Portafolio" },
@@ -10,14 +8,8 @@ const Links = [
 ]
 ---
 
-<header class="mx-auto flex w-[1120px] items-center justify-center py-5">
-	<nav class="flex gap-x-10 opacity-80">
-		{
-			Links.map((item) => (
-				<a class="block px-4 py-2 text-end hover:bg-gray-700 hover:text-white" href={item.href}>
-					{item.label}
-				</a>
-			))
-		}
+<header class="mx-auto flex w-full items-center justify-center py-5 xl:w-[1120px]">
+	<nav class="flex flex-col gap-x-10 opacity-80 md:flex-row">
+		{Links.map((item) => <a href={item.href}>{item.label}</a>)}
 	</nav>
 </header>
