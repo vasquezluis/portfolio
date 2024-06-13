@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets"
+import LinkedinImage from "../../public/images/linkedin-icon.png"
+import YoutubeImage from "../../public/images/youtube-icon.png"
+import GithubImage from "../../public/images/github-icon.svg"
+import AvatarImage from "../../public/icons/avatar.svg"
+---
+
 <main class="mx-auto max-w-screen-lg px-3 py-6" id="informacion">
 	<div class="flex flex-col items-center md:flex-row md:justify-between md:gap-x-24">
 		<div>
@@ -19,26 +27,18 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<img
-						class="h-12 w-12 hover:translate-y-0.5"
-						src="images/linkedin-icon.png"
-						alt="linkedin icon"
-					/>
+					<Image class="h-12 w-12 hover:translate-y-0.5" src={LinkedinImage} alt="linkedin icon" />
 				</a>
 				<a href="https://www.youtube.com/@luisvasquez6971/videos" target="_blank" rel="noreferrer">
-					<img
-						class="h-12 w-12 hover:translate-y-0.5"
-						src="images/youtube-icon.png"
-						alt="youtube icon"
-					/>
+					<Image class="h-12 w-12 hover:translate-y-0.5" src={YoutubeImage} alt="youtube icon" />
 				</a>
 				<a href="https://github.com/vasquezluis" target="_blank" rel="noreferrer">
-					<img class="h-9 w-9 hover:translate-y-0.5" src="github-icon.svg" alt="github icon" />
+					<Image class="h-9 w-9 hover:translate-y-0.5" src={GithubImage} alt="github icon" />
 				</a>
 			</div>
 		</div>
 		<div class="shrink-0">
-			<img class="h-80 w-64" src="icons/avatar.svg" alt="avatar" />
+			<Image class="h-80 w-64" src={AvatarImage} loading="lazy" alt="avatar" />
 		</div>
 	</div>
 </main>
