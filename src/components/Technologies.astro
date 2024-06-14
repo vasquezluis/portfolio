@@ -1,0 +1,125 @@
+---
+import Container from "./Container.astro"
+import Settings from "./icons/Settings.astro"
+import NextjsIcon from "./icons/Nextjs.astro"
+import FirebaseIcon from "./icons/Firebase.astro"
+import TypescriptIcon from "./icons/Typescript.astro"
+import ReactIcon from "./icons/React.astro"
+import TailwindcssIcon from "./icons/Tailwindcss.astro"
+import MySQLIcon from "./icons/MySQL.astro"
+import MoodleIcon from "./icons/Moodle.astro"
+import Technology from "./Technology.astro"
+import JavascriptIcon from "./icons/Javascript.astro"
+import NodejsIcon from "./icons/Nodejs.astro"
+import PythonIcon from "./icons/Python.astro"
+import LinuxIcon from "./icons/Linux.astro"
+import DockerIcon from "./icons/Docker.astro"
+import HtmlIcon from "./icons/Html.astro"
+import CssIcon from "./icons/Css.astro"
+import DjangoIcon from "./icons/Django.astro"
+import AwsIcon from "./icons/Aws.astro"
+import WordpressIcon from "./icons/Wordpress.astro"
+
+const TECHS = [
+	{
+		title: "Nextjs",
+		Icon: NextjsIcon,
+		styles: "bg-[#ffffff] hover:bg-[#f2f2f2] text-black",
+	},
+	{
+		title: "Node.js",
+		Icon: NodejsIcon,
+		styles: "bg-[#333333] hover:bg-[#444444]",
+	},
+	{
+		title: "ReactJS",
+		Icon: ReactIcon,
+		styles: "bg-[#003366] hover:bg-[#004080]",
+	},
+	{
+		title: "TypeScript",
+		Icon: TypescriptIcon,
+		styles: "bg-[#1E3A8A] hover:bg-[#274fbb]",
+	},
+	{
+		title: "MySQL",
+		Icon: MySQLIcon,
+		styles: "bg-[#ffffff] hover:bg-[#f2f2f2] text-black",
+	},
+	{
+		title: "Tailwind CSS",
+		Icon: TailwindcssIcon,
+		styles: "bg-[#003159] hover:bg-[#004080]",
+	},
+	{
+		title: "Firebase",
+		Icon: FirebaseIcon,
+		styles: "bg-[#333333] hover:bg-[#444444]",
+	},
+	{
+		title: "Moodle",
+		Icon: MoodleIcon,
+		styles: "bg-[#654321] hover:bg-[#7d5233]",
+	},
+	{
+		title: "Python",
+		Icon: PythonIcon,
+		styles: "bg-[#306998] hover:bg-[#417fb3]",
+	},
+	{
+		title: "Django",
+		Icon: DjangoIcon,
+		styles: "bg-[#333333] hover:bg-[#444444]",
+	},
+	{
+		title: "AWS",
+		Icon: AwsIcon,
+		styles: "bg-[#654321] hover:bg-[#7d5233]",
+	},
+	{
+		title: "Linux",
+		Icon: LinuxIcon,
+		styles: "bg-[#333333] hover:bg-[#444444]",
+	},
+	{
+		title: "Docker",
+		Icon: DockerIcon,
+		styles: "bg-[#003366] hover:bg-[#004080]",
+	},
+	{
+		title: "HTML",
+		Icon: HtmlIcon,
+		styles: "bg-[#e34c26] hover:bg-[#e65e38]",
+	},
+	{
+		title: "JavaScript",
+		Icon: JavascriptIcon,
+		styles: "bg-[#654321] hover:bg-[#7d5233]",
+	},
+	{
+		title: "CSS",
+		Icon: CssIcon,
+		styles: "bg-[#306998] hover:bg-[#417fb3]",
+	},
+	{
+		title: "WordPress",
+		Icon: WordpressIcon,
+		styles: "bg-[#003366] hover:bg-[#004080]",
+	},
+]
+---
+
+<Container id="technologies">
+	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
+		<Settings class="size-6" />
+		Tecnologías
+	</h2>
+
+	<div class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
+		{
+			TECHS.map(({ title, Icon, styles }) => (
+				<Technology title={title} Icon={Icon} styles={styles} />
+			))
+		}
+	</div>
+</Container>
