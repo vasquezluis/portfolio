@@ -5,12 +5,14 @@ import Container from "./Container.astro"
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
 
-const projects = [
+export const projects = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
+		url: "dashboard-dolcecompras",
 		title: {
 			text: "Dashboard para DolceCompras",
+			slug: "dashboard-dolcecompras",
 			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 		},
 		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
@@ -20,12 +22,15 @@ const projects = [
 			type: "Freelance",
 			colorType: "bg-teal-600 text-white",
 		},
+		role: "Programer",
 	},
 	{
 		id: 2,
 		imageUrl: "/images/ignition.webp",
+		url: "ignition",
 		title: {
 			text: "Ignition",
+			slug: "ignition",
 			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
@@ -35,12 +40,15 @@ const projects = [
 			type: "Prometheus",
 			colorType: "bg-orange-600 text-white",
 		},
+		role: "Programer",
 	},
 	{
 		id: 3,
 		imageUrl: "/images/flamerly.webp",
+		url: "flamerly",
 		title: {
 			text: "Flamerly",
+			slug: "flamerly",
 			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
@@ -50,12 +58,15 @@ const projects = [
 			type: "Prometheus",
 			colorType: "bg-orange-600 text-white",
 		},
+		role: "Programer",
 	},
 	{
 		id: 4,
 		imageUrl: "/images/duagt.webp",
+		url: "escuela-duagt",
 		title: {
 			text: "Escuela virtual DUAGT",
+			slug: "escuela-duagt",
 			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
 		},
 		tags: [TAGS.MOODLE, TAGS.MYSQL],
@@ -65,6 +76,7 @@ const projects = [
 			type: "Freelance",
 			colorType: "bg-teal-600 white",
 		},
+		role: "Programer",
 	},
 ]
 ---
@@ -80,6 +92,7 @@ const projects = [
 			projects.map((item) => (
 				<Proyect
 					imageUrl={item.imageUrl}
+					url={item.url}
 					title={item.title}
 					tags={item.tags}
 					description={item.description}

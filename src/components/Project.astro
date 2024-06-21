@@ -12,6 +12,7 @@ interface ProjectType {
 
 interface Props {
 	imageUrl: any
+	url: string
 	title: {
 		text: string
 		color: string
@@ -21,18 +22,20 @@ interface Props {
 	type: ProjectType
 }
 
-const { imageUrl, title, tags, description, type } = Astro.props
+const { imageUrl, url, title, tags, description, type } = Astro.props
 ---
 
 <article class="mb-1 rounded-lg bg-neutral-800 p-2">
 	<h3 class:list={`${title.color} mb-2 text-xl font-semibold text-transparent`}>
 		{title.text}
 	</h3>
-	<img
-		class="mb-2 rounded shadow-2xl shadow-white/10"
-		src={imageUrl}
-		alt={`Captura de pantalla del proyecto ${imageUrl}`}
-	/>
+	<a href={url}>
+		<img
+			class="mb-2 rounded shadow-2xl shadow-white/10"
+			src={imageUrl}
+			alt={`Captura de pantalla del proyecto ${imageUrl}`}
+		/>
+	</a>
 
 	<p class="mb-3 text-pretty text-base">{description}</p>
 	<ul class="mb-3 flex flex-wrap gap-2">
