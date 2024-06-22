@@ -1,4 +1,6 @@
 ---
+import { myFade } from "../constants"
+
 interface TagsProps {
 	label: string
 	class: string
@@ -15,6 +17,7 @@ interface Props {
 	url: string
 	title: {
 		text: string
+		slug: string
 		color: string
 	}
 	tags: Array<TagsProps>
@@ -31,6 +34,8 @@ const { imageUrl, url, title, tags, description, type } = Astro.props
 	</h3>
 	<a href={url}>
 		<img
+			transition:name={title.slug}
+			transition:animate={myFade}
 			class="mb-2 rounded shadow-2xl shadow-white/10"
 			src={imageUrl}
 			alt={`Captura de pantalla del proyecto ${imageUrl}`}
