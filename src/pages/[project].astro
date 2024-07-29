@@ -1,16 +1,56 @@
 ---
 import Layout from "../layouts/ProjectLayout.astro"
-import { projects } from "../components/Projects.astro"
+import { works, projects } from "../components/Projects.astro"
 import Container from "../components/Container.astro"
 import CheckList from "../components/icons/CheckList.astro"
 import { myFade } from "../constants"
+import type { Props } from "astro/components/ViewTransitions.astro"
+
+interface TagsProps {
+	label: string
+	class: string
+	icon: any
+}
+
+interface ProjectType {
+	type: string
+	colorType: string
+}
+
+interface ResponsabilitiesType {
+	title: string
+	description: string
+	type: string
+}
+
+interface Project {
+	id: number
+	imageUrl: any
+	url: string
+	title: {
+		text: string
+		slug: string
+		color: string
+	}
+	tags: Array<TagsProps>
+	description: string
+	type: ProjectType
+	date: string
+	responsabilities?: ResponsabilitiesType[] | undefined
+}
 
 const { project } = Astro.params
 
-const info = projects.find((p) => p.title.slug === project)
+let info: Project
+
+info = works.find((p) => p.title.slug === project) as Project
 
 if (!info) {
-	return Astro.redirect("/404")
+	info = projects.find((p) => p.title.slug === project) as Project
+
+	if (!info) {
+		return Astro.redirect("/404")
+	}
 }
 ---
 
@@ -54,7 +94,7 @@ if (!info) {
 			</section>
 
 			{
-				info.responsabilities && (
+				info.responsabilities !== undefined && (
 					<section class="w-full">
 						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">Responsabilidades</h3>
 						<ol class="relative border-s border-gray-700">

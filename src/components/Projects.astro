@@ -5,7 +5,7 @@ import Container from "./Container.astro"
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
 
-export const projects = [
+export const works = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
@@ -131,6 +131,27 @@ export const projects = [
 		date: "Enero 2024",
 	},
 ]
+
+export const projects = [
+	{
+		id: 1,
+		imageUrl: "/images/dolce-compras.webp",
+		url: "easydocs-extension",
+		title: {
+			text: "easyDocs extension",
+			slug: "easydocs-extension",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
+		description:
+			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 text-white",
+		},
+		date: "Mayo 2024",
+	},
+]
 ---
 
 <Container id="projects">
@@ -139,7 +160,27 @@ export const projects = [
 		Proyectos
 	</h2>
 
-	<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+	<div class="mb-3 flex w-full gap-x-3">
+		<button id="buttonWorks" class="selected">Trabajos</button>
+		<button id="buttonProjects">Proyectos</button>
+	</div>
+
+	<section id="worksSection" class="projectsShow grid grid-cols-1 gap-3 md:grid-cols-2">
+		{
+			works.map((item) => (
+				<Proyect
+					imageUrl={item.imageUrl}
+					url={item.url}
+					title={item.title}
+					tags={item.tags}
+					description={item.description}
+					type={item.type}
+				/>
+			))
+		}
+	</section>
+
+	<!-- <section id="projectsSection" class="projectsHide grid grid-cols-1 gap-3 md:grid-cols-2">
 		{
 			projects.map((item) => (
 				<Proyect
@@ -152,5 +193,55 @@ export const projects = [
 				/>
 			))
 		}
-	</div>
+	</section> -->
 </Container>
+
+<!-- <script>
+	const buttonWorks = document.getElementById("buttonWorks")
+	const buttonProjects = document.getElementById("buttonProjects")
+	const worksContainer = document.getElementById("worksSection")
+	const projectsContainer = document.getElementById("projectsSection")
+
+	buttonWorks?.addEventListener("click", () => {
+		console.log("click on works")
+
+		projectsContainer?.classList.remove("projectsShow")
+		projectsContainer?.classList.add("projectsHide")
+
+		worksContainer?.classList.remove("projectsHide")
+		worksContainer?.classList.add("projectsShow")
+
+		buttonWorks?.classList.add("selected")
+		buttonProjects?.classList.remove("selected")
+	})
+
+	buttonProjects?.addEventListener("click", () => {
+		console.log("click on projects")
+
+		worksContainer?.classList.remove("projectsShow")
+		worksContainer?.classList.add("projectsHide")
+
+		projectsContainer?.classList.remove("projectsHide")
+		projectsContainer?.classList.add("projectsShow")
+
+		buttonProjects?.classList.add("selected")
+		buttonWorks?.classList.remove("selected")
+	})
+</script> -->
+
+<style>
+	button {
+		padding: 0.25rem 0.5rem;
+	}
+	.selected {
+		border-bottom: 1px solid white;
+	}
+
+	.projectsShow {
+		display: grid;
+	}
+
+	.projectsHide {
+		display: none;
+	}
+</style>
