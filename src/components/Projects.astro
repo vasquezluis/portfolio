@@ -4,6 +4,7 @@ import Container from "./Container.astro"
 
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
+import Down from "./icons/Down.astro"
 
 export const works = [
 	{
@@ -160,74 +161,81 @@ export const projects = [
 		Proyectos
 	</h2>
 
-	<div class="mb-3 flex w-full gap-x-3">
-		<button id="buttonWorks" class="selected">Trabajos</button>
-		<button id="buttonProjects">Proyectos</button>
+	<div class="flex flex-col items-center justify-center gap-y-3">
+		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				works.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				projects.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<button
+			id="projectsButton"
+			class="flex w-fit items-center justify-center gap-x-2 rounded-md px-3 py-2"
+		>
+			<Down class:list="h-6 w-6 text-white" />
+			<span>Mostrar mas</span>
+		</button>
 	</div>
-
-	<section id="worksSection" class="projectsShow grid grid-cols-1 gap-3 md:grid-cols-2">
-		{
-			works.map((item) => (
-				<Proyect
-					imageUrl={item.imageUrl}
-					url={item.url}
-					title={item.title}
-					tags={item.tags}
-					description={item.description}
-					type={item.type}
-				/>
-			))
-		}
-	</section>
-
-	<!-- <section id="projectsSection" class="projectsHide grid grid-cols-1 gap-3 md:grid-cols-2">
-		{
-			projects.map((item) => (
-				<Proyect
-					imageUrl={item.imageUrl}
-					url={item.url}
-					title={item.title}
-					tags={item.tags}
-					description={item.description}
-					type={item.type}
-				/>
-			))
-		}
-	</section> -->
 </Container>
 
-<!-- <script>
-	const buttonWorks = document.getElementById("buttonWorks")
-	const buttonProjects = document.getElementById("buttonProjects")
-	const worksContainer = document.getElementById("worksSection")
+<script>
+	const showProjectsButton = document.getElementById("projectsButton")
 	const projectsContainer = document.getElementById("projectsSection")
 
-	buttonWorks?.addEventListener("click", () => {
-		console.log("click on works")
+	if (showProjectsButton && projectsContainer) {
+		let isProjecstVisible = false
 
-		projectsContainer?.classList.remove("projectsShow")
-		projectsContainer?.classList.add("projectsHide")
+		const toggleProjects = () => {
+			const buttonText = showProjectsButton.querySelector("span")
+			const svg = showProjectsButton.querySelector("svg")
 
-		worksContainer?.classList.remove("projectsHide")
-		worksContainer?.classList.add("projectsShow")
+			if (isProjecstVisible) {
+				projectsContainer.classList.remove("projectsShow")
+				projectsContainer.classList.add("projectsHide")
+				if (buttonText) {
+					buttonText.textContent = "Mostrar mas"
+				}
+			} else {
+				projectsContainer.classList.remove("projectsHide")
+				projectsContainer.classList.add("projectsShow")
+				if (buttonText) {
+					buttonText.textContent = "Mostrar menos"
+				}
+			}
 
-		buttonWorks?.classList.add("selected")
-		buttonProjects?.classList.remove("selected")
-	})
+			svg?.classList.toggle("rotate-180")
+			isProjecstVisible = !isProjecstVisible
+		}
 
-	buttonProjects?.addEventListener("click", () => {
-		console.log("click on projects")
-
-		worksContainer?.classList.remove("projectsShow")
-		worksContainer?.classList.add("projectsHide")
-
-		projectsContainer?.classList.remove("projectsHide")
-		projectsContainer?.classList.add("projectsShow")
-
-		buttonProjects?.classList.add("selected")
-		buttonWorks?.classList.remove("selected")
-	})
-</script> -->
+		showProjectsButton?.addEventListener("click", toggleProjects)
+	} else {
+		console.error("No se ha encontrado los elementos")
+	}
+</script>
 
 <style>
 	button {
