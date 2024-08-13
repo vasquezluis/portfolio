@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/onest"
-import Header from "../components/Header.astro"
+import Header from "../components/Header"
 import Footer from "../components/Footer.astro"
 import Background from "../components/Background.astro"
 
@@ -28,7 +28,7 @@ const { title, description } = Astro.props
 	<body>
 		<Background />
 
-		<Header />
+		<Header client:visible />
 		<slot />
 		<Footer />
 
