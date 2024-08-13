@@ -1,0 +1,16 @@
+---
+interface Props {
+	title: string
+	Icon: any
+	styles: string
+}
+
+const { title, Icon, styles } = Astro.props
+---
+
+<div
+	class:list={`${styles} flex h-28 transform flex-col items-center justify-center rounded-lg shadow-lg shadow-neutral-900 transition duration-300 hover:scale-105`}
+>
+	<Icon class="mb-2 size-12" />
+	<span class="font-medium">{title}</span>
+</div>

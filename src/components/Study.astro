@@ -1,0 +1,38 @@
+---
+import Container from "./Container.astro"
+import School from "./icons/School.astro"
+import StudyItem from "./StudyItem.astro"
+
+const STUDYDATA = [
+	{
+		school: "Universidad del Valle de Guatemala, CA",
+		date: "2019-2023",
+		description: "Licenciatura en tecnología de sistemas informáticos",
+	},
+	{
+		school: "Universidad del Valle de Guatemala, CA",
+		date: "2017-2018",
+		description: "Técnico universitario en sistemas e informática",
+	},
+	{
+		school: "Escuela en ciencias de la computación",
+		date: "2015-2016",
+		description: "Bachillerato en computación",
+	},
+]
+---
+
+<Container id="study">
+	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
+		<School class="size-6" />
+		Estudios
+	</h2>
+
+	<ol class="relative items-center px-2 md:ml-0 md:flex">
+		{
+			STUDYDATA.map(({ school, date, description }) => (
+				<StudyItem school={school} date={date} description={description} />
+			))
+		}
+	</ol>
+</Container>

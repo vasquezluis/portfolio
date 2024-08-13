@@ -7,12 +7,19 @@ import ReduxIcon from "./icons/Redux.astro"
 import TailwindcssIcon from "./icons/Tailwindcss.astro"
 import MySQLIcon from "./icons/MySQL.astro"
 import MoodleIcon from "./icons/Moodle.astro"
+import DjangoIcon from "./icons/Django.astro"
+import AISDK from "./icons/AISDK.astro"
 
 export const TAGS = {
 	NEXTJS: {
 		label: "Nextjs",
 		class: "bg-[#ffffff] text-black", // Blanco
 		icon: NextjsIcon,
+	},
+	AISDK: {
+		label: "AI SDK",
+		class: "bg-[#ffffff] text-black", // Blanco
+		icon: AISDK,
 	},
 	FIREBASE: {
 		label: "Firebase",
@@ -36,7 +43,7 @@ export const TAGS = {
 	},
 	TAILWIND: {
 		label: "Tailwindcss",
-		class: "bg-[#3158] text-white", // Azul oscuro (ajustado)
+		class: "bg-[#003159] text-white", // Azul oscuro (ajustado)
 		icon: TailwindcssIcon,
 	},
 	MYSQL: {
@@ -48,6 +55,11 @@ export const TAGS = {
 		label: "Moodle",
 		class: "bg-[#654320] text-white", // Marrón oscuro
 		icon: MoodleIcon,
+	},
+	DJANGO: {
+		label: "Django",
+		class: "bg-[#654320] text-white", // Marrón oscuro
+		icon: DjangoIcon,
 	},
 }
 ---

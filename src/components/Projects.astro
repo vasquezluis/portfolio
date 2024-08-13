@@ -4,43 +4,153 @@ import Container from "./Container.astro"
 
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
+import Down from "./icons/Down.astro"
 
-const projects = [
+export const works = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
-		title: "Dashboard para DolceCompras",
+		url: "dashboard-dolcecompras",
+		title: {
+			text: "Dashboard DolceCompras",
+			slug: "dashboard-dolcecompras",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
 		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
 		description:
-			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utencilios relacionados a heladerías, hecho con Nextjs, Typescript, Tailwind, Firebase authentication y Firebase Realtime Database.",
+			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
 		type: {
 			type: "Freelance",
 			colorType: "bg-teal-600 text-white",
 		},
+		date: "Mayo 2024",
 	},
 	{
 		id: 2,
 		imageUrl: "/images/ignition.webp",
-		title: "Ignition",
+		url: "ignition",
+		title: {
+			text: "Ignition",
+			slug: "ignition",
+			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
+		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
 		description:
-			"Proyecto de generación de imágenes usando Inteligencia Artificial, frontend en Reactjs + TypeScript, MySQL, NodeJS, AWS S3, AWS Lambdas y AWS Cognito.",
+			"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
 		type: {
-			type: "Ignition",
+			type: "Prometheus",
 			colorType: "bg-orange-600 text-white",
 		},
+		date: "Diciembre 2023",
+		responsabilities: [
+			{
+				title: "Creación de frontend con Reactjs",
+				description:
+					"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+				type: "Frontend",
+			},
+			{
+				title: "Creación de lambdas de AWS",
+				description:
+					"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+				type: "Cloud",
+			},
+			{
+				title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
+				description:
+					"Creación y mantenimiento de base de datos donde se guardan las imágenes generados por los usuarios.",
+				type: "Database",
+			},
+		],
 	},
 	{
 		id: 3,
+		imageUrl: "/images/flamerly.webp",
+		url: "flamerly",
+		title: {
+			text: "Flamerly",
+			slug: "flamerly",
+			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
+		},
+		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
+		description:
+			"Proyecto tipo asistente virtual basado en APIs de OpenAI. Frontend en Reactjs + Typescript, MYSQL RDS, Django restframework, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		type: {
+			type: "Prometheus",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Mayo 2023",
+		responsabilities: [
+			{
+				title: "Creación de APIs con DJango",
+				description:
+					"Creación de endpoints para la generación de respuestas de los modelos de OpenAI al estilo de ChatGPT.",
+				type: "Backend",
+			},
+			{
+				title: "Creación de frontend con Reactjs",
+				description:
+					"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+				type: "Frontend",
+			},
+			{
+				title: "Creación de chatbot utilizando OpenAI",
+				description:
+					"Creación de un chatbot utilizando los modelos de OpenAI (chat completions) y crear respuestas basadas en archivos privados de la empresa.",
+				type: "IA",
+			},
+			{
+				title: "Creación de lambdas de AWS",
+				description:
+					"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+				type: "Cloud",
+			},
+			{
+				title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
+				description:
+					"Creación y mantenimiento de base de datos donde se guardan los mensajes generados por los usuarios.",
+				type: "Database",
+			},
+		],
+	},
+	{
+		id: 4,
 		imageUrl: "/images/duagt.webp",
-		title: "Escuela virtual",
+		url: "escuela-duagt",
+		title: {
+			text: "Escuela virtual DUAGT",
+			slug: "escuela-duagt",
+			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
+		},
 		tags: [TAGS.MOODLE, TAGS.MYSQL],
 		description:
-			"Proyecto hecho con Moodle para la administración de 3 escuelas en conjunto con la asociación DUA de Guatemala.",
+			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
 		type: {
 			type: "Freelance",
 			colorType: "bg-teal-600 white",
 		},
+		date: "Enero 2024",
+	},
+]
+
+export const projects = [
+	{
+		id: 1,
+		imageUrl: "/images/structura.webp",
+		url: "structura",
+		title: {
+			text: "Structura",
+			slug: "structura",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
+		description:
+			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
+		type: {
+			type: "Hackathon",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Julio 2024",
 	},
 ]
 ---
@@ -51,15 +161,95 @@ const projects = [
 		Proyectos
 	</h2>
 
-	{
-		projects.map((item) => (
-			<Proyect
-				imageUrl={item.imageUrl}
-				title={item.title}
-				tags={item.tags}
-				description={item.description}
-				type={item.type}
-			/>
-		))
-	}
+	<div class="flex flex-col items-center justify-center gap-y-3">
+		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				works.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				projects.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<button
+			id="projectsButton"
+			class="flex w-fit items-center justify-center gap-x-2 rounded-md px-3 py-2"
+		>
+			<Down class:list="h-6 w-6 text-white" />
+			<span>Mostrar mas</span>
+		</button>
+	</div>
 </Container>
+
+<script>
+	document.addEventListener("astro:page-load", () => {
+		const showProjectsButton = document.getElementById("projectsButton")
+		const projectsContainer = document.getElementById("projectsSection")
+
+		if (showProjectsButton && projectsContainer) {
+			let isProjecstVisible = false
+
+			const toggleProjects = () => {
+				const buttonText = showProjectsButton.querySelector("span")
+				const svg = showProjectsButton.querySelector("svg")
+
+				if (isProjecstVisible) {
+					projectsContainer.classList.remove("projectsShow")
+					projectsContainer.classList.add("projectsHide")
+					if (buttonText) {
+						buttonText.textContent = "Mostrar mas"
+					}
+				} else {
+					projectsContainer.classList.remove("projectsHide")
+					projectsContainer.classList.add("projectsShow")
+					if (buttonText) {
+						buttonText.textContent = "Mostrar menos"
+					}
+				}
+
+				svg?.classList.toggle("rotate-180")
+				isProjecstVisible = !isProjecstVisible
+			}
+
+			showProjectsButton?.addEventListener("click", toggleProjects)
+		}
+	})
+</script>
+
+<style>
+	button {
+		padding: 0.25rem 0.5rem;
+	}
+	.selected {
+		border-bottom: 1px solid white;
+	}
+
+	.projectsShow {
+		display: grid;
+	}
+
+	.projectsHide {
+		display: none;
+	}
+</style>

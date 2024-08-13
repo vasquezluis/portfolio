@@ -1,7 +1,9 @@
 ---
 import "@fontsource-variable/onest"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Background from "../components/Background.astro"
+
+import { ViewTransitions } from "astro:transitions"
+
 interface Props {
 	title: string
 	description: string
@@ -19,41 +21,36 @@ const { title, description } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<body class="bg-neutral-950">
-		<div
-			class="absolute inset-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-		>
-		</div>
-
-		<Header />
+	<body>
+		<Background />
 		<slot />
-		<Footer />
+
+		<style is:global>
+			:root {
+				color-scheme: light dark;
+			}
+
+			html {
+				font-family: "Onest Variable", system-ui, sans-serif;
+				/* scroll-behavior: smooth; */
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+			}
+
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				html {
+					scroll-behavior: auto;
+				}
+			}
+		</style>
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-
-	html {
-		font-family: "Onest Variable", system-ui, sans-serif;
-		scroll-behavior: smooth;
-		margin: 0;
-		padding: 0;
-		overflow-x: hidden;
-	}
-
-	body {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		html {
-			scroll-behavior: auto;
-		}
-	}
-</style>

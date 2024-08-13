@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { works, projects } from "../components/Projects.astro"
+import Container from "../components/Container.astro"
+import CheckList from "../components/icons/CheckList.astro"
+import { myFade } from "../constants"
+import type { Props } from "astro/components/ViewTransitions.astro"
+
+interface TagsProps {
+	label: string
+	class: string
+	icon: any
+}
+
+interface ProjectType {
+	type: string
+	colorType: string
+}
+
+interface ResponsabilitiesType {
+	title: string
+	description: string
+	type: string
+}
+
+interface Project {
+	id: number
+	imageUrl: any
+	url: string
+	title: {
+		text: string
+		slug: string
+		color: string
+	}
+	tags: Array<TagsProps>
+	description: string
+	type: ProjectType
+	date: string
+	responsabilities?: ResponsabilitiesType[] | undefined
+}
+
+const { project } = Astro.params
+
+let info: Project
+
+info = works.find((p) => p.title.slug === project) as Project
+
+if (!info) {
+	info = projects.find((p) => p.title.slug === project) as Project
+
+	if (!info) {
+		return Astro.redirect("/404")
+	}
+}
+---
+
+<Layout
+	title={`Proyecto ${info.title.slug}`}
+	description={`Pagina del proyecto ${info.title.text}`}
+>
+	<Container>
+		<main class="mt-8 flex w-full flex-col items-center justify-center gap-8">
+			<picture class="flex w-full items-center justify-center">
+				<img
+					transition:name={info.title.slug}
+					transition:animate={myFade}
+					class="aspect-auto h-full w-full max-w-full rounded-lg object-cover"
+					src={info.imageUrl}
+					alt={`Portada de ${info.title.text}`}
+				/>
+			</picture>
+
+			<section
+				class="flex w-full flex-col items-start justify-start gap-y-2 md:flex-row md:items-center md:gap-x-2"
+			>
+				<div>
+					<span class="h-full text-neutral-500">{info.date}</span>
+				</div>
+				<ul class="flex flex-wrap gap-x-2">
+					{
+						info.tags.map((tag) => (
+							<li>
+								<span
+									class:list={`flex gap-x-2 rounded-full text-sm ${tag.class} items-center justify-center px-2 py-1`}
+								>
+									<tag.icon class="size-6" />
+									{tag.label}
+								</span>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<section class="w-full">
+				<h1 class="mb-4 text-5xl font-bold text-neutral-100">{info.title.text}</h1>
+				<p class="text-neutral-300">{info.description}</p>
+			</section>
+
+			{
+				info.responsabilities !== undefined && (
+					<section class="w-full pl-4 pr-1 md:px-0">
+						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">Responsabilidades</h3>
+						<ol class="relative border-s border-gray-700">
+							{info.responsabilities.map(({ title, description, type }) => (
+								<li class="mb-10 ms-6">
+									<span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-600 ring-8 ring-neutral-800">
+										<CheckList class="h-5 w-5" />
+									</span>
+									<h3 class="mb-1 flex items-center text-lg font-semibold text-neutral-200">
+										{title}
+										<span class="me-2 ms-3 rounded bg-neutral-600 px-2.5 py-0.5 text-sm font-medium text-neutral-300 backdrop-blur">
+											{type}
+										</span>
+									</h3>
+									<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+										{description}
+									</p>
+								</li>
+							))}
+						</ol>
+					</section>
+				)
+			}
+		</main>
+	</Container>
+</Layout>

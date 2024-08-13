@@ -1,4 +1,6 @@
 ---
+import { myFade } from "../constants"
+
 interface TagsProps {
 	label: string
 	class: string
@@ -12,19 +14,36 @@ interface ProjectType {
 
 interface Props {
 	imageUrl: any
-	title: string
+	url: string
+	title: {
+		text: string
+		slug: string
+		color: string
+	}
 	tags: Array<TagsProps>
 	description: string
 	type: ProjectType
 }
 
-const { imageUrl, title, tags, description, type } = Astro.props
+const { imageUrl, url, title, tags, description, type } = Astro.props
 ---
 
-<article>
-	<h3 class="mb-2 text-2xl font-semibold text-yellow-200">{title}</h3>
-	<p class="mb-4 text-pretty text-lg">{description}</p>
-	<ul class="mb-3 flex gap-x-2">
+<article class="mb-1 rounded-lg bg-neutral-800 p-2 shadow-lg shadow-neutral-900">
+	<h3 class:list={`${title.color} mb-2 text-xl font-semibold text-transparent`}>
+		{title.text}
+	</h3>
+	<a href={url}>
+		<img
+			transition:name={title.slug}
+			transition:animate={myFade}
+			class="mb-2 rounded shadow-2xl shadow-white/10"
+			src={imageUrl}
+			alt={`Captura de pantalla del proyecto ${imageUrl}`}
+		/>
+	</a>
+
+	<p class="mb-3 text-pretty text-base">{description}</p>
+	<ul class="mb-3 flex flex-wrap gap-2">
 		{
 			tags.map((tag) => (
 				<li>
@@ -37,17 +56,11 @@ const { imageUrl, title, tags, description, type } = Astro.props
 				</li>
 			))
 		}
-
-		<span
-			class:list={`flex gap-x-2 rounded-full text-xs ${type.colorType} items-center justify-center px-2 py-1`}
-		>
-			{type.type}
-		</span>
 	</ul>
 
-	<img
-		class="rounded shadow-2xl shadow-white/10"
-		src={imageUrl}
-		alt={`Captura de pantalla del proyecto ${imageUrl}`}
-	/>
+	<!-- <span
+		class:list={`inline-flex rounded-full text-xs ${type.colorType} items-center justify-center px-2 py-1`}
+	>
+		{type.type}
+	</span> -->
 </article>
