@@ -5,12 +5,17 @@ import Experience from "../components/Experience.astro"
 import Projects from "../components/Projects.astro"
 import Technologies from "../components/Technologies.astro"
 import Study from "../components/Study.astro"
+
+import Header from "../components/Header"
+import Footer from "../components/Footer.astro"
 ---
 
 <Layout
 	title="vasquezluis portfolio - Desarrollador y Programador Web Junior"
 	description="Contrata a vasquezluis para crear tu aplicación web hecha a medida. Desarrollador y Programador web."
 >
+	<Header client:visible />
+
 	<Hero />
 
 	<Experience />
@@ -20,4 +25,6 @@ import Study from "../components/Study.astro"
 	<Technologies />
 
 	<Study />
+
+	<Footer />
 </Layout>

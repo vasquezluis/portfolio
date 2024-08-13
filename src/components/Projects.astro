@@ -36,7 +36,7 @@ export const works = [
 		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
 		description:
-			"Proyecto de generación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+			"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
 		type: {
 			type: "Prometheus",
 			colorType: "bg-orange-600 text-white",
@@ -136,21 +136,21 @@ export const works = [
 export const projects = [
 	{
 		id: 1,
-		imageUrl: "/images/dolce-compras.webp",
-		url: "easydocs-extension",
+		imageUrl: "/images/structura.webp",
+		url: "structura",
 		title: {
-			text: "easyDocs extension",
-			slug: "easydocs-extension",
+			text: "Structura",
+			slug: "structura",
 			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 		},
-		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
+		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
 		description:
-			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
+			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
 		type: {
-			type: "Freelance",
-			colorType: "bg-teal-600 text-white",
+			type: "Hackathon",
+			colorType: "bg-orange-600 text-white",
 		},
-		date: "Mayo 2024",
+		date: "Julio 2024",
 	},
 ]
 ---
@@ -203,38 +203,38 @@ export const projects = [
 </Container>
 
 <script>
-	const showProjectsButton = document.getElementById("projectsButton")
-	const projectsContainer = document.getElementById("projectsSection")
+	document.addEventListener("astro:page-load", () => {
+		const showProjectsButton = document.getElementById("projectsButton")
+		const projectsContainer = document.getElementById("projectsSection")
 
-	if (showProjectsButton && projectsContainer) {
-		let isProjecstVisible = false
+		if (showProjectsButton && projectsContainer) {
+			let isProjecstVisible = false
 
-		const toggleProjects = () => {
-			const buttonText = showProjectsButton.querySelector("span")
-			const svg = showProjectsButton.querySelector("svg")
+			const toggleProjects = () => {
+				const buttonText = showProjectsButton.querySelector("span")
+				const svg = showProjectsButton.querySelector("svg")
 
-			if (isProjecstVisible) {
-				projectsContainer.classList.remove("projectsShow")
-				projectsContainer.classList.add("projectsHide")
-				if (buttonText) {
-					buttonText.textContent = "Mostrar mas"
+				if (isProjecstVisible) {
+					projectsContainer.classList.remove("projectsShow")
+					projectsContainer.classList.add("projectsHide")
+					if (buttonText) {
+						buttonText.textContent = "Mostrar mas"
+					}
+				} else {
+					projectsContainer.classList.remove("projectsHide")
+					projectsContainer.classList.add("projectsShow")
+					if (buttonText) {
+						buttonText.textContent = "Mostrar menos"
+					}
 				}
-			} else {
-				projectsContainer.classList.remove("projectsHide")
-				projectsContainer.classList.add("projectsShow")
-				if (buttonText) {
-					buttonText.textContent = "Mostrar menos"
-				}
+
+				svg?.classList.toggle("rotate-180")
+				isProjecstVisible = !isProjecstVisible
 			}
 
-			svg?.classList.toggle("rotate-180")
-			isProjecstVisible = !isProjecstVisible
+			showProjectsButton?.addEventListener("click", toggleProjects)
 		}
-
-		showProjectsButton?.addEventListener("click", toggleProjects)
-	} else {
-		console.error("No se ha encontrado los elementos")
-	}
+	})
 </script>
 
 <style>
