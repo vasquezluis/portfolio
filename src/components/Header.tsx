@@ -17,7 +17,7 @@ const Header = () => {
 			{/* desktop menu */}
 			<header
 				id="info"
-				class="mx-auto hidden z-50 items-center justify-center py-5 md:flex xl:w-[1120px]"
+				class="z-50 mx-auto hidden items-center justify-center py-5 md:flex xl:w-[1120px]"
 			>
 				<nav class="inline-flex items-center justify-center gap-x-2 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs md:px-4 md:py-2 md:text-base">
 					{Links.map((item) => (
@@ -29,7 +29,10 @@ const Header = () => {
 			</header>
 
 			{/* mobile menu */}
-			<header id="info" class="relative mx-auto flex w-full items-center justify-end py-2 pr-4 md:hidden">
+			<header
+				id="info"
+				class="relative mx-auto flex w-full items-center justify-end py-2 pr-4 md:hidden"
+			>
 				<button
 					data-dropdown-toggle="dropdownDelay"
 					data-dropdown-delay="500"
@@ -42,18 +45,12 @@ const Header = () => {
 				</button>
 
 				<nav
-					class={`absolute right-3 top-full mt-1 z-50 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"} w-44 divide-y divide-gray-100 rounded-lg bg-neutral-800/90 shadow border border-white/10 transition ease-in-out duration-300 transform`}
+					class={`absolute right-3 top-full z-50 mt-1 ${isOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"} w-44 transform divide-y divide-gray-100 rounded-lg border border-white/10 bg-neutral-800/90 shadow transition duration-300 ease-in-out`}
 				>
-					<ul
-						class="py-2 text-sm text-gray-200"
-						aria-labelledby="dropdownDelayButton"
-					>
+					<ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownDelayButton">
 						{Links.map((item) => (
 							<li>
-								<a
-									href={item.href}
-									class="block px-4 py-2"
-								>
+								<a href={item.href} class="block px-4 py-2">
 									{item.label}
 								</a>
 							</li>
