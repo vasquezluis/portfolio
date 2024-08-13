@@ -5,9 +5,9 @@ import StudyItem from "./StudyItem.astro"
 
 const STUDYDATA = [
 	{
-		school: "Escuela en ciencias de la computación",
-		date: "2015-2016",
-		description: "Bachillerato en computación",
+		school: "Universidad del Valle de Guatemala, CA",
+		date: "2019-2023",
+		description: "Licenciatura en tecnología de sistemas informáticos",
 	},
 	{
 		school: "Universidad del Valle de Guatemala, CA",
@@ -15,10 +15,10 @@ const STUDYDATA = [
 		description: "Técnico universitario en sistemas e informática",
 	},
 	{
-		school: "Universidad del Valle de Guatemala, CA",
-		date: "2019-2023",
-		description: "Licenciatura en tecnología de sistemas informáticos",
-	},
+		school: "Escuela en ciencias de la computación",
+		date: "2015-2016",
+		description: "Bachillerato en computación",
+	}
 ]
 ---
 
@@ -28,7 +28,7 @@ const STUDYDATA = [
 		Estudios
 	</h2>
 
-	<ol class="items-center px-2 sm:flex">
+	<ol class="relative items-center px-2 md:ml-0 md:flex">
 		{
 			STUDYDATA.map(({ school, date, description }) => (
 				<StudyItem school={school} date={date} description={description} />

@@ -28,7 +28,7 @@ interface Props {
 const { imageUrl, url, title, tags, description, type } = Astro.props
 ---
 
-<article class="mb-1 rounded-lg bg-neutral-800 p-2">
+<article class="mb-1 rounded-lg shadow-lg shadow-neutral-900 bg-neutral-800 p-2">
 	<h3 class:list={`${title.color} mb-2 text-xl font-semibold text-transparent`}>
 		{title.text}
 	</h3>

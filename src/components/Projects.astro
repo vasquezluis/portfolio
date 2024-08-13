@@ -4,14 +4,15 @@ import Container from "./Container.astro"
 
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
+import Down from "./icons/Down.astro"
 
-export const projects = [
+export const works = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
 		url: "dashboard-dolcecompras",
 		title: {
-			text: "Dashboard para DolceCompras",
+			text: "Dashboard DolceCompras",
 			slug: "dashboard-dolcecompras",
 			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 		},
@@ -131,6 +132,27 @@ export const projects = [
 		date: "Enero 2024",
 	},
 ]
+
+export const projects = [
+	{
+		id: 1,
+		imageUrl: "/images/dolce-compras.webp",
+		url: "easydocs-extension",
+		title: {
+			text: "easyDocs extension",
+			slug: "easydocs-extension",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
+		description:
+			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
+		type: {
+			type: "Freelance",
+			colorType: "bg-teal-600 text-white",
+		},
+		date: "Mayo 2024",
+	},
+]
 ---
 
 <Container id="projects">
@@ -139,18 +161,95 @@ export const projects = [
 		Proyectos
 	</h2>
 
-	<div class="grid grid-cols-1 gap-3 md:grid-cols-2">
-		{
-			projects.map((item) => (
-				<Proyect
-					imageUrl={item.imageUrl}
-					url={item.url}
-					title={item.title}
-					tags={item.tags}
-					description={item.description}
-					type={item.type}
-				/>
-			))
-		}
+	<div class="flex flex-col items-center justify-center gap-y-3">
+		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				works.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				projects.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
+
+		<button
+			id="projectsButton"
+			class="flex w-fit items-center justify-center gap-x-2 rounded-md px-3 py-2"
+		>
+			<Down class:list="h-6 w-6 text-white" />
+			<span>Mostrar mas</span>
+		</button>
 	</div>
 </Container>
+
+<script>
+	const showProjectsButton = document.getElementById("projectsButton")
+	const projectsContainer = document.getElementById("projectsSection")
+
+	if (showProjectsButton && projectsContainer) {
+		let isProjecstVisible = false
+
+		const toggleProjects = () => {
+			const buttonText = showProjectsButton.querySelector("span")
+			const svg = showProjectsButton.querySelector("svg")
+
+			if (isProjecstVisible) {
+				projectsContainer.classList.remove("projectsShow")
+				projectsContainer.classList.add("projectsHide")
+				if (buttonText) {
+					buttonText.textContent = "Mostrar mas"
+				}
+			} else {
+				projectsContainer.classList.remove("projectsHide")
+				projectsContainer.classList.add("projectsShow")
+				if (buttonText) {
+					buttonText.textContent = "Mostrar menos"
+				}
+			}
+
+			svg?.classList.toggle("rotate-180")
+			isProjecstVisible = !isProjecstVisible
+		}
+
+		showProjectsButton?.addEventListener("click", toggleProjects)
+	} else {
+		console.error("No se ha encontrado los elementos")
+	}
+</script>
+
+<style>
+	button {
+		padding: 0.25rem 0.5rem;
+	}
+	.selected {
+		border-bottom: 1px solid white;
+	}
+
+	.projectsShow {
+		display: grid;
+	}
+
+	.projectsHide {
+		display: none;
+	}
+</style>
