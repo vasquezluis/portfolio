@@ -5,6 +5,9 @@ import Container from "../components/Container.astro"
 import CheckList from "../components/icons/CheckList.astro"
 import { myFade } from "../constants"
 import type { Props } from "astro/components/ViewTransitions.astro"
+import Lock from "../components/icons/Lock.astro"
+import Github from "../components/icons/Github.astro"
+import World from "../components/icons/World.astro"
 
 interface TagsProps {
 	label: string
@@ -14,6 +17,8 @@ interface TagsProps {
 
 interface ProjectType {
 	type: string
+	repo?: string
+	url?: string
 	colorType: string
 }
 
@@ -21,6 +26,11 @@ interface ResponsabilitiesType {
 	title: string
 	description: string
 	type: string
+}
+
+interface ProjectFunctionality {
+	title: string
+	description: string
 }
 
 interface Project {
@@ -37,6 +47,7 @@ interface Project {
 	type: ProjectType
 	date: string
 	responsabilities?: ResponsabilitiesType[] | undefined
+	functionalities?: ProjectFunctionality[] | undefined
 }
 
 const { project } = Astro.params
@@ -54,10 +65,7 @@ if (!info) {
 }
 ---
 
-<Layout
-	title={`Proyecto ${info.title.slug}`}
-	description={`Pagina del proyecto ${info.title.text}`}
->
+<Layout title={`${info.title.text}`} description={`Pagina del proyecto ${info.title.text}`}>
 	<Container>
 		<main class="mt-8 flex w-full flex-col items-center justify-center gap-8">
 			<picture class="flex w-full items-center justify-center">
@@ -70,32 +78,87 @@ if (!info) {
 				/>
 			</picture>
 
-			<section
-				class="flex w-full flex-col items-start justify-start gap-y-2 md:flex-row md:items-center md:gap-x-2"
-			>
-				<div>
+			<section class="flex w-full flex-col items-start justify-center gap-y-3">
+				<div
+					class="flex flex-col items-start justify-center gap-y-2 md:flex-row md:items-center md:gap-x-2 md:gap-y-0"
+				>
 					<span class="h-full text-neutral-500">{info.date}</span>
+					<ul class="flex flex-wrap gap-x-2">
+						{
+							info.tags.map((tag) => (
+								<li>
+									<span
+										class:list={`flex gap-x-2 rounded-full text-sm ${tag.class} items-center justify-center px-2 py-1`}
+									>
+										<tag.icon class="size-6" />
+										{tag.label}
+									</span>
+								</li>
+							))
+						}
+					</ul>
 				</div>
-				<ul class="flex flex-wrap gap-x-2">
+				<div>
 					{
-						info.tags.map((tag) => (
-							<li>
-								<span
-									class:list={`flex gap-x-2 rounded-full text-sm ${tag.class} items-center justify-center px-2 py-1`}
+						info.type.type === "private" ? (
+							<span class="flex items-center justify-center gap-x-1 text-neutral-400">
+								Código privado <Lock class="size-6" />
+							</span>
+						) : (
+							<div class="flex items-center justify-center gap-x-2">
+								<a
+									href={info.type.repo}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center justify-center gap-x-2 rounded-md px-2 py-1 text-neutral-300 hover:bg-white/5 hover:ring-1 hover:ring-white/30
+								"
 								>
-									<tag.icon class="size-6" />
-									{tag.label}
-								</span>
-							</li>
-						))
+									Código <Github class="size-6" />
+								</a>
+								{info.type.url && (
+									<a
+										href={info.type.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="flex items-center justify-center gap-x-2 rounded-md px-2 py-1 text-neutral-300 hover:bg-white/5 hover:ring-1 hover:ring-white/30
+								"
+									>
+										Link <World class="size-6" />
+									</a>
+								)}
+							</div>
+						)
 					}
-				</ul>
+				</div>
 			</section>
 
 			<section class="w-full">
 				<h1 class="mb-4 text-5xl font-bold text-neutral-100">{info.title.text}</h1>
 				<p class="text-neutral-300">{info.description}</p>
 			</section>
+
+			{
+				info.functionalities !== undefined && (
+					<section class="w-full pl-4 pr-1 md:px-0">
+						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">Funcionalidad</h3>
+						<ol class="relative border-s border-gray-700">
+							{info.functionalities.map(({ title, description }) => (
+								<li class="mb-10 ms-6">
+									<span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-600 ring-8 ring-neutral-800">
+										<CheckList class="h-5 w-5" />
+									</span>
+									<h3 class="mb-1 flex items-center text-lg font-semibold text-neutral-200">
+										{title}
+									</h3>
+									<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+										{description}
+									</p>
+								</li>
+							))}
+						</ol>
+					</section>
+				)
+			}
 
 			{
 				info.responsabilities !== undefined && (
