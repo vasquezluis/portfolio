@@ -25,18 +25,18 @@ interface Props {
 	type: ProjectType
 }
 
-const { imageUrl, url, title, tags, description, type } = Astro.props
+const { imageUrl, url, title, tags, description } = Astro.props
 ---
 
 <article class="mb-1 rounded-lg bg-neutral-800 p-2 shadow-lg shadow-neutral-900">
 	<h3 class:list={`${title.color} mb-2 text-xl font-semibold text-transparent`}>
 		{title.text}
 	</h3>
-	<a href={url}>
+	<a href={url} class="block overflow-hidden rounded">
 		<img
 			transition:name={title.slug}
 			transition:animate={myFade}
-			class="mb-2 rounded shadow-2xl shadow-white/10"
+			class="mb-2 transform overflow-hidden rounded shadow-2xl shadow-white/10 transition-transform duration-300 ease-out hover:scale-110"
 			src={imageUrl}
 			alt={`Captura de pantalla del proyecto ${imageUrl}`}
 		/>
