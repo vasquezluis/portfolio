@@ -2,6 +2,7 @@
 import Container from "./Container.astro"
 import School from "./icons/School.astro"
 import StudyItem from "./StudyItem.astro"
+import StudyItemM from "./StudyItemM.astro"
 
 const STUDYDATA = [
 	{
@@ -28,10 +29,18 @@ const STUDYDATA = [
 		Estudios
 	</h2>
 
-	<ol class="relative items-center px-2 md:ml-0 md:flex">
+	<ol class="relative hidden items-center px-3 md:ml-0 md:flex">
 		{
 			STUDYDATA.map(({ school, date, description }) => (
 				<StudyItem school={school} date={date} description={description} />
+			))
+		}
+	</ol>
+
+	<ol class="relative ml-3 border-s border-gray-200 dark:border-gray-700 sm:hidden">
+		{
+			STUDYDATA.map(({ school, date, description }) => (
+				<StudyItemM school={school} date={date} description={description} />
 			))
 		}
 	</ol>

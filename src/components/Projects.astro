@@ -5,8 +5,6 @@ import Container from "./Container.astro"
 import { TAGS } from "./TagsList.astro"
 import Code from "./icons/Code.astro"
 
-// import Down from "./icons/Down.astro"
-
 export const works = [
 	{
 		id: 1,
@@ -265,24 +263,58 @@ export const projects = [
 			},
 		],
 	},
-	// {
-	// 	id: 2,
-	// 	imageUrl: "/images/flamerly.webp",
-	// 	url: "easy-docs",
-	// 	title: {
-	// 		text: "easyDocs",
-	// 		slug: "easy-docs",
-	// 		color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
-	// 	},
-	// 	tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-	// 	description:
-	// 		"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
-	// 	type: {
-	// 		type: "Hackathon",
-	// 		colorType: "bg-orange-600 text-white",
-	// 	},
-	// 	date: "Julio 2024",
-	// },
+	{
+		id: 2,
+		imageUrl: "/images/ignition.webp",
+		url: "tic-tac-toe",
+		title: {
+			text: "Tic Tac Toe multijugador",
+			slug: "tic-tac-toe",
+			color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
+		description:
+			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
+		type: {
+			type: "open",
+			repo: "https://github.com/vasquezluis/structura",
+			url: "https://structura-hackathon.vercel.app/",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Julio 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Lenguaje natural",
+				description:
+					"Structura puede comprender el lenguaje natural para la generación de contenido utilizando el modelo gpt3.5 de OpenAI.",
+			},
+			{
+				id: 2,
+				title: "Generación de estructuras SQL",
+				description:
+					"Structura genera contenido SQL basado en la descripción del proyecto del usuario. Structura solo necesita el contexto del proyecto para generar una estructura inicial.",
+			},
+			{
+				id: 3,
+				title: "Generación código SQL",
+				description:
+					"Structura genera código SQL basado en la descripción del proyecto del usuario.",
+			},
+			{
+				id: 4,
+				title: "Generación descripción",
+				description:
+					"Structura una descripción del código SQL generado, ayudando al usuario a entender el contenido.",
+			},
+			{
+				id: 5,
+				title: "Generación mapa mental",
+				description:
+					"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
+			},
+		],
+	},
 	// {
 	// 	id: 3,
 	// 	imageUrl: "/images/duagt.webp",
@@ -312,24 +344,9 @@ export const projects = [
 
 	<div class="flex flex-col items-center justify-center gap-y-3">
 		<div class="w-full" transition:persist="">
-			<button id="buttonProjects" class="selected">Proyectos</button>
-			<button id="buttonWorks">Trabajos</button>
+			<button id="buttonWorks" class="selected">Trabajos</button>
+			<button id="buttonProjects">Proyectos</button>
 		</div>
-
-		<section id="projectsSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
-			{
-				projects.map((item) => (
-					<Proyect
-						imageUrl={item.imageUrl}
-						url={item.url}
-						title={item.title}
-						tags={item.tags}
-						description={item.description}
-						type={item.type}
-					/>
-				))
-			}
-		</section>
 
 		<section id="worksSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
 			{
@@ -346,13 +363,20 @@ export const projects = [
 			}
 		</section>
 
-		<!-- <button
-			id="projectsButton"
-			class="flex w-fit items-center justify-center gap-x-2 rounded-md px-3 py-2"
-		>
-			<Down class:list="h-6 w-6 text-white" />
-			<span>Mostrar mas</span>
-		</button> -->
+		<section id="projectsSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+			{
+				projects.map((item) => (
+					<Proyect
+						imageUrl={item.imageUrl}
+						url={item.url}
+						title={item.title}
+						tags={item.tags}
+						description={item.description}
+						type={item.type}
+					/>
+				))
+			}
+		</section>
 	</div>
 </Container>
 
@@ -405,39 +429,6 @@ export const projects = [
 		buttonWorks?.addEventListener("click", showWorks)
 		buttonProjects?.addEventListener("click", showProjects)
 	})
-
-	// document.addEventListener("astro:page-load", () => {
-	// 	const showProjectsButton = document.getElementById("projectsButton")
-	// 	const projectsContainer = document.getElementById("projectsSection")
-
-	// 	if (showProjectsButton && projectsContainer) {
-	// 		let isProjecstVisible = false
-
-	// 		const toggleProjects = () => {
-	// 			const buttonText = showProjectsButton.querySelector("span")
-	// 			const svg = showProjectsButton.querySelector("svg")
-
-	// 			if (isProjecstVisible) {
-	// 				projectsContainer.classList.remove("projectsShow")
-	// 				projectsContainer.classList.add("projectsHide")
-	// 				if (buttonText) {
-	// 					buttonText.textContent = "Mostrar mas"
-	// 				}
-	// 			} else {
-	// 				projectsContainer.classList.remove("projectsHide")
-	// 				projectsContainer.classList.add("projectsShow")
-	// 				if (buttonText) {
-	// 					buttonText.textContent = "Mostrar menos"
-	// 				}
-	// 			}
-
-	// 			svg?.classList.toggle("rotate-180")
-	// 			isProjecstVisible = !isProjecstVisible
-	// 		}
-
-	// 		showProjectsButton?.addEventListener("click", toggleProjects)
-	// 	}
-	// })
 </script>
 
 <style>
