@@ -1,5 +1,5 @@
 ---
-import { myFade } from "../constants"
+import { myFade } from "@/constants"
 
 interface TagsProps {
 	label: string
@@ -25,14 +25,17 @@ interface Props {
 	type: ProjectType
 }
 
+import { getRelativeLocaleUrl } from "astro:i18n"
+const { currentLocale } = Astro
+
 const { imageUrl, url, title, tags, description } = Astro.props
 ---
 
-<article class="mb-1 rounded-lg bg-neutral-900 p-2 shadow shadow-neutral-700">
+<article class="mb-1 rounded-lg border border-white/10 bg-white/5 p-2">
 	<h3 class:list={`${title.color} mb-2 text-xl font-semibold text-transparent`}>
 		{title.text}
 	</h3>
-	<a href={url} class="block overflow-hidden rounded">
+	<a href={getRelativeLocaleUrl(currentLocale ?? "", url)} class="block overflow-hidden rounded">
 		<img
 			transition:name={title.slug}
 			transition:animate={myFade}

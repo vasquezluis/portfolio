@@ -3,27 +3,27 @@ import Briefcase from "@/components/icons/Briefcase.astro"
 import Container from "@/components/Container.astro"
 import ExperienceItem from "@/components/ExperienceItem.astro"
 
+const { t } = Astro.props
+
 const EXPERIENCE = [
 	{
-		date: "Mayo 2023 - mayo 2024",
-		title: "Programador Fullstack Junior",
+		date: `${t("exp1.date")}`,
+		title: `${t("exp1.title")}`,
 		company: {
 			name: "Prometheus",
 			link: "https://innovacion.ai",
 		},
-		description:
-			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Creación y despliegue de aplicaciones basadas en AWS (EC2, RDS, S3, Lambdas).",
+		description: `${t("exp1.desc")}`,
 		link: "https://innovacion.ai",
 	},
 	{
-		date: "Febrero 2024 - julio 2023",
-		title: "Auxiliatura en programación web",
+		date: `${t("exp2.date")}`,
+		title: `${t("exp2.title")}`,
 		company: {
 			name: "UVGA",
 			link: "https://altiplano.uvg.edu.gt/",
 		},
-		description:
-			"Auxiliaturas en el curso de programación web 1 en la Universidad del Valle de Guatemala, campus Altiplano. Clases sobre HTML, CSS y JavaScript. Maquetación y creación de páginas web responsivas y modernas usando Reactjs y Tailwindcss.",
+		description: `${t("exp2.desc")}`,
 		link: "https://altiplano.uvg.edu.gt/",
 	},
 ]
@@ -32,7 +32,7 @@ const EXPERIENCE = [
 <Container id="experience">
 	<h2 class="mb-6 flex items-center gap-x-2 text-2xl font-semibold">
 		<Briefcase class="size-6" />
-		Experiencia Laboral
+		{t("exp.title")}
 	</h2>
 
 	<ol class="relative ml-3 border-s border-gray-700">

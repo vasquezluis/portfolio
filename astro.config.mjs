@@ -11,6 +11,12 @@ export default defineConfig({
   adapter: netlify(),
   i18n: {
     defaultLocale: "es",
-    locales: ["es", "en"]
+    locales: ["es", "en"],
+    routing: {
+      prefixDefaultLocale: false
+    },
+    fallback: {
+      en: "es"
+    }
   }
 })

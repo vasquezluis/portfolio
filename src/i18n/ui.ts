@@ -1,0 +1,81 @@
+export const languages = {
+	es: "Español",
+	en: "English",
+}
+
+export const defaultLang = "es"
+
+export const ui = {
+	es: {
+		"layout.title": "vasquezluis portfolio - Desarrollador Web",
+		"layout.description":
+			"Contrata a vasquezluis para crear tu aplicación web hecha a medida. Desarrollador y Programador web.",
+		"nav.information": "Información",
+		"nav.experience": "Experiencia",
+		"nav.projects": "Proyectos",
+		"nav.technologies": "Tecnologías",
+		"nav.studies": "Estudios",
+		"hero.badge": "Trabajemos juntos",
+		"hero.title": "Hola, Soy Luis Vásquez",
+		"hero.desc1": "Desarrollador Web FullStack.",
+		"hero.desc2": "De Guatemala.",
+		"hero.desc3": "Especializado en crear aplicaciones únicas.",
+		"hero.resume": "Curriculum",
+		"hero.email": "Correo",
+		"exp.title": "Experiencia laboral",
+		"exp.more": "Más sobre ",
+		"exp1.date": "Mayo 2023 - mayo 2024",
+		"exp1.title": "Desarrollador Fullstack Junior",
+		"exp1.desc":
+			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Creación y despliegue de aplicaciones basadas en AWS (EC2, RDS, S3, Lambdas).",
+		"exp2.date": "Febrero 2024 - julio 2023",
+		"exp2.title": "Auxiliatura en programación web",
+		"exp2.desc":
+			"Auxiliaturas en el curso de programación web 1 en la Universidad del Valle de Guatemala, campus Altiplano. Clases sobre HTML, CSS y JavaScript. Maquetación y creación de páginas web responsivas y modernas usando Reactjs y Tailwindcss.",
+		"proj.title": "Proyectos",
+		"proj.tabWo": "Trabajos",
+		"proj.tabPr": "Proyectos",
+		"techs.title": "Tecnologías",
+		"stud.title": "Estudios",
+		"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
+		"stud2.desc": "Técnico universitario en sistemas e informática",
+		"stud3.desc": "Bachillerato en computación",
+		"foot.right": "Casi todos los derechos reservados",
+	},
+	en: {
+		"layout.title": "vasquezluis portfolio - Web Developer",
+		"layout.description":
+			"Hire vasquezluis to create your custom web app. Web developer and programmer.",
+		"nav.information": "Information",
+		"nav.experience": "Experience",
+		"nav.projects": "Projects",
+		"nav.technologies": "Technologies",
+		"nav.studies": "Studies",
+		"hero.badge": "Let's work together",
+		"hero.title": "Hi, Soy Luis Vásquez",
+		"hero.desc1": "FullStack Web Developer.",
+		"hero.desc2": "From Guatemala.",
+		"hero.desc3": "Specialized in creating unique applications.",
+		"hero.resume": "Resume",
+		"hero.email": "Email",
+		"exp.title": "Work experience",
+		"exp.more": "More about ",
+		"exp1.date": "May 2023 - may 2024",
+		"exp1.title": "Junior Web Developer",
+		"exp1.desc":
+			"Responsible for creating an image generator based on Midjourney and creating a custom chatbot using OpenAI. Database maintenance. Creation and deployment of applications based on AWS (EC2, RDS, S3, Lambdas).",
+		"exp2.date": "February 2024 - July 2023",
+		"exp2.title": "Assistance in web programming",
+		"exp2.desc":
+			"Assistants in the web programming course 1 at the Universidad del Valle de Guatemala, Altiplano campus. Classes on HTML, CSS and JavaScript. Layout and creation of responsive and modern web pages using Reactjs and Tailwindcss.",
+		"proj.title": "Projects",
+		"proj.tabWo": "Works",
+		"proj.tabPr": "Projects",
+		"techs.title": "Technologies",
+		"stud.title": "Studies",
+		"stud1.desc": "Bachelor of Computer Systems Technology",
+		"stud2.desc": "University technician in systems and computing",
+		"stud3.desc": "Bachelor's degree in computing",
+		"foot.right": "Almost every right reserved",
+	},
+} as const

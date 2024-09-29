@@ -1,0 +1,25 @@
+---
+import NavMenu from "@/components/NavMenu"
+import { useTranslations, getLangFromUrl } from "@/i18n/utils"
+import LanguagePicker from "./LanguagePicker.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const Links = [
+	{ href: "#info", label: t("nav.information") },
+	{ href: "#experience", label: t("nav.experience") },
+	{ href: "#projects", label: t("nav.projects") },
+	{ href: "#technologies", label: t("nav.technologies") },
+	{ href: "#study", label: t("nav.studies") },
+]
+---
+
+<section class="flex w-full items-center justify-center py-5">
+	<div class="flex space-x-2">
+		<NavMenu client:visible Links={Links} />
+		<div class="flex items-center justify-center">
+			<LanguagePicker />
+		</div>
+	</div>
+</section>

@@ -5,6 +5,8 @@ import Container from "@/components/Container.astro"
 import { TAGS } from "@/components/TagsList.astro"
 import Code from "@/components/icons/Code.astro"
 
+const { t } = Astro.props
+
 export const works = [
 	{
 		id: 1,
@@ -315,40 +317,22 @@ export const projects = [
 			},
 		],
 	},
-	// {
-	// 	id: 3,
-	// 	imageUrl: "/images/duagt.webp",
-	// 	url: "discord-bot",
-	// 	title: {
-	// 		text: "Discord Bot",
-	// 		slug: "discord-bot",
-	// 		color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
-	// 	},
-	// 	tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-	// 	description:
-	// 		"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
-	// 	type: {
-	// 		type: "Hackathon",
-	// 		colorType: "bg-orange-600 text-white",
-	// 	},
-	// 	date: "Julio 2024",
-	// },
 ]
 ---
 
 <Container id="projects">
 	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
 		<Code />
-		Proyectos
+		{t("proj.title")}
 	</h2>
 
 	<div class="flex flex-col items-center justify-center gap-y-3">
-		<div class="w-full" transition:persist="">
-			<button id="buttonWorks" class="selected">Trabajos</button>
-			<button id="buttonProjects">Proyectos</button>
+		<div class="w-full">
+			<button id="buttonWorks" class="selected">{t("proj.tabWo")}</button>
+			<button id="buttonProjects">{t("proj.tabPr")}</button>
 		</div>
 
-		<section id="worksSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
+		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				works.map((item) => (
 					<Proyect
@@ -363,7 +347,7 @@ export const projects = [
 			}
 		</section>
 
-		<section id="projectsSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				projects.map((item) => (
 					<Proyect
