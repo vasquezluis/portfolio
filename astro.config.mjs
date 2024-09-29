@@ -8,5 +8,9 @@ import preact from "@astrojs/preact"
 export default defineConfig({
   integrations: [tailwind(), preact()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"]
+  }
 })
