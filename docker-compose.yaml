@@ -1,6 +1,7 @@
 services:
   web:
     build: .
+    container_name: portfolio
     ports:
       - 4321:4321
     environment:
@@ -8,6 +9,7 @@ services:
   
   nginx:
     image: nginx:alpine
+    container_name: portfolio-nginx
     ports:
       - 80:80
     volumes:

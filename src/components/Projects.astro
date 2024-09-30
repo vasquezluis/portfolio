@@ -1,29 +1,55 @@
 ---
-import Proyect from "./Project.astro"
-import Container from "./Container.astro"
+import Project from "@/components/Project.astro"
+import Container from "@/components/Container.astro"
 
-import { TAGS } from "./TagsList.astro"
-import Code from "./icons/Code.astro"
-import Down from "./icons/Down.astro"
+import { TAGS } from "@/components/TagsList.astro"
+import Code from "@/components/icons/Code.astro"
 
-export const works = [
+const { t } = Astro.props
+
+const works = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
-		url: "dashboard-dolcecompras",
+		url: "dolcecompras",
 		title: {
-			text: "Dashboard DolceCompras",
-			slug: "dashboard-dolcecompras",
+			text: "DolceCompras",
+			slug: "dolcecompras",
 			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 		},
 		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
-		description:
-			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
+		description: t("work1.desc"),
 		type: {
-			type: "Freelance",
+			type: "private",
 			colorType: "bg-teal-600 text-white",
 		},
 		date: "Mayo 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Base de datos en tiempo real",
+				description:
+					"La plataforma de DolceCompras ofrece visualizar datos en tiempo real utilizando Firebase.",
+			},
+			{
+				id: 2,
+				title: "Timer general",
+				description:
+					"La plataforma cuenta con la funcionalidad de permitir únicamente un usuario a la vez, restringiendo el acceso con máximo de 15 minutos por sesión. Los demás usuarios pueden ver cuánto tiempo deben esperar para poder iniciar sesión.",
+			},
+			{
+				id: 3,
+				title: "Email Trigger",
+				description:
+					"La plataforma genera y envía un email con una copia de los datos solicitados.",
+			},
+			{
+				id: 4,
+				title: "Chequeo de sesiones",
+				description:
+					"La plataforma cuenta con un 'Firebase Function' el cual revisa constantemente la expiración de la sesión del usuario.",
+			},
+		],
 	},
 	{
 		id: 2,
@@ -35,10 +61,9 @@ export const works = [
 			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
-		description:
-			"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		description: t("work2.desc"),
 		type: {
-			type: "Prometheus",
+			type: "private",
 			colorType: "bg-orange-600 text-white",
 		},
 		date: "Diciembre 2023",
@@ -62,6 +87,25 @@ export const works = [
 				type: "Database",
 			},
 		],
+		functionalities: [
+			{
+				id: 1,
+				title: "Generación de imágenes",
+				description: "Ignition genera imágenes utilizando Midjourney como base.",
+			},
+			{
+				id: 2,
+				title: "Generación de imágenes tropicalizadas",
+				description:
+					"Utilizando parámetros visuales, Ignition genera imágenes basados en la localización del usuario, sin crear imágenes de stock.",
+			},
+			{
+				id: 3,
+				title: "Generación de imágenes adaptadas",
+				description:
+					"Ignition genera imágenes adaptadas a marcas, por ejemplo generar cerveza de una marca en especifico.",
+			},
+		],
 	},
 	{
 		id: 3,
@@ -73,10 +117,9 @@ export const works = [
 			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
-		description:
-			"Proyecto tipo asistente virtual basado en APIs de OpenAI. Frontend en Reactjs + Typescript, MYSQL RDS, Django restframework, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		description: t("work3.desc"),
 		type: {
-			type: "Prometheus",
+			type: "private",
 			colorType: "bg-orange-600 text-white",
 		},
 		date: "Mayo 2023",
@@ -112,6 +155,19 @@ export const works = [
 				type: "Database",
 			},
 		],
+		functionalities: [
+			{
+				id: 1,
+				title: "Chatbot",
+				description: "Flamerly puede responder preguntas generales.",
+			},
+			{
+				id: 2,
+				title: "Chatbot empresarial",
+				description:
+					"Flamerly está entrenado para responder preguntas específicas con información privada.",
+			},
+		],
 	},
 	{
 		id: 4,
@@ -123,17 +179,36 @@ export const works = [
 			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
 		},
 		tags: [TAGS.MOODLE, TAGS.MYSQL],
-		description:
-			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
+		description: t("work4.desc"),
 		type: {
-			type: "Freelance",
+			type: "private",
 			colorType: "bg-teal-600 white",
 		},
 		date: "Enero 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Control de estudiantes",
+				description:
+					"El proyecto permite un control de estudiantes y inscripción a diferentes cursos.",
+			},
+			{
+				id: 2,
+				title: "Control de maestros",
+				description:
+					"El proyecto permite el control de maestros y su generación de contenido para diferentes cursos.",
+			},
+			{
+				id: 3,
+				title: "Generación de reportes",
+				description:
+					"El proyecto permite generar reportes de estudiantes, maestros, notas, rendimiento de estudiantes y rendimiento de la aplicación.",
+			},
+		],
 	},
 ]
 
-export const projects = [
+const projects = [
 	{
 		id: 1,
 		imageUrl: "/images/structura.webp",
@@ -141,16 +216,49 @@ export const projects = [
 		title: {
 			text: "Structura",
 			slug: "structura",
-			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+			color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
 		},
 		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-		description:
-			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
+		description: t("proj1.desc"),
 		type: {
-			type: "Hackathon",
+			type: "open",
+			repo: "https://github.com/vasquezluis/structura",
+			url: "https://structura-hackathon.vercel.app/",
 			colorType: "bg-orange-600 text-white",
 		},
 		date: "Julio 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Lenguaje natural",
+				description:
+					"Structura puede comprender el lenguaje natural para la generación de contenido utilizando el modelo gpt3.5 de OpenAI.",
+			},
+			{
+				id: 2,
+				title: "Generación de estructuras SQL",
+				description:
+					"Structura genera contenido SQL basado en la descripción del proyecto del usuario. Structura solo necesita el contexto del proyecto para generar una estructura inicial.",
+			},
+			{
+				id: 3,
+				title: "Generación código SQL",
+				description:
+					"Structura genera código SQL basado en la descripción del proyecto del usuario.",
+			},
+			{
+				id: 4,
+				title: "Generación descripción",
+				description:
+					"Structura una descripción del código SQL generado, ayudando al usuario a entender el contenido.",
+			},
+			{
+				id: 5,
+				title: "Generación mapa mental",
+				description:
+					"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
+			},
+		],
 	},
 ]
 ---
@@ -158,14 +266,19 @@ export const projects = [
 <Container id="projects">
 	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
 		<Code />
-		Proyectos
+		{t("proj.title")}
 	</h2>
 
 	<div class="flex flex-col items-center justify-center gap-y-3">
+		<div class="w-full">
+			<button id="buttonWorks" class="selected">{t("proj.tabWo")}</button>
+			<button id="buttonProjects">{t("proj.tabPr")}</button>
+		</div>
+
 		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				works.map((item) => (
-					<Proyect
+					<Project
 						imageUrl={item.imageUrl}
 						url={item.url}
 						title={item.title}
@@ -180,7 +293,7 @@ export const projects = [
 		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				projects.map((item) => (
-					<Proyect
+					<Project
 						imageUrl={item.imageUrl}
 						url={item.url}
 						title={item.title}
@@ -191,49 +304,57 @@ export const projects = [
 				))
 			}
 		</section>
-
-		<button
-			id="projectsButton"
-			class="flex w-fit items-center justify-center gap-x-2 rounded-md px-3 py-2"
-		>
-			<Down class:list="h-6 w-6 text-white" />
-			<span>Mostrar mas</span>
-		</button>
 	</div>
 </Container>
 
 <script>
 	document.addEventListener("astro:page-load", () => {
-		const showProjectsButton = document.getElementById("projectsButton")
+		const buttonWorks = document.getElementById("buttonWorks")
+		const buttonProjects = document.getElementById("buttonProjects")
+		const worksContainer = document.getElementById("worksSection")
 		const projectsContainer = document.getElementById("projectsSection")
 
-		if (showProjectsButton && projectsContainer) {
-			let isProjecstVisible = false
-
-			const toggleProjects = () => {
-				const buttonText = showProjectsButton.querySelector("span")
-				const svg = showProjectsButton.querySelector("svg")
-
-				if (isProjecstVisible) {
-					projectsContainer.classList.remove("projectsShow")
-					projectsContainer.classList.add("projectsHide")
-					if (buttonText) {
-						buttonText.textContent = "Mostrar mas"
-					}
-				} else {
-					projectsContainer.classList.remove("projectsHide")
-					projectsContainer.classList.add("projectsShow")
-					if (buttonText) {
-						buttonText.textContent = "Mostrar menos"
-					}
-				}
-
-				svg?.classList.toggle("rotate-180")
-				isProjecstVisible = !isProjecstVisible
-			}
-
-			showProjectsButton?.addEventListener("click", toggleProjects)
+		const updateLS = (value: string) => {
+			window.localStorage.setItem("tab", value)
 		}
+
+		const showWorks = () => {
+			projectsContainer?.classList.remove("projectsShow")
+			projectsContainer?.classList.add("projectsHide")
+
+			worksContainer?.classList.remove("projectsHide")
+			worksContainer?.classList.add("projectsShow")
+
+			buttonWorks?.classList.add("selected")
+			buttonProjects?.classList.remove("selected")
+
+			updateLS("works")
+		}
+
+		const showProjects = () => {
+			worksContainer?.classList.remove("projectsShow")
+			worksContainer?.classList.add("projectsHide")
+
+			projectsContainer?.classList.remove("projectsHide")
+			projectsContainer?.classList.add("projectsShow")
+
+			buttonProjects?.classList.add("selected")
+			buttonWorks?.classList.remove("selected")
+
+			updateLS("projects")
+		}
+
+		const valueFromLS = window.localStorage.getItem("tab")
+		if (valueFromLS !== null) {
+			if (valueFromLS === "works") {
+				showWorks()
+			} else if (valueFromLS === "projects") {
+				showProjects()
+			}
+		}
+
+		buttonWorks?.addEventListener("click", showWorks)
+		buttonProjects?.addEventListener("click", showProjects)
 	})
 </script>
 

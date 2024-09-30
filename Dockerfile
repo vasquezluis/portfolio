@@ -12,6 +12,8 @@ RUN npm i
 
 COPY --chown=astro . .
 
+RUN npm run build
+
 EXPOSE 4321
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

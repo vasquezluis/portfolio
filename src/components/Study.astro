@@ -1,23 +1,26 @@
 ---
-import Container from "./Container.astro"
-import School from "./icons/School.astro"
-import StudyItem from "./StudyItem.astro"
+import Container from "@/components/Container.astro"
+import School from "@/components/icons/School.astro"
+import StudyItem from "@/components/StudyItem.astro"
+import StudyItemM from "@/components/StudyItemM.astro"
+
+const { t } = Astro.props
 
 const STUDYDATA = [
 	{
-		school: "Universidad del Valle de Guatemala, CA",
+		school: "Universidad del Valle de Guatemala, Campus Altiplano",
 		date: "2019-2023",
-		description: "Licenciatura en tecnología de sistemas informáticos",
+		description: `${t("stud1.desc")}`,
 	},
 	{
-		school: "Universidad del Valle de Guatemala, CA",
+		school: "Universidad del Valle de Guatemala, Campus Altiplano",
 		date: "2017-2018",
-		description: "Técnico universitario en sistemas e informática",
+		description: `${t("stud2.desc")}`,
 	},
 	{
-		school: "Escuela en ciencias de la computación",
+		school: "Escuela en ciencias de la computación, Sololá",
 		date: "2015-2016",
-		description: "Bachillerato en computación",
+		description: `${t("stud3.desc")}`,
 	},
 ]
 ---
@@ -25,13 +28,21 @@ const STUDYDATA = [
 <Container id="study">
 	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
 		<School class="size-6" />
-		Estudios
+		{t("stud.title")}
 	</h2>
 
-	<ol class="relative items-center px-2 md:ml-0 md:flex">
+	<ol class="relative hidden items-center md:flex">
 		{
 			STUDYDATA.map(({ school, date, description }) => (
 				<StudyItem school={school} date={date} description={description} />
+			))
+		}
+	</ol>
+
+	<ol class="relative ml-3 border-s border-gray-200 dark:border-gray-700 sm:hidden">
+		{
+			STUDYDATA.map(({ school, date, description }) => (
+				<StudyItemM school={school} date={date} description={description} />
 			))
 		}
 	</ol>

@@ -10,7 +10,11 @@ interface Props {
 	link?: string
 }
 
-import SocialPill from "./SocialPill.astro"
+import SocialPill from "@/components/SocialPill.astro"
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils"
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const { date, title, company, description, link } = Astro.props
 ---
@@ -33,7 +37,7 @@ const { date, title, company, description, link } = Astro.props
 	{
 		link && (
 			<SocialPill link={link}>
-				Más sobre {company.name}{" "}
+				{t("exp.more")} {company.name}
 				<svg
 					class="ms-2 h-3 w-3 rtl:rotate-180"
 					aria-hidden="true"

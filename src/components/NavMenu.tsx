@@ -1,24 +1,31 @@
 import { useState } from "preact/hooks"
-import Hamburger from "./icons/Hamburger"
+import Hamburger from "@/components/icons/Hamburger"
 
-const Links = [
-	{ href: "#info", label: "Información" },
-	{ href: "#experience", label: "Experiencia" },
-	{ href: "#projects", label: "Proyectos" },
-	{ href: "#technologies", label: "Tecnologías" },
-	{ href: "#study", label: "Estudios" },
-]
+import SpainFlag from "/icons/spanish.svg?url"
+import EnglishFlag from "/icons/english.svg?url"
 
-const Header = () => {
+import { useTranslatedPath } from "@/i18n/utils"
+
+type Links = {
+	href: string
+	label: string
+}
+
+interface Props {
+	Links: Links[]
+	lang: "es" | "en"
+	languages: { es: string; en: string }
+}
+
+const Header = ({ Links, lang, languages }: Props) => {
 	const [isOpen, setIsOpen] = useState(false)
+
+	const translatePath = useTranslatedPath(lang)
 
 	return (
 		<>
 			{/* desktop menu */}
-			<header
-				id="info"
-				class="z-50 mx-auto hidden items-center justify-center py-5 md:flex xl:w-[1120px]"
-			>
+			<header id="info" class="z-50 hidden items-center justify-center md:flex">
 				<nav class="inline-flex items-center justify-center gap-x-2 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-xs md:px-4 md:py-2 md:text-base">
 					{Links.map((item) => (
 						<a href={item.href} class="transition hover:text-[#0891b2]">
@@ -55,6 +62,13 @@ const Header = () => {
 								</a>
 							</li>
 						))}
+						<li class="flex items-start justify-center gap-x-2">
+							{Object.entries(languages).map(([langPrefix]) => (
+								<a href={translatePath("/", langPrefix)}>
+									{langPrefix === "es" ? <img src={SpainFlag} /> : <img src={EnglishFlag} />}
+								</a>
+							))}
+						</li>
 					</ul>
 				</nav>
 			</header>

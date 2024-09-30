@@ -7,8 +7,8 @@ import type { Props } from "astro/components/ViewTransitions.astro"
 import Lock from "@/components/icons/Lock.astro"
 import Github from "@/components/icons/Github.astro"
 import World from "@/components/icons/World.astro"
-import { TAGS } from "@/components/TagsList.astro"
 import { type Project } from "@/types"
+import { TAGS } from "@/components/TagsList.astro"
 
 import { getLangFromUrl, useTranslations, useTranslatedPath } from "@/i18n/utils"
 const lang = getLangFromUrl(Astro.url)
@@ -276,7 +276,7 @@ if (!info) {
 	info = projects.find((p) => p.title.slug === project) as Project
 
 	if (!info) {
-		return Astro.redirect(translatePath("/404", lang))
+		return Astro.redirect(translatePath("/en/404", lang))
 	}
 }
 ---
@@ -318,7 +318,7 @@ if (!info) {
 					{
 						info.type.type === "private" ? (
 							<span class="flex items-center justify-center gap-x-1 text-neutral-400">
-								Código privado <Lock class="size-6" />
+								{t("proj.type")} <Lock class="size-6" />
 							</span>
 						) : (
 							<div class="flex items-center justify-center gap-x-2">
@@ -356,7 +356,7 @@ if (!info) {
 			{
 				info.functionalities !== undefined && (
 					<section class="w-full pl-4 pr-1 md:px-0">
-						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">Funcionalidad</h3>
+						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">{t("proj.func")}</h3>
 						<ol class="relative border-s border-gray-700">
 							{info.functionalities.map(({ title, description }) => (
 								<li class="mb-10 ms-6">
@@ -379,7 +379,7 @@ if (!info) {
 			{
 				info.responsabilities !== undefined && (
 					<section class="w-full pl-4 pr-1 md:px-0">
-						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">Responsabilidades</h3>
+						<h3 class="mb-5 text-2xl font-semibold text-neutral-100">{t("proj.resp")}</h3>
 						<ol class="relative border-s border-gray-700">
 							{info.responsabilities.map(({ title, description, type }) => (
 								<li class="mb-10 ms-6">
