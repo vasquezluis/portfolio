@@ -1,8 +1,26 @@
 import { useState } from "preact/hooks"
 import Hamburger from "@/components/icons/Hamburger"
 
-const Header = ({ Links }: { Links: { href: string; label: string }[] }) => {
+import SpainFlag from "/icons/spanish.svg?url"
+import EnglishFlag from "/icons/english.svg?url"
+
+import { useTranslatedPath } from "@/i18n/utils"
+
+type Links = {
+	href: string
+	label: string
+}
+
+interface Props {
+	Links: Links[]
+	lang: "es" | "en"
+	languages: { es: string; en: string }
+}
+
+const Header = ({ Links, lang, languages }: Props) => {
 	const [isOpen, setIsOpen] = useState(false)
+
+	const translatePath = useTranslatedPath(lang)
 
 	return (
 		<>
@@ -44,6 +62,13 @@ const Header = ({ Links }: { Links: { href: string; label: string }[] }) => {
 								</a>
 							</li>
 						))}
+						<li class="flex items-start justify-center gap-x-2">
+							{Object.entries(languages).map(([langPrefix]) => (
+								<a href={translatePath("/", langPrefix)}>
+									{langPrefix === "es" ? <img src={SpainFlag} /> : <img src={EnglishFlag} />}
+								</a>
+							))}
+						</li>
 					</ul>
 				</nav>
 			</header>

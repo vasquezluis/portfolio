@@ -5,9 +5,7 @@ import NextjsIcon from "@/components/icons/Nextjs.astro"
 import FirebaseIcon from "@/components/icons/Firebase.astro"
 import TypescriptIcon from "@/components/icons/Typescript.astro"
 import ReactIcon from "@/components/icons/React.astro"
-import TailwindcssIcon from "@/components/icons/Tailwindcss.astro"
 import MySQLIcon from "@/components/icons/MySQL.astro"
-import MoodleIcon from "@/components/icons/Moodle.astro"
 import Technology from "@/components/Technology.astro"
 import JavascriptIcon from "@/components/icons/Javascript.astro"
 import NodejsIcon from "@/components/icons/Nodejs.astro"
@@ -16,17 +14,32 @@ import LinuxIcon from "@/components/icons/Linux.astro"
 import DockerIcon from "@/components/icons/Docker.astro"
 import HtmlIcon from "@/components/icons/Html.astro"
 import CssIcon from "@/components/icons/Css.astro"
-import DjangoIcon from "@/components/icons/Django.astro"
 import AwsIcon from "@/components/icons/Aws.astro"
 import WordpressIcon from "@/components/icons/Wordpress.astro"
+import GitIcon from "./icons/Git.astro"
 
 const { t } = Astro.props
 
 const TECHS = [
 	{
-		title: "Nextjs",
-		Icon: NextjsIcon,
-		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
+		title: "HTML",
+		Icon: HtmlIcon,
+		styles: "border border-orange-500 bg-orange-500/40 text-neutral-200",
+	},
+	{
+		title: "CSS",
+		Icon: CssIcon,
+		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
+	},
+	{
+		title: "JavaScript",
+		Icon: JavascriptIcon,
+		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
+	},
+	{
+		title: "TypeScript",
+		Icon: TypescriptIcon,
+		styles: "border border-blue-800 bg-blue-800/40 text-neutral-200",
 	},
 	{
 		title: "Node.js",
@@ -39,9 +52,9 @@ const TECHS = [
 		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
 	},
 	{
-		title: "HTML",
-		Icon: HtmlIcon,
-		styles: "border border-orange-500 bg-orange-500/40 text-neutral-200",
+		title: "Nextjs",
+		Icon: NextjsIcon,
+		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
 	},
 	{
 		title: "MySQL",
@@ -49,34 +62,14 @@ const TECHS = [
 		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
 	},
 	{
-		title: "Tailwind CSS",
-		Icon: TailwindcssIcon,
-		styles: "border border-blue-900 bg-blue-900/40 text-neutral-200",
-	},
-	{
 		title: "Firebase",
 		Icon: FirebaseIcon,
 		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
 	},
 	{
-		title: "Moodle",
-		Icon: MoodleIcon,
-		styles: "border border-yellow-900 bg-yellow-900/40 text-neutral-200",
-	},
-	{
-		title: "TypeScript",
-		Icon: TypescriptIcon,
-		styles: "border border-blue-800 bg-blue-800/40 text-neutral-200",
-	},
-	{
-		title: "Django",
-		Icon: DjangoIcon,
-		styles: "border border-emerald-500 bg-emerald-500/40 text-neutral-200",
-	},
-	{
-		title: "AWS",
-		Icon: AwsIcon,
-		styles: "border border-orange-500 bg-yellow-900 text-neutral-200",
+		title: "Git",
+		Icon: GitIcon,
+		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
 	},
 	{
 		title: "Linux",
@@ -89,19 +82,14 @@ const TECHS = [
 		styles: "border border-blue-500 bg-blue-900/40 text-neutral-200",
 	},
 	{
+		title: "AWS",
+		Icon: AwsIcon,
+		styles: "border border-orange-500 bg-yellow-900 text-neutral-200",
+	},
+	{
 		title: "Python",
 		Icon: PythonIcon,
 		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
-	},
-	{
-		title: "JavaScript",
-		Icon: JavascriptIcon,
-		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
-	},
-	{
-		title: "CSS",
-		Icon: CssIcon,
-		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
 	},
 	{
 		title: "WordPress",

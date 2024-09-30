@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import { works, projects } from "@/components/Projects.astro"
 import Container from "@/components/Container.astro"
 import CheckList from "@/components/icons/CheckList.astro"
 import { myFade } from "@/constants"
@@ -8,47 +7,264 @@ import type { Props } from "astro/components/ViewTransitions.astro"
 import Lock from "@/components/icons/Lock.astro"
 import Github from "@/components/icons/Github.astro"
 import World from "@/components/icons/World.astro"
+import { TAGS } from "@/components/TagsList.astro"
+import { type Project } from "@/types"
 
-interface TagsProps {
-	label: string
-	class: string
-	icon: any
-}
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "@/i18n/utils"
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
 
-interface ProjectType {
-	type: string
-	repo?: string
-	url?: string
-	colorType: string
-}
+const works = [
+	{
+		id: 1,
+		imageUrl: "/images/dolce-compras.webp",
+		url: "dolcecompras",
+		title: {
+			text: "DolceCompras",
+			slug: "dolcecompras",
+			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
+		description: t("work1.desc"),
+		type: {
+			type: "private",
+			colorType: "bg-teal-600 text-white",
+		},
+		date: t("work1.date"),
+		functionalities: [
+			{
+				id: 1,
+				title: t("work1.func.title1"),
+				description: t("work1.func.desc1"),
+			},
+			{
+				id: 2,
+				title: t("work1.func.title2"),
+				description: t("work1.func.desc2"),
+			},
+			{
+				id: 3,
+				title: t("work1.func.title3"),
+				description: t("work1.func.desc3"),
+			},
+			{
+				id: 4,
+				title: t("work1.func.title4"),
+				description: t("work1.func.desc4"),
+			},
+		],
+	},
+	{
+		id: 2,
+		imageUrl: "/images/ignition.webp",
+		url: "ignition",
+		title: {
+			text: "Ignition",
+			slug: "ignition",
+			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
+		},
+		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
+		description: t("work2.desc"),
+		type: {
+			type: "private",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Diciembre 2023",
+		responsabilities: [
+			{
+				title: "Creación de frontend con Reactjs",
+				description:
+					"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+				type: "Frontend",
+			},
+			{
+				title: "Creación de lambdas de AWS",
+				description:
+					"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+				type: "Cloud",
+			},
+			{
+				title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
+				description:
+					"Creación y mantenimiento de base de datos donde se guardan las imágenes generados por los usuarios.",
+				type: "Database",
+			},
+		],
+		functionalities: [
+			{
+				id: 1,
+				title: "Generación de imágenes",
+				description: "Ignition genera imágenes utilizando Midjourney como base.",
+			},
+			{
+				id: 2,
+				title: "Generación de imágenes tropicalizadas",
+				description:
+					"Utilizando parámetros visuales, Ignition genera imágenes basados en la localización del usuario, sin crear imágenes de stock.",
+			},
+			{
+				id: 3,
+				title: "Generación de imágenes adaptadas",
+				description:
+					"Ignition genera imágenes adaptadas a marcas, por ejemplo generar cerveza de una marca en especifico.",
+			},
+		],
+	},
+	{
+		id: 3,
+		imageUrl: "/images/flamerly.webp",
+		url: "flamerly",
+		title: {
+			text: "Flamerly",
+			slug: "flamerly",
+			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
+		},
+		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
+		description: t("work3.desc"),
+		type: {
+			type: "private",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Mayo 2023",
+		responsabilities: [
+			{
+				title: "Creación de APIs con DJango",
+				description:
+					"Creación de endpoints para la generación de respuestas de los modelos de OpenAI al estilo de ChatGPT.",
+				type: "Backend",
+			},
+			{
+				title: "Creación de frontend con Reactjs",
+				description:
+					"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+				type: "Frontend",
+			},
+			{
+				title: "Creación de chatbot utilizando OpenAI",
+				description:
+					"Creación de un chatbot utilizando los modelos de OpenAI (chat completions) y crear respuestas basadas en archivos privados de la empresa.",
+				type: "IA",
+			},
+			{
+				title: "Creación de lambdas de AWS",
+				description:
+					"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+				type: "Cloud",
+			},
+			{
+				title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
+				description:
+					"Creación y mantenimiento de base de datos donde se guardan los mensajes generados por los usuarios.",
+				type: "Database",
+			},
+		],
+		functionalities: [
+			{
+				id: 1,
+				title: "Chatbot",
+				description: "Flamerly puede responder preguntas generales.",
+			},
+			{
+				id: 2,
+				title: "Chatbot empresarial",
+				description:
+					"Flamerly está entrenado para responder preguntas específicas con información privada.",
+			},
+		],
+	},
+	{
+		id: 4,
+		imageUrl: "/images/duagt.webp",
+		url: "escuela-duagt",
+		title: {
+			text: "Escuela virtual DUAGT",
+			slug: "escuela-duagt",
+			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
+		},
+		tags: [TAGS.MOODLE, TAGS.MYSQL],
+		description: t("work4.desc"),
+		type: {
+			type: "private",
+			colorType: "bg-teal-600 white",
+		},
+		date: "Enero 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Control de estudiantes",
+				description:
+					"El proyecto permite un control de estudiantes y inscripción a diferentes cursos.",
+			},
+			{
+				id: 2,
+				title: "Control de maestros",
+				description:
+					"El proyecto permite el control de maestros y su generación de contenido para diferentes cursos.",
+			},
+			{
+				id: 3,
+				title: "Generación de reportes",
+				description:
+					"El proyecto permite generar reportes de estudiantes, maestros, notas, rendimiento de estudiantes y rendimiento de la aplicación.",
+			},
+		],
+	},
+]
 
-interface ResponsabilitiesType {
-	title: string
-	description: string
-	type: string
-}
-
-interface ProjectFunctionality {
-	title: string
-	description: string
-}
-
-interface Project {
-	id: number
-	imageUrl: any
-	url: string
-	title: {
-		text: string
-		slug: string
-		color: string
-	}
-	tags: Array<TagsProps>
-	description: string
-	type: ProjectType
-	date: string
-	responsabilities?: ResponsabilitiesType[] | undefined
-	functionalities?: ProjectFunctionality[] | undefined
-}
+const projects = [
+	{
+		id: 1,
+		imageUrl: "/images/structura.webp",
+		url: "structura",
+		title: {
+			text: "Structura",
+			slug: "structura",
+			color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
+		},
+		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
+		description: t("proj1.desc"),
+		type: {
+			type: "open",
+			repo: "https://github.com/vasquezluis/structura",
+			url: "https://structura-hackathon.vercel.app/",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Julio 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Lenguaje natural",
+				description:
+					"Structura puede comprender el lenguaje natural para la generación de contenido utilizando el modelo gpt3.5 de OpenAI.",
+			},
+			{
+				id: 2,
+				title: "Generación de estructuras SQL",
+				description:
+					"Structura genera contenido SQL basado en la descripción del proyecto del usuario. Structura solo necesita el contexto del proyecto para generar una estructura inicial.",
+			},
+			{
+				id: 3,
+				title: "Generación código SQL",
+				description:
+					"Structura genera código SQL basado en la descripción del proyecto del usuario.",
+			},
+			{
+				id: 4,
+				title: "Generación descripción",
+				description:
+					"Structura una descripción del código SQL generado, ayudando al usuario a entender el contenido.",
+			},
+			{
+				id: 5,
+				title: "Generación mapa mental",
+				description:
+					"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
+			},
+		],
+	},
+]
 
 const { project } = Astro.params
 
@@ -60,7 +276,7 @@ if (!info) {
 	info = projects.find((p) => p.title.slug === project) as Project
 
 	if (!info) {
-		return Astro.redirect("/404")
+		return Astro.redirect(translatePath("/404", lang))
 	}
 }
 ---

@@ -1,5 +1,5 @@
 ---
-import Proyect from "@/components/Project.astro"
+import Project from "@/components/Project.astro"
 import Container from "@/components/Container.astro"
 
 import { TAGS } from "@/components/TagsList.astro"
@@ -7,7 +7,7 @@ import Code from "@/components/icons/Code.astro"
 
 const { t } = Astro.props
 
-export const works = [
+const works = [
 	{
 		id: 1,
 		imageUrl: "/images/dolce-compras.webp",
@@ -18,8 +18,7 @@ export const works = [
 			color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 		},
 		tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
-		description:
-			"Proyecto tipo dashboard para que los usuarios puedan pedir productos y utensilios relacionados a heladerías. Hecho con Nextjs, Typescript, Tailwind, Firebase Authentication, Firebase Realtime Database, Firebase Functions y Firebase Email Trigger.",
+		description: t("work1.desc"),
 		type: {
 			type: "private",
 			colorType: "bg-teal-600 text-white",
@@ -62,8 +61,7 @@ export const works = [
 			color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
-		description:
-			"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		description: t("work2.desc"),
 		type: {
 			type: "private",
 			colorType: "bg-orange-600 text-white",
@@ -119,8 +117,7 @@ export const works = [
 			color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
 		},
 		tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
-		description:
-			"Proyecto tipo asistente virtual basado en APIs de OpenAI. Frontend en Reactjs + Typescript, MYSQL RDS, Django restframework, AWS S3, AWS Lambdas, AWS Cognito y MS Active Directory.",
+		description: t("work3.desc"),
 		type: {
 			type: "private",
 			colorType: "bg-orange-600 text-white",
@@ -182,8 +179,7 @@ export const works = [
 			color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
 		},
 		tags: [TAGS.MOODLE, TAGS.MYSQL],
-		description:
-			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
+		description: t("work4.desc"),
 		type: {
 			type: "private",
 			colorType: "bg-teal-600 white",
@@ -212,7 +208,7 @@ export const works = [
 	},
 ]
 
-export const projects = [
+const projects = [
 	{
 		id: 1,
 		imageUrl: "/images/structura.webp",
@@ -223,60 +219,7 @@ export const projects = [
 			color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
 		},
 		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-		description:
-			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
-		type: {
-			type: "open",
-			repo: "https://github.com/vasquezluis/structura",
-			url: "https://structura-hackathon.vercel.app/",
-			colorType: "bg-orange-600 text-white",
-		},
-		date: "Julio 2024",
-		functionalities: [
-			{
-				id: 1,
-				title: "Lenguaje natural",
-				description:
-					"Structura puede comprender el lenguaje natural para la generación de contenido utilizando el modelo gpt3.5 de OpenAI.",
-			},
-			{
-				id: 2,
-				title: "Generación de estructuras SQL",
-				description:
-					"Structura genera contenido SQL basado en la descripción del proyecto del usuario. Structura solo necesita el contexto del proyecto para generar una estructura inicial.",
-			},
-			{
-				id: 3,
-				title: "Generación código SQL",
-				description:
-					"Structura genera código SQL basado en la descripción del proyecto del usuario.",
-			},
-			{
-				id: 4,
-				title: "Generación descripción",
-				description:
-					"Structura una descripción del código SQL generado, ayudando al usuario a entender el contenido.",
-			},
-			{
-				id: 5,
-				title: "Generación mapa mental",
-				description:
-					"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
-			},
-		],
-	},
-	{
-		id: 2,
-		imageUrl: "/images/ignition.webp",
-		url: "tic-tac-toe",
-		title: {
-			text: "Tic Tac Toe multijugador",
-			slug: "tic-tac-toe",
-			color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
-		},
-		tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-		description:
-			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL basado en lenguaje natural.",
+		description: t("proj1.desc"),
 		type: {
 			type: "open",
 			repo: "https://github.com/vasquezluis/structura",
@@ -335,7 +278,7 @@ export const projects = [
 		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				works.map((item) => (
-					<Proyect
+					<Project
 						imageUrl={item.imageUrl}
 						url={item.url}
 						title={item.title}
@@ -350,7 +293,7 @@ export const projects = [
 		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				projects.map((item) => (
-					<Proyect
+					<Project
 						imageUrl={item.imageUrl}
 						url={item.url}
 						title={item.title}
