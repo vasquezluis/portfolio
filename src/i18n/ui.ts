@@ -61,7 +61,9 @@ export const ui = {
 		"work4.desc":
 			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
 		"proj1.desc":
-			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL usando lenguaje natural.",
+			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Capaz de generar contenido estructurado orientado a base de datos tipo SQL usando lenguaje natural.",
+		"proj2.desc":
+			"Proyecto basado en el juego tic-tac-toe, multijugador, en tiempo real, capaz de manejar varias salas de dos jugadores cada una. Creado con Reactjs, Nodejs, Web Sockets, Tailwindcss y Zustand.",
 		"techs.title": "Tecnologías",
 		"stud.title": "Estudios",
 		"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
@@ -124,7 +126,9 @@ export const ui = {
 		"work4.desc":
 			"Project built with Moodle to manage three schools. The platform is designed to handle various roles, including administrators, principals, teachers, and students, while enhancing the overall experience.",
 		"proj1.desc":
-			"Project based on content generation with Artificial Intelligence using Vercel AI SDK and OpenAI's GPT-3. The structure is capable of generating structured content oriented towards SQL-type databases using natural language.",
+			"Project based on content generation with Artificial Intelligence using Vercel AI SDK and OpenAI's GPT-3. Capable of generating structured content oriented towards SQL-type databases using natural language.",
+		"proj2.desc":
+			"Tic-tac-toe-based multiplayer game in real-time, capable of efficiently handling multiple rooms with two players each. Built with React.js, Node.js, WebSockets, Tailwind CSS, and Zustand.",
 		"techs.title": "Technologies",
 		"stud.title": "Studies",
 		"stud1.desc": "Bachelor's Degree in Information Systems Technology",

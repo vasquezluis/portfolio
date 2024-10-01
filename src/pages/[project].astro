@@ -264,6 +264,45 @@ const projects = [
 			},
 		],
 	},
+	{
+		id: 2,
+		imageUrl: "/images/tic-tac-toe.webp",
+		url: "tic-tac-toe",
+		title: {
+			text: "Tic-Tac-Toe",
+			slug: "tic-tac-toe",
+			color: "bg-gradient-to-r from-[#257441] to-[#195d75] bg-clip-text",
+		},
+		tags: [TAGS.REACTJS, TAGS.SOCKETIO, TAGS.ZUSTAND],
+		description: t("proj2.desc"),
+		type: {
+			type: "open",
+			repo: "https://github.com/vasquezluis/tic-tac-toe-client",
+			// url: "https://structura-hackathon.vercel.app/",
+			colorType: "bg-orange-600 text-white",
+		},
+		date: "Septiembre 2024",
+		functionalities: [
+			{
+				id: 1,
+				title: "Multijugador",
+				description:
+					"Este juego tiene la capacidad de manejar dos jugadores para jugar tic-tac-toe",
+			},
+			{
+				id: 2,
+				title: "Tiempo real",
+				description:
+					"Este proyecto tiene la capacidad de manejar los datos en tiempo real de los jugadores en la partida. Sin tener que recargar la página para obtener cambios.",
+			},
+			{
+				id: 3,
+				title: "Salas",
+				description:
+					"El proyecto tiene la capacidad de manejar diferentes salas, con un máximo de 2 jugadores. Los jugadores pueden crear salas o unirse a salas con un código.",
+			},
+		],
+	},
 ]
 
 const { project } = Astro.params
@@ -318,7 +357,7 @@ if (!info) {
 					{
 						info.type.type === "private" ? (
 							<span class="flex items-center justify-center gap-x-1 text-neutral-400">
-								Código privado <Lock class="size-6" />
+								{t("proj.type")} <Lock class="size-6" />
 							</span>
 						) : (
 							<div class="flex items-center justify-center gap-x-2">
