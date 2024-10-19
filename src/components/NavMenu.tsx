@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks"
-import Hamburger from "@/components/icons/Hamburger"
 
 import SpainFlag from "/icons/spanish.svg?url"
 import EnglishFlag from "/icons/english.svg?url"
@@ -48,7 +47,7 @@ const Header = ({ Links, lang, languages }: Props) => {
 					type="button"
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					<Hamburger class="size-6" />
+					<img src="/icons/Hamburger.svg" allow="Hamburger icon" class="size-6" />
 				</button>
 
 				<nav

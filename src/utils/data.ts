@@ -1,5 +1,5 @@
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
-import { TAGS } from "@/components/TagsList.astro"
+import { TAGS } from "@/utils/tags"
 
 export async function getWorks(url: URL) {
 	const lang = getLangFromUrl(url)

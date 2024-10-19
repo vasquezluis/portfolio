@@ -1,13 +1,7 @@
 ---
 import Badge from "@/components/Badge.astro"
 import SocialPill from "@/components/SocialPill.astro"
-
-import Logo from "@/components/icons/Logo.astro"
 import Container from "@/components/Container.astro"
-import Linkedin from "@/components/icons/Linkedin.astro"
-import Github from "@/components/icons/Github.astro"
-import Mail from "@/components/icons/Mail.astro"
-import File from "@/components/icons/File.astro"
 
 const { t } = Astro.props
 ---
@@ -15,7 +9,7 @@ const { t } = Astro.props
 <main class="px-2">
 	<Container className="pb-28 pt-20 md:pb-32 md:pt-44">
 		<section class="mb-3 flex items-center gap-x-2">
-			<Logo />
+			<img src="/icons/Logo.svg" alt="Github icon" class="size-8" />
 			<a
 				href="https://www.linkedin.com/in/lantvas"
 				target="_blank"
@@ -39,19 +33,19 @@ const { t } = Astro.props
 
 		<nav class="mt-8 flex flex-wrap gap-4">
 			<SocialPill link="https://www.linkedin.com/in/lantvas">
-				<Linkedin class="size-4 md:size-6" />
+				<img src="/icons/Linkedin.svg" alt="Github icon" class="size-4 md:size-6" />
 				LinkedIn
 			</SocialPill>
 			<SocialPill link="https://github.com/vasquezluis">
-				<Github class="size-4 md:size-6" />
+				<img src="/icons/techs/Github.svg" alt="Github icon" class="size-4 md:size-6" />
 				GitHub
 			</SocialPill>
 			<SocialPill link="/cv-vasquezluis.pdf">
-				<File class="size-4 md:size-6" />
+				<img src="/icons/File.svg" alt="Github icon" class="size-4 md:size-6" />
 				{t("hero.resume")}
 			</SocialPill>
 			<SocialPill link="mailto:lvasquez0127@gmail.com">
-				<Mail class="size-4 md:size-6" />
+				<img src="/icons/Mail.svg" alt="Github icon" class="size-4 md:size-6" />
 				{t("hero.email")}
 			</SocialPill>
 		</nav>

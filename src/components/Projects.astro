@@ -2,7 +2,6 @@
 import Project from "@/components/Project.astro"
 import Container from "@/components/Container.astro"
 
-import Code from "@/components/icons/Code.astro"
 import { getWorks, getProjects } from "@/utils/data"
 const works = await getWorks(Astro.url)
 const projects = await getProjects(Astro.url)
@@ -12,7 +11,7 @@ const { t } = Astro.props
 
 <Container id="projects">
 	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
-		<Code />
+		<img src="/icons/Code.svg" alt="Code icon" />
 		{t("proj.title")}
 	</h2>
 

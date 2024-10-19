@@ -1,6 +1,4 @@
 ---
-import Spain from "@/components/icons/SpainFlag.astro"
-import English from "@/components/icons/EnglishFlag.astro"
 import { useTranslatedPath } from "@/i18n/utils"
 
 const { lang, languages } = Astro.props
@@ -9,13 +7,24 @@ const translatePath = useTranslatedPath(lang)
 
 <div class="dropdown">
 	<button id="dropbtn" class="dropbtn"
-		>{lang === "es" ? <Spain class:list={"size-8"} /> : <English class:list={"size-8"} />}</button
+		>{
+			lang === "es" ? (
+				<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" />
+			) : (
+				<img src="/icons/english.svg" alt="English icon" class="size-8" />
+			)
+		}</button
 	>
 	<div id="myDropdown" class="dropdown-content">
 		{
 			Object.entries(languages).map(([langPrefix]) => (
 				<a href={translatePath("/", langPrefix)} title={`${langPrefix} version`}>
-					{langPrefix === "es" ? <Spain /> : <English />} {langPrefix}
+					{langPrefix === "es" ? (
+						<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" />
+					) : (
+						<img src="/icons/english.svg" alt="English icon" class="size-8" />
+					)}{" "}
+					{langPrefix}
 				</a>
 			))
 		}
