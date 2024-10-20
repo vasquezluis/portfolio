@@ -10,11 +10,13 @@ const STUDYDATA = [
 		school: "Universidad del Valle de Guatemala, Campus Altiplano",
 		date: "2019-2023",
 		description: `${t("stud1.desc")}`,
+		award: "SUMMA CUM LAUDE",
 	},
 	{
 		school: "Universidad del Valle de Guatemala, Campus Altiplano",
 		date: "2017-2018",
 		description: `${t("stud2.desc")}`,
+		award: "CUM LAUDE",
 	},
 	{
 		school: "Escuela en ciencias de la computación, Sololá",
@@ -30,18 +32,18 @@ const STUDYDATA = [
 		{t("stud.title")}
 	</h2>
 
-	<ol class="relative hidden items-center md:flex">
+	<ol class="relative hidden items-start sm:flex md:ml-3 xl:ml-0">
 		{
-			STUDYDATA.map(({ school, date, description }) => (
-				<StudyItem school={school} date={date} description={description} />
+			STUDYDATA.map(({ school, date, description, award }) => (
+				<StudyItem school={school} date={date} description={description} award={award} />
 			))
 		}
 	</ol>
 
-	<ol class="relative ml-3 border-s border-gray-200 dark:border-gray-700 sm:hidden">
+	<ol class="relative ml-4 border-s border-gray-200 dark:border-gray-700 sm:hidden">
 		{
-			STUDYDATA.map(({ school, date, description }) => (
-				<StudyItemM school={school} date={date} description={description} />
+			STUDYDATA.map(({ school, date, description, award }) => (
+				<StudyItemM school={school} date={date} description={description} award={award} />
 			))
 		}
 	</ol>

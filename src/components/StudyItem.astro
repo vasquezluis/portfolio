@@ -3,9 +3,10 @@ interface Props {
 	school: string
 	date: string
 	description: string
+	award: string | undefined
 }
 
-const { school, date, description } = Astro.props
+const { school, date, description, award } = Astro.props
 ---
 
 <li class="relative mb-6 sm:mb-0">
@@ -24,5 +25,13 @@ const { school, date, description } = Astro.props
 		<p class="text-sm font-normal text-neutral-300">
 			{school}
 		</p>
+		{
+			award && (
+				<div class="mt-1 flex items-center justify-start gap-x-1">
+					<img src="/icons/Award.svg" alt="Award icon" />
+					<span class="text-xs text-yellow-300/60">{award}</span>
+				</div>
+			)
+		}
 	</div>
 </li>
