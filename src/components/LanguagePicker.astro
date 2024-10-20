@@ -23,7 +23,7 @@ const translatePath = useTranslatedPath(lang)
 						<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" />
 					) : (
 						<img src="/icons/english.svg" alt="English icon" class="size-8" />
-					)}{" "}
+					)}
 					{langPrefix}
 				</a>
 			))
@@ -36,15 +36,15 @@ const translatePath = useTranslatedPath(lang)
 		}
 
 		.dropdown {
-			@apply relative inline-block;
+			@apply relative flex items-center justify-center;
 		}
 
 		.dropdown-content {
-			@apply absolute z-[1] hidden rounded-md border border-white/10 bg-white/5;
+			@apply absolute left-0 top-10 z-[1] hidden rounded-md border border-white/10 bg-white/5;
 		}
 
 		.dropdown-content a {
-			@apply flex items-center justify-start gap-2 rounded-md px-5 py-1 text-white;
+			@apply flex items-center justify-center gap-2 rounded-md px-5 py-1 text-white;
 		}
 
 		.dropdown-content a:hover {
