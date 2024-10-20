@@ -29,10 +29,10 @@ export const ui = {
 		"exp1.title": "Desarrollador Fullstack Junior",
 		"exp1.desc":
 			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Creación y despliegue de aplicaciones basadas en AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "Febrero 2024 - julio 2023",
-		"exp2.title": "Auxiliatura en programación web",
+		"exp2.date": "Enero 2024 - actualidad",
+		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Auxiliaturas en el curso de programación web 1 en la Universidad del Valle de Guatemala, campus Altiplano. Clases sobre HTML, CSS y JavaScript. Maquetación y creación de páginas web responsivas y modernas usando Reactjs y Tailwindcss.",
+			"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo formulario personalizado para incripciones a eventos. Dashboard de datos en tiempo real para la heladería Dolce y creación de escuela virtual para DUAGT.",
 		"proj.title": "Proyectos",
 		"proj.tabWo": "Trabajos",
 		"proj.tabPr": "Proyectos",
@@ -94,10 +94,10 @@ export const ui = {
 		"exp1.title": "Junior Web Developer",
 		"exp1.desc":
 			"Responsible for creating an image generator based on Midjourney and creating a custom chatbot using OpenAI. Database maintenance. Creation and deployment of applications based on AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "February 2024 - July 2023",
-		"exp2.title": "Assistance in web programming",
+		"exp2.date": "January 2024 - today",
+		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Assistants in the web programming course 1 at the Universidad del Valle de Guatemala, Altiplano campus. Classes on HTML, CSS and JavaScript. Layout and creation of responsive and modern web pages using Reactjs and Tailwindcss.",
+			"Freelance web applitations development. Creation of a custom form-based applications for event registrations. Real-time data dashboard for the Dolce ice-cream shop and development of a virtual school for DUAGT.",
 		"proj.title": "Projects",
 		"proj.tabWo": "Works",
 		"proj.tabPr": "Projects",
