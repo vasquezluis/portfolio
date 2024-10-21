@@ -1,99 +1,83 @@
 ---
 import Container from "@/components/Container.astro"
-import Settings from "@/components/icons/Settings.astro"
-import NextjsIcon from "@/components/icons/Nextjs.astro"
-import FirebaseIcon from "@/components/icons/Firebase.astro"
-import TypescriptIcon from "@/components/icons/Typescript.astro"
-import ReactIcon from "@/components/icons/React.astro"
-import MySQLIcon from "@/components/icons/MySQL.astro"
 import Technology from "@/components/Technology.astro"
-import JavascriptIcon from "@/components/icons/Javascript.astro"
-import NodejsIcon from "@/components/icons/Nodejs.astro"
-import PythonIcon from "@/components/icons/Python.astro"
-import LinuxIcon from "@/components/icons/Linux.astro"
-import DockerIcon from "@/components/icons/Docker.astro"
-import HtmlIcon from "@/components/icons/Html.astro"
-import CssIcon from "@/components/icons/Css.astro"
-import AwsIcon from "@/components/icons/Aws.astro"
-import WordpressIcon from "@/components/icons/Wordpress.astro"
-import GitIcon from "./icons/Git.astro"
 
 const { t } = Astro.props
 
 const TECHS = [
 	{
 		title: "HTML",
-		Icon: HtmlIcon,
+		icon: "/icons/techs/Html.svg",
 		styles: "border border-orange-500 bg-orange-500/40 text-neutral-200",
 	},
 	{
 		title: "CSS",
-		Icon: CssIcon,
+		icon: "/icons/techs/Css.svg",
 		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
 	},
 	{
 		title: "JavaScript",
-		Icon: JavascriptIcon,
+		icon: "/icons/techs/Javascript.svg",
 		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
 	},
 	{
 		title: "TypeScript",
-		Icon: TypescriptIcon,
+		icon: "/icons/techs/Typescript.svg",
 		styles: "border border-blue-800 bg-blue-800/40 text-neutral-200",
 	},
 	{
 		title: "Node.js",
-		Icon: NodejsIcon,
+		icon: "/icons/techs/Nodejs.svg",
 		styles: "border border-emerald-500 bg-emerald-500/40 text-neutral-200",
 	},
 	{
 		title: "ReactJS",
-		Icon: ReactIcon,
+		icon: "/icons/techs/React.svg",
 		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
 	},
 	{
 		title: "Nextjs",
-		Icon: NextjsIcon,
+		icon: "/icons/techs/Nextjs.svg",
 		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
 	},
 	{
 		title: "MySQL",
-		Icon: MySQLIcon,
+		icon: "/icons/techs/MySQL.svg",
 		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
 	},
 	{
 		title: "Firebase",
-		Icon: FirebaseIcon,
+		icon: "/icons/techs/Firebase.svg",
 		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
 	},
 	{
 		title: "Git",
-		Icon: GitIcon,
+		icon: "/icons/techs/Git.svg",
 		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
 	},
 	{
 		title: "Linux",
-		Icon: LinuxIcon,
+		icon: "/icons/techs/Linux.svg",
 		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
 	},
 	{
 		title: "Docker",
-		Icon: DockerIcon,
+		icon: "/icons/techs/Docker.svg",
 		styles: "border border-blue-500 bg-blue-900/40 text-neutral-200",
 	},
 	{
 		title: "AWS",
-		Icon: AwsIcon,
+		icon: "/icons/techs/Aws.svg",
 		styles: "border border-orange-500 bg-yellow-900 text-neutral-200",
 	},
 	{
 		title: "Python",
-		Icon: PythonIcon,
+		icon: "/icons/techs/Python.svg",
 		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
 	},
 	{
 		title: "WordPress",
-		Icon: WordpressIcon,
+		icon: "/icons/techs/Wordpress.svg",
 		styles: "border border-blue-500 bg-blue-900/40 text-neutral-200",
 	},
 ]
@@ -101,14 +85,14 @@ const TECHS = [
 
 <Container id="technologies">
 	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
-		<Settings class="size-6" />
+		<img src="/icons/Settings.svg" alt="Settings icon" class="size-6" />
 		{t("techs.title")}
 	</h2>
 
 	<div class="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-6">
 		{
-			TECHS.map(({ title, Icon, styles }) => (
-				<Technology title={title} Icon={Icon} styles={styles} />
+			TECHS.map(({ title, icon, styles }) => (
+				<Technology title={title} icon={icon} styles={styles} />
 			))
 		}
 	</div>

@@ -1,13 +1,12 @@
 ---
-import School from "@/components/icons/School.astro"
-
 interface Props {
 	school: string
 	date: string
 	description: string
+	award: string | undefined
 }
 
-const { school, date, description } = Astro.props
+const { school, date, description, award } = Astro.props
 ---
 
 <li class="relative mb-6 sm:mb-0">
@@ -15,7 +14,7 @@ const { school, date, description } = Astro.props
 		<div
 			class="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ring-0 ring-neutral-800 sm:ring-8"
 		>
-			<School class="size-6" />
+			<img src="/icons/School.svg" alt="School icon" class="size-6" />
 		</div>
 		<div class="h-0.5 w-full bg-gray-500 sm:flex"></div>
 	</div>
@@ -26,5 +25,13 @@ const { school, date, description } = Astro.props
 		<p class="text-sm font-normal text-neutral-300">
 			{school}
 		</p>
+		{
+			award && (
+				<div class="mt-1 flex items-center justify-start gap-x-1">
+					<img src="/icons/Award.svg" alt="Award icon" />
+					<span class="text-xs text-yellow-300/60">{award}</span>
+				</div>
+			)
+		}
 	</div>
 </li>

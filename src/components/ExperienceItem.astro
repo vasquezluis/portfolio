@@ -2,7 +2,7 @@
 interface Props {
 	date: string
 	title: string
-	company: {
+	company?: {
 		name: string
 		link: string
 	}
@@ -28,14 +28,14 @@ const { date, title, company, description, link } = Astro.props
 	<h3 class="mt-2 text-lg font-bold text-[#19b4b9]">
 		{title}
 	</h3>
-	<a href={company.link} target="_blank" rel="noopener noreferrer">
-		<span class="text-xs text-[#19b4b9]/90">{company.name}</span>
+	<a href={company && company.link} target="_blank" rel="noopener noreferrer">
+		<span class="text-xs text-[#19b4b9]/90">{company && company.name}</span>
 	</a>
 	<p class="mb-4 text-pretty text-base font-normal text-gray-200">
 		{description}
 	</p>
 	{
-		link && (
+		link && company && (
 			<SocialPill link={link}>
 				{t("exp.more")} {company.name}
 				<svg

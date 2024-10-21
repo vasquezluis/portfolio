@@ -29,10 +29,10 @@ export const ui = {
 		"exp1.title": "Desarrollador Fullstack Junior",
 		"exp1.desc":
 			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Creación y despliegue de aplicaciones basadas en AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "Febrero 2024 - julio 2023",
-		"exp2.title": "Auxiliatura en programación web",
+		"exp2.date": "Enero 2024 - actualidad",
+		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Auxiliaturas en el curso de programación web 1 en la Universidad del Valle de Guatemala, campus Altiplano. Clases sobre HTML, CSS y JavaScript. Maquetación y creación de páginas web responsivas y modernas usando Reactjs y Tailwindcss.",
+			"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo formulario personalizado para incripciones a eventos. Dashboard de datos en tiempo real para la heladería Dolce y creación de escuela virtual para DUAGT.",
 		"proj.title": "Proyectos",
 		"proj.tabWo": "Trabajos",
 		"proj.tabPr": "Proyectos",
@@ -61,7 +61,9 @@ export const ui = {
 		"work4.desc":
 			"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
 		"proj1.desc":
-			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Structura es capaz de generar contenido estructurado orientado a base de datos tipo SQL usando lenguaje natural.",
+			"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Capaz de generar contenido estructurado orientado a base de datos tipo SQL usando lenguaje natural.",
+		"proj2.desc":
+			"Proyecto basado en el juego tic-tac-toe, multijugador, en tiempo real, capaz de manejar varias salas de dos jugadores cada una. Creado con Reactjs, Nodejs, Web Sockets, Tailwindcss y Zustand.",
 		"techs.title": "Tecnologías",
 		"stud.title": "Estudios",
 		"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
@@ -92,10 +94,10 @@ export const ui = {
 		"exp1.title": "Junior Web Developer",
 		"exp1.desc":
 			"Responsible for creating an image generator based on Midjourney and creating a custom chatbot using OpenAI. Database maintenance. Creation and deployment of applications based on AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "February 2024 - July 2023",
-		"exp2.title": "Assistance in web programming",
+		"exp2.date": "January 2024 - today",
+		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Assistants in the web programming course 1 at the Universidad del Valle de Guatemala, Altiplano campus. Classes on HTML, CSS and JavaScript. Layout and creation of responsive and modern web pages using Reactjs and Tailwindcss.",
+			"Freelance web applitations development. Creation of a custom form-based applications for event registrations. Real-time data dashboard for the Dolce ice-cream shop and development of a virtual school for DUAGT.",
 		"proj.title": "Projects",
 		"proj.tabWo": "Works",
 		"proj.tabPr": "Projects",
@@ -124,7 +126,9 @@ export const ui = {
 		"work4.desc":
 			"Project built with Moodle to manage three schools. The platform is designed to handle various roles, including administrators, principals, teachers, and students, while enhancing the overall experience.",
 		"proj1.desc":
-			"Project based on content generation with Artificial Intelligence using Vercel AI SDK and OpenAI's GPT-3. The structure is capable of generating structured content oriented towards SQL-type databases using natural language.",
+			"Project based on content generation with Artificial Intelligence using Vercel AI SDK and OpenAI's GPT-3. Capable of generating structured content oriented towards SQL-type databases using natural language.",
+		"proj2.desc":
+			"Tic-tac-toe-based multiplayer game in real-time, capable of efficiently handling multiple rooms with two players each. Built with React.js, Node.js, WebSockets, Tailwind CSS, and Zustand.",
 		"techs.title": "Technologies",
 		"stud.title": "Studies",
 		"stud1.desc": "Bachelor's Degree in Information Systems Technology",

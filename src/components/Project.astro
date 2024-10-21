@@ -43,7 +43,7 @@ const { imageUrl, url, title, tags, description } = Astro.props
 					<span
 						class:list={`flex gap-x-2 rounded-full text-xs ${tag.class} items-center justify-center px-2 py-1`}
 					>
-						<tag.icon class="size-6" />
+						<img src={tag.icon} alt={`${tag.label}-icon`} class="size-6" />
 						{tag.label}
 					</span>
 				</li>
