@@ -6,48 +6,46 @@ import Container from "@/components/Container.astro"
 const { t } = Astro.props
 ---
 
-<main class="px-2">
-	<Container className="pb-28 pt-20 md:pb-32 md:pt-44">
-		<section class="mb-3 flex items-center gap-x-2">
-			<img src="/icons/Logo.svg" alt="Github icon" class="size-8" />
-			<a
-				href="https://www.linkedin.com/in/lantvas"
-				target="_blank"
-				rel="noopener"
-				class="flex items-center"
-			>
-				<Badge>{t("hero.badge")}</Badge>
-			</a>
-		</section>
-
-		<h1
-			class="flex flex-col gap-x-4 pb-6 text-2xl font-bold text-white md:flex-row md:text-3xl lg:pb-10 lg:text-4xl"
+<Container className="pb-28 pt-20 md:pb-32 md:pt-44" id="info">
+	<section class="mb-3 flex items-center gap-x-2">
+		<img src="/icons/Logo.svg" alt="Github icon" class="size-8" />
+		<a
+			href="https://www.linkedin.com/in/lantvas"
+			target="_blank"
+			rel="noopener"
+			class="flex items-center"
 		>
-			{t("hero.title")}
-		</h1>
-		<h2 class="max-w-[700px] text-wrap text-lg lg:text-2xl">
-			<span class="text-[#19b4b9]">{t("hero.desc1")}</span>
-			<span>{t("hero.desc2")}</span>
-			<span class="opacity-85">{t("hero.desc3")}</span>
-		</h2>
+			<Badge>{t("hero.badge")}</Badge>
+		</a>
+	</section>
 
-		<nav class="mt-8 flex flex-wrap gap-4">
-			<SocialPill link="https://www.linkedin.com/in/lantvas">
-				<img src="/icons/Linkedin.svg" alt="Github icon" class="size-4 md:size-6" />
-				LinkedIn
-			</SocialPill>
-			<SocialPill link="https://github.com/vasquezluis">
-				<img src="/icons/techs/Github.svg" alt="Github icon" class="size-4 md:size-6" />
-				GitHub
-			</SocialPill>
-			<SocialPill link="/cv-luisvasquez.pdf">
-				<img src="/icons/File.svg" alt="Github icon" class="size-4 md:size-6" />
-				{t("hero.resume")}
-			</SocialPill>
-			<SocialPill link="mailto:lvasquez0127@gmail.com">
-				<img src="/icons/Mail.svg" alt="Github icon" class="size-4 md:size-6" />
-				{t("hero.email")}
-			</SocialPill>
-		</nav>
-	</Container>
-</main>
+	<h1
+		class="flex flex-col gap-x-4 pb-6 text-2xl font-bold text-white md:flex-row md:text-3xl lg:pb-10 lg:text-4xl"
+	>
+		{t("hero.title")}
+	</h1>
+	<h2 class="max-w-[700px] text-wrap text-lg lg:text-2xl">
+		<span class="text-[#19b4b9]">{t("hero.desc1")}</span>
+		<span>{t("hero.desc2")}</span>
+		<span class="opacity-85">{t("hero.desc3")}</span>
+	</h2>
+
+	<nav class="mt-8 flex flex-wrap gap-4">
+		<SocialPill link="https://www.linkedin.com/in/lantvas">
+			<img src="/icons/Linkedin.svg" alt="Github icon" class="size-4 md:size-6" />
+			LinkedIn
+		</SocialPill>
+		<SocialPill link="https://github.com/vasquezluis">
+			<img src="/icons/techs/Github.svg" alt="Github icon" class="size-4 md:size-6" />
+			GitHub
+		</SocialPill>
+		<SocialPill link="/cv-luisvasquez.pdf">
+			<img src="/icons/File.svg" alt="Github icon" class="size-4 md:size-6" />
+			{t("hero.resume")}
+		</SocialPill>
+		<SocialPill link="mailto:lvasquez0127@gmail.com">
+			<img src="/icons/Mail.svg" alt="Github icon" class="size-4 md:size-6" />
+			{t("hero.email")}
+		</SocialPill>
+	</nav>
+</Container>
