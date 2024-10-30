@@ -24,7 +24,7 @@ const { t } = Astro.props
 	>
 		{t("hero.title")}
 	</h1>
-	<h2 class="max-w-[700px] text-wrap text-lg lg:text-2xl">
+	<h2 class="max-w-[700px] text-wrap text-lg">
 		<span class="text-[#19b4b9]">{t("hero.desc1")}</span>
 		<span>{t("hero.desc2")}</span>
 		<span class="opacity-85">{t("hero.desc3")}</span>
@@ -39,7 +39,7 @@ const { t } = Astro.props
 			<img src="/icons/techs/Github.svg" alt="Github icon" class="size-4 md:size-6" />
 			GitHub
 		</SocialPill>
-		<SocialPill link="/cv-luisvasquez.pdf">
+		<SocialPill link={t("hero.cv")}>
 			<img src="/icons/File.svg" alt="Github icon" class="size-4 md:size-6" />
 			{t("hero.resume")}
 		</SocialPill>
