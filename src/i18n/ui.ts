@@ -71,6 +71,12 @@ export const ui = {
 		"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
 		"stud2.desc": "Técnico universitario en sistemas e informática",
 		"stud3.desc": "Bachillerato en computación",
+		"about.title": "Hola, soy Luis Vásquez",
+		"about.span1":
+			"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y Project Zomboid 💀, los cuales me inspiran mucho.",
+		"about.span2": "También soy fan de Stephen King 📚 y Linkin Park 🎶.",
+		"about.span3":
+			"Me apasiona aprender constantemente y mantenerme actualizado con nuevas tecnologías 👀.",
 		"foot.right": "2024",
 		"404.text": "404 página no encontrada",
 	},
@@ -138,6 +144,12 @@ export const ui = {
 		"stud1.desc": "Bachelor's Degree in Information Systems Technology",
 		"stud2.desc": "Associate Degree in Systems and IT",
 		"stud3.desc": "Bachelor of Computer Science",
+		"about.title": "Hi, I'm Luis Vásquez",
+		"about.span1":
+			"When I'm not writtng code, I enjoy playing video games like Elden Ring 👹, Stardew Valley 🦆 and Project Zomboid 🧞‍♂️, which inspire me a lot.",
+		"about.span2": "Also, I'm fan of Stephen King 📚 and Linkin Park 🎶.",
+		"about.span3":
+			"I'm passionate about continuous learning and staying up-to-date with new technologies 👀.",
 		"foot.right": "2024",
 		"404.text": "404 page not found",
 	},
