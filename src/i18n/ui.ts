@@ -73,9 +73,8 @@ export const ui = {
 		"stud3.desc": "Bachillerato en computación",
 		"about.title": "Hola, soy Luis Vásquez",
 		"about.span1":
-			"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y Project Zomboid 💀, los cuales me inspiran en el diseño de experiencias interactivas.",
-		"about.span2":
-			"También soy fan de Stephen King 📚 y Linkin Park 🎶, lo que alimenta mi creatividad y perspectiva fresca.",
+			"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y Project Zomboid 💀, los cuales me inspiran mucho.",
+		"about.span2": "También soy fan de Stephen King 📚 y Linkin Park 🎶.",
 		"about.span3":
 			"Me apasiona aprender constantemente y mantenerme actualizado con nuevas tecnologías 👀.",
 		"foot.right": "2024",
@@ -147,9 +146,8 @@ export const ui = {
 		"stud3.desc": "Bachelor of Computer Science",
 		"about.title": "Hi, I'm Luis Vásquez",
 		"about.span1":
-			"When I'm not writtng code, I enjoy playing video games like Elden Ring 👹, Stardew Valley 🦆 and Project Zomboid 🧞‍♂️, which inspire me in designing interactive experiences.",
-		"about.span2":
-			"Also, I'm fan of Stephen King 📚 and Linkin Park 🎶, which fuel my creativity and keep my perspective fresh.",
+			"When I'm not writtng code, I enjoy playing video games like Elden Ring 👹, Stardew Valley 🦆 and Project Zomboid 🧞‍♂️, which inspire me a lot.",
+		"about.span2": "Also, I'm fan of Stephen King 📚 and Linkin Park 🎶.",
 		"about.span3":
 			"I'm passionate about continuous learning and staying up-to-date with new technologies 👀.",
 		"foot.right": "2024",
