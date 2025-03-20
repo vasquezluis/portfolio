@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Container from "@/components/Container.astro"
-import { myFade } from "@/constants"
 import type { Props } from "astro/components/ViewTransitions.astro"
 import { type Project } from "@/types"
 import { getWorks, getProjects } from "@/utils/data"
@@ -34,7 +33,6 @@ if (!info) {
 			<picture class="flex w-full items-center justify-center">
 				<img
 					transition:name={info.title.slug}
-					transition:animate={myFade}
 					class="aspect-auto h-full w-full max-w-full rounded-lg object-cover"
 					src={info.imageUrl}
 					alt={`Portada de ${info.title.text}`}
