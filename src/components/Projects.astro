@@ -16,12 +16,7 @@ const { t } = Astro.props
 	</h2>
 
 	<div class="flex flex-col items-center justify-center gap-y-3">
-		<div class="w-full">
-			<button id="buttonWorks" class="selected">{t("proj.tabWo")}</button>
-			<button id="buttonProjects">{t("proj.tabPr")}</button>
-		</div>
-
-		<section id="worksSection" class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
+		<section class="projectsShow grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				works.map((item) => (
 					<Project
@@ -34,9 +29,6 @@ const { t } = Astro.props
 					/>
 				))
 			}
-		</section>
-
-		<section id="projectsSection" class="projectsHide grid-cols-1 gap-3 md:grid-cols-2">
 			{
 				projects.map((item) => (
 					<Project
@@ -52,57 +44,6 @@ const { t } = Astro.props
 		</section>
 	</div>
 </Container>
-
-<script>
-	document.addEventListener("astro:page-load", () => {
-		const buttonWorks = document.getElementById("buttonWorks")
-		const buttonProjects = document.getElementById("buttonProjects")
-		const worksContainer = document.getElementById("worksSection")
-		const projectsContainer = document.getElementById("projectsSection")
-
-		const updateLS = (value: string) => {
-			window.localStorage.setItem("tab", value)
-		}
-
-		const showWorks = () => {
-			projectsContainer?.classList.remove("projectsShow")
-			projectsContainer?.classList.add("projectsHide")
-
-			worksContainer?.classList.remove("projectsHide")
-			worksContainer?.classList.add("projectsShow")
-
-			buttonWorks?.classList.add("selected")
-			buttonProjects?.classList.remove("selected")
-
-			updateLS("works")
-		}
-
-		const showProjects = () => {
-			worksContainer?.classList.remove("projectsShow")
-			worksContainer?.classList.add("projectsHide")
-
-			projectsContainer?.classList.remove("projectsHide")
-			projectsContainer?.classList.add("projectsShow")
-
-			buttonProjects?.classList.add("selected")
-			buttonWorks?.classList.remove("selected")
-
-			updateLS("projects")
-		}
-
-		const valueFromLS = window.localStorage.getItem("tab")
-		if (valueFromLS !== null) {
-			if (valueFromLS === "works") {
-				showWorks()
-			} else if (valueFromLS === "projects") {
-				showProjects()
-			}
-		}
-
-		buttonWorks?.addEventListener("click", showWorks)
-		buttonProjects?.addEventListener("click", showProjects)
-	})
-</script>
 
 <style>
 	button {

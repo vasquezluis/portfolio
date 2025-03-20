@@ -19,7 +19,7 @@ module.exports = {
 		"quotes": ["warn", "double"],
 		"semi": ["warn", "never"],
 	},
-	ignorePatterns: [".eslintrc.cjs"],
+	ignorePatterns: [".eslintrc.cjs", ".astro", ".netlify", "dist", "node_modules"],
 	overrides: [
 		{
 			files: ["*.astro"],
