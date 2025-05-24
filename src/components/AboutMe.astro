@@ -8,7 +8,7 @@ const { t } = Astro.props
 	<section
 		class="mb-3 flex flex-col items-center justify-evenly gap-2 rounded-md border border-white/10 bg-white/5 p-2 md:flex-row"
 	>
-		<div class="flex flex-col gap-y-1">
+		<div class="flex flex-col gap-y-3">
 			<h3 class="text-2xl font-bold text-white">
 				{t("about.title")}
 			</h3>
@@ -25,4 +25,26 @@ const { t } = Astro.props
 
 		<img src="/images/me.webp" alt="me" class="size-60 rounded-md" />
 	</section>
+
+	<div class="mt-2">
+		<h4 class="text-sm font-semibold uppercase text-neutral-400">{t("about.learning")}</h4>
+		<div class="mt-2 flex flex-wrap gap-2">
+			<span
+				class="rounded-full border border-blue-600 bg-blue-800/30 px-3 py-1 text-sm text-blue-300"
+				>.NET</span
+			>
+			<span
+				class="rounded-full border border-orange-500 bg-orange-600/30 px-3 py-1 text-sm text-orange-200"
+				>Bash</span
+			>
+			<span
+				class="rounded-full border border-emerald-600 bg-emerald-800/30 px-3 py-1 text-sm text-emerald-300"
+				>Nginx</span
+			>
+			<span
+				class="rounded-full border border-neutral-600 bg-neutral-400/30 px-3 py-1 text-sm text-neutral-300"
+				>Github Actions</span
+			>
+		</div>
+	</div>
 </Container>
