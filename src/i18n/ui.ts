@@ -20,7 +20,7 @@ export const ui = {
 		"hero.title": "Hola, Soy Luis Vásquez",
 		"hero.desc1": "Desarrollador Web Fullstack",
 		"hero.desc2":
-			" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y MySQL. Experiencia en herramientas cloud como AWS y Firebase. Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
+			" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y PostgreSQL. Experiencia en herramientas cloud como AWS y Firebase. Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
 		"hero.desc3": "proyectos innovadores y desafiantes.",
 		"hero.cv": "/cv-luisvasquez-es.pdf",
 		"hero.resume": "Curriculum",
@@ -77,6 +77,7 @@ export const ui = {
 		"about.span2": "También soy fan de Stephen King 📚 y Linkin Park 🎶.",
 		"about.span3":
 			"Me apasiona aprender constantemente y mantenerme actualizado con nuevas tecnologías 👀.",
+		"about.learning": "Estoy Aprendiendo",
 		"foot.right": "2024",
 		"404.text": "404 página no encontrada",
 	},
@@ -93,7 +94,7 @@ export const ui = {
 		"hero.title": "Hi, I'm Luis Vásquez",
 		"hero.desc1": "FullStack Web Developer ",
 		"hero.desc2":
-			"with experience in building scalable applications using ReactJS, Node.js, Python and MySQL. Skilled in cloud tools like AWS and Firebase. Focused on delivering efficient solutions and committed to continuous learning to contribute to ",
+			"with experience in building scalable applications using ReactJS, Node.js, Python and PostgreSQL. Skilled in cloud tools like AWS and Firebase. Focused on delivering efficient solutions and committed to continuous learning to contribute to ",
 		"hero.desc3": "innovative and challenging projects.",
 		"hero.cv": "/cv-luisvasquez-en.pdf",
 		"hero.resume": "Resume",
@@ -150,6 +151,7 @@ export const ui = {
 		"about.span2": "Also, I'm fan of Stephen King 📚 and Linkin Park 🎶.",
 		"about.span3":
 			"I'm passionate about continuous learning and staying up-to-date with new technologies 👀.",
+		"about.learning": "Currently Learning",
 		"foot.right": "2024",
 		"404.text": "404 page not found",
 	},
