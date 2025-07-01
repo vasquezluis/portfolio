@@ -1,6 +1,14 @@
 import { getLangFromUrl, useTranslations } from "@/i18n/utils"
 import { TAGS } from "@/utils/tags"
 
+// images
+import dolceComprasImg from "../../public/images/dolce-compras.webp"
+import ignitionImg from "../../public/images/ignition.webp"
+import flamerlyImg from "../../public/images/flamerly.webp"
+import duagtImg from "../../public/images/duagt.webp"
+import structuraImg from "../../public/images/structura.webp"
+import tictactoeImg from "../../public/images/tic-tac-toe.webp"
+
 export async function getWorks(url: URL) {
 	const lang = getLangFromUrl(url)
 	const t = useTranslations(lang)
@@ -8,7 +16,7 @@ export async function getWorks(url: URL) {
 	return [
 		{
 			id: 1,
-			imageUrl: "/images/dolce-compras.webp",
+			imageUrl: dolceComprasImg,
 			url: "dolcecompras",
 			title: {
 				text: "DolceCompras",
@@ -51,7 +59,7 @@ export async function getWorks(url: URL) {
 		},
 		{
 			id: 2,
-			imageUrl: "/images/ignition.webp",
+			imageUrl: ignitionImg,
 			url: "ignition",
 			title: {
 				text: "Ignition",
@@ -107,7 +115,7 @@ export async function getWorks(url: URL) {
 		},
 		{
 			id: 3,
-			imageUrl: "/images/flamerly.webp",
+			imageUrl: flamerlyImg,
 			url: "flamerly",
 			title: {
 				text: "Flamerly",
@@ -169,7 +177,7 @@ export async function getWorks(url: URL) {
 		},
 		{
 			id: 4,
-			imageUrl: "/images/duagt.webp",
+			imageUrl: duagtImg,
 			url: "escuela-duagt",
 			title: {
 				text: "Escuela virtual DUAGT",
@@ -214,7 +222,7 @@ export async function getProjects(url: URL) {
 	return [
 		{
 			id: 1,
-			imageUrl: "/images/structura.webp",
+			imageUrl: structuraImg,
 			url: "structura",
 			title: {
 				text: "Structura",
@@ -265,7 +273,7 @@ export async function getProjects(url: URL) {
 		},
 		{
 			id: 2,
-			imageUrl: "/images/tic-tac-toe.webp",
+			imageUrl: tictactoeImg,
 			url: "tic-tac-toe",
 			title: {
 				text: "Tic-Tac-Toe",

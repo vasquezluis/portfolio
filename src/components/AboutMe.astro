@@ -1,5 +1,7 @@
 ---
 import Container from "@/components/Container.astro"
+import { Image } from "astro:assets"
+import meImg from "../../public/images/me.webp"
 
 const technologies = [
 	{
@@ -19,11 +21,11 @@ const technologies = [
 	},
 ]
 
-const githubActions = 	{
-		title: "Github Actions",
-		icon: "/icons/techs/Github.svg",
-		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
-	}
+const githubActions = {
+	title: "Github Actions",
+	icon: "/icons/techs/Github.svg",
+	styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
+}
 
 const { t } = Astro.props
 ---
@@ -46,8 +48,7 @@ const { t } = Astro.props
 				{t("about.span3")}
 			</span>
 		</div>
-
-		<img src="/images/me.webp" alt="me" class="size-60 rounded-md" />
+		<Image src={meImg} alt="me" class="size-60 rounded-md" />
 	</section>
 
 	<div class="mt-2 flex w-full flex-col gap-y-3">
@@ -58,7 +59,7 @@ const { t } = Astro.props
 					<div
 						class:list={`${styles} glass-hover flex h-28 transform flex-col items-center justify-center rounded-lg border border-blue-800 bg-blue-800/40 text-neutral-200 shadow-md shadow-neutral-900`}
 					>
-						<img class="mb-2 size-12" alt={`${title}-img`} src={icon} />
+						<img class="mb-2 size-12" alt={`${title}-img`} src={icon} loading="lazy" />
 						<span class="font-medium">{title}</span>
 					</div>
 				))
@@ -67,8 +68,13 @@ const { t } = Astro.props
 			<div
 				class:list={`${githubActions.styles} glass-hover flex h-28 transform flex-col items-center justify-center rounded-lg border border-blue-800 bg-blue-800/40 text-neutral-200 shadow-md shadow-neutral-900`}
 			>
-				<img class="mb-2 size-12" alt={`${githubActions.title}-img`} src={githubActions.icon} />
-				<span class="font-medium text-sm">{githubActions.title}</span>
+				<img
+					class="mb-2 size-12"
+					alt={`${githubActions.title}-img`}
+					src={githubActions.icon}
+					loading="lazy"
+				/>
+				<span class="text-sm font-medium">{githubActions.title}</span>
 			</div>
 		</div>
 	</div>
