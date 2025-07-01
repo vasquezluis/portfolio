@@ -6,6 +6,11 @@ const { t } = Astro.props
 
 const EXPERIENCE = [
 	{
+		date: `${t("exp2.date")}`,
+		title: `${t("exp2.title")}`,
+		description: `${t("exp2.desc")}`,
+	},
+	{
 		date: `${t("exp1.date")}`,
 		title: `${t("exp1.title")}`,
 		company: {
@@ -14,16 +19,6 @@ const EXPERIENCE = [
 		},
 		description: `${t("exp1.desc")}`,
 		link: "https://innovacion.ai",
-	},
-	{
-		date: `${t("exp2.date")}`,
-		title: `${t("exp2.title")}`,
-		// company: {
-		// 	name: "UVGA",
-		// 	link: "https://altiplano.uvg.edu.gt/",
-		// },
-		description: `${t("exp2.desc")}`,
-		// link: "https://altiplano.uvg.edu.gt/",
 	},
 ]
 ---

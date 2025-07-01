@@ -20,7 +20,7 @@ export const ui = {
 		"hero.title": "Hola, Soy Luis Vásquez",
 		"hero.desc1": "Desarrollador Web Fullstack",
 		"hero.desc2":
-			" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y PostgreSQL. Experiencia en herramientas cloud como AWS y Firebase. Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
+			" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y PostgreSQL. Experiencia en herramientas cloud como AWS, Firebase y VPS propio. Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
 		"hero.desc3": "proyectos innovadores y desafiantes.",
 		"hero.cv": "/cv-luisvasquez-es.pdf",
 		"hero.resume": "Curriculum",
@@ -30,11 +30,11 @@ export const ui = {
 		"exp1.date": "Mayo 2023 - mayo 2024",
 		"exp1.title": "Desarrollador Fullstack Junior",
 		"exp1.desc":
-			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Creación y despliegue de aplicaciones basadas en AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "Enero 2024 - actualidad",
+			"Responsable de la creación de un generador de imágenes basado en Midjourney y creación de un chatbot a medida usando OpenAI. Mantenimiento de bases de datos. Despliegue de aplicaciones en AWS (EC2, RDS, S3, Lambdas).",
+		"exp2.date": "Mayo 2024 - actualidad",
 		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo formulario personalizado para incripciones a eventos. Dashboard de datos en tiempo real para la heladería Dolce y creación de escuela virtual para DUAGT.",
+			"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo control de inventarios y ventas. Desarollo de formularios en tiempo real personalizados.",
 		"proj.title": "Proyectos",
 		"proj.tabWo": "Trabajos",
 		"proj.tabPr": "Proyectos",
@@ -104,11 +104,11 @@ export const ui = {
 		"exp1.date": "May 2023 - may 2024",
 		"exp1.title": "Junior Web Developer",
 		"exp1.desc":
-			"Responsible for creating an image generator based on Midjourney and creating a custom chatbot using OpenAI. Database maintenance. Creation and deployment of applications based on AWS (EC2, RDS, S3, Lambdas).",
-		"exp2.date": "January 2024 - today",
+			"Responsible for creating an image generator based on Midjourney and creating a custom chatbot using OpenAI. Database maintenance. Deployment of applications on AWS (EC2, RDS, S3, Lambdas).",
+		"exp2.date": "May 2024 - today",
 		"exp2.title": "Freelance",
 		"exp2.desc":
-			"Freelance web applitations development. Creation of a custom form-based applications for event registrations. Real-time data dashboard for the Dolce ice-cream shop and development of a virtual school for DUAGT.",
+			"Freelance web applitations development. Development of inventory and sales control appilcations. Development of custom real-time forms.",
 		"proj.title": "Projects",
 		"proj.tabWo": "Works",
 		"proj.tabPr": "Projects",
