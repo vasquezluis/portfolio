@@ -7,23 +7,142 @@ import { ViewTransitions } from "astro:transitions"
 interface Props {
 	title: string
 	description: string
+	image?: string
+	url?: string
+	type?: string
+	author?: string
+	keywords?: string
 }
 
-const { title, description } = Astro.props
+const {
+	title,
+	description,
+	image = "/images/og-default.png",
+	url = Astro.url.href,
+	type = "website",
+	author = "Luis Vásquez",
+	keywords = "desarrollador web, fullstack developer, reactjs, nodejs, typescript, aws, firebase",
+} = Astro.props
 
 const { currentLocale } = Astro
+
+// Canonical URL - handle case when Astro.site is not configured
+const canonicalURL = Astro.site
+	? new URL(Astro.url.pathname, Astro.site)
+	: new URL(Astro.url.pathname, `${Astro.url.protocol}//${Astro.url.host}`)
+
+// Structured Data for Google
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Luis Vásquez",
+	"jobTitle": "Fullstack Web Developer",
+	"url": Astro.site?.href,
+	"sameAs": ["https://www.linkedin.com/in/lantvas", "https://github.com/vasquezluis"],
+	"knowsAbout": [
+		"Web Development",
+		"React.js",
+		"Node.js",
+		"TypeScript",
+		"AWS",
+		"Firebase",
+		"Python",
+	],
+}
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Basic SEO -->
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content={author} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image:alt" content={`${title} - ${author}`} />
+		<meta property="og:site_name" content="vasquezluis Portfolio" />
+		<meta property="og:locale" content={currentLocale === "es" ? "es_ES" : "en_US"} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(image, Astro.url)} />
+		<meta name="twitter:image:alt" content={`${title} - ${author}`} />
+
+		<!-- LinkedIn specific -->
+		<meta property="article:author" content={author} />
+
+		<!-- Additional SEO Meta Tags -->
+		<meta
+			name="robots"
+			content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+		/>
+		<meta name="googlebot" content="index, follow" />
+		<meta name="bingbot" content="index, follow" />
+
+		<!-- Language alternatives -->
+		{
+			Astro.site ? (
+				<>
+					<link rel="alternate" hreflang="es" href={new URL("/", Astro.site)} />
+					<link rel="alternate" hreflang="en" href={new URL("/en/", Astro.site)} />
+					<link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site)} />
+				</>
+			) : (
+				<>
+					<link rel="alternate" hreflang="es" href={`${Astro.url.protocol}//${Astro.url.host}/`} />
+					<link
+						rel="alternate"
+						hreflang="en"
+						href={`${Astro.url.protocol}//${Astro.url.host}/en/`}
+					/>
+					<link
+						rel="alternate"
+						hreflang="x-default"
+						href={`${Astro.url.protocol}//${Astro.url.host}/`}
+					/>
+				</>
+			)
+		}
+
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#0891b2" />
+		<meta name="msapplication-TileColor" content="#0891b2" />
+
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+		<!-- View Transitions -->
 		<ViewTransitions />
+
+		<!-- Preload critical resources -->
+		<link rel="preload" href="/images/me.webp" as="image" type="image/webp" />
 	</head>
 	<body>
 		<Background />
