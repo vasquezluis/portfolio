@@ -10,7 +10,7 @@ export const ui = {
 	es: {
 		"layout.title": "vasquezluis portfolio - Desarrollador Web",
 		"layout.description":
-			"Contrata a vasquezluis para crear tu aplicación web hecha a medida. Desarrollador y Programador web.",
+			"Desarrollador Web Fullstack con experiencia en Reactjs, Node.js, Python y PostgreSQL.",
 		"nav.information": "Información",
 		"nav.experience": "Experiencia",
 		"nav.projects": "Proyectos",
@@ -84,7 +84,7 @@ export const ui = {
 	en: {
 		"layout.title": "vasquezluis portfolio - Web Developer",
 		"layout.description":
-			"Hire vasquezluis to create your custom web app. Web developer and programmer.",
+			"Fullstack web developer with experience in Reactjs, Node.js, Python and PostgreSQL",
 		"nav.information": "Information",
 		"nav.experience": "Experience",
 		"nav.projects": "Projects",
