@@ -11,7 +11,7 @@ const { title, icon, styles } = Astro.props
 <div
 	class:list={`${styles} glass-hover flex h-28 transform flex-col items-center justify-center rounded-lg shadow-md shadow-neutral-900`}
 >
-	<img class="mb-2 size-12" alt={`${title}-img`} src={icon} />
+	<img class="mb-2 size-12" alt={`${title}-img`} src={icon} loading="lazy" />
 	<span class="font-medium">{title}</span>
 </div>
 
