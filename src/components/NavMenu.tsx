@@ -31,7 +31,7 @@ const Header = ({ Links, lang, languages }: Props) => {
 				type="button"
 				onClick={() => setIsOpen(!isOpen)}
 			>
-				<img src="/icons/Hamburger.svg" allow="Hamburger icon" class="size-6" />
+				<img src="/icons/Hamburger.svg" class="size-6" />
 			</button>
 
 			<nav

@@ -18,6 +18,9 @@ export default {
 					"100%": { transform: "translate(100px, 100px) rotate(360deg)" },
 				},
 			},
+			colors: {
+				"custom-tail": "#19b4b9",
+			},
 		},
 	},
 	plugins: [],
