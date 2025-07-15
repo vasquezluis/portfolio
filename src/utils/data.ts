@@ -24,36 +24,32 @@ export async function getWorks(url: URL) {
 				color: "bg-gradient-to-r from-[#4fa2c8] via-[#9e93ab] to-[#d4816f] bg-clip-text",
 			},
 			tags: [TAGS.NEXTJS, TAGS.FIREBASE, TAGS.TYPESCRIPT],
-			description: t("work1.desc"),
+			description: t("dolce.desc"),
 			type: {
 				type: "private",
 				colorType: "bg-teal-600 text-white",
 			},
-			date: "Mayo 2024",
+			date: t("dolce.date"),
 			functionalities: [
 				{
 					id: 1,
-					title: "Base de datos en tiempo real",
-					description:
-						"La plataforma de DolceCompras ofrece visualizar datos en tiempo real utilizando Firebase.",
+					title: t("dolce.func.title1"),
+					description: t("dolce.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Timer general",
-					description:
-						"La plataforma cuenta con la funcionalidad de permitir únicamente un usuario a la vez, restringiendo el acceso con máximo de 15 minutos por sesión. Los demás usuarios pueden ver cuánto tiempo deben esperar para poder iniciar sesión.",
+					title: t("dolce.func.title2"),
+					description: t("dolce.func.desc2"),
 				},
 				{
 					id: 3,
-					title: "Email Trigger",
-					description:
-						"La plataforma genera y envía un email con una copia de los datos solicitados.",
+					title: t("dolce.func.title2"),
+					description: t("dolce.func.desc3"),
 				},
 				{
 					id: 4,
-					title: "Chequeo de sesiones",
-					description:
-						"La plataforma cuenta con un 'Firebase Function' el cual revisa constantemente la expiración de la sesión del usuario.",
+					title: t("dolce.func.title4"),
+					description: t("dolce.func.desc4"),
 				},
 			],
 		},
@@ -67,49 +63,44 @@ export async function getWorks(url: URL) {
 				color: "bg-gradient-to-r from-[#fe4d3c] to-[#d80d91] bg-clip-text",
 			},
 			tags: [TAGS.REACTJS, TAGS.REDUX, TAGS.TAILWIND],
-			description: t("work2.desc"),
+			description: t("ignition.desc"),
 			type: {
 				type: "private",
 				colorType: "bg-orange-600 text-white",
 			},
-			date: "Diciembre 2023",
+			date: t("ignition.date"),
 			responsabilities: [
 				{
-					title: "Creación de frontend con Reactjs",
-					description:
-						"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+					title: t("ignition.resp.title1"),
+					description: t("ignition.resp.desc1"),
 					type: "Frontend",
 				},
 				{
-					title: "Creación de lambdas de AWS",
-					description:
-						"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+					title: t("ignition.resp.title2"),
+					description: t("ignition.resp.desc2"),
 					type: "Cloud",
 				},
 				{
-					title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
-					description:
-						"Creación y mantenimiento de base de datos donde se guardan las imágenes generados por los usuarios.",
+					title: t("ignition.resp.title3"),
+					description: t("ignition.resp.desc3"),
 					type: "Database",
 				},
 			],
 			functionalities: [
 				{
 					id: 1,
-					title: "Generación de imágenes",
-					description: "Ignition genera imágenes utilizando Midjourney como base.",
+					title: t("ignition.func.title1"),
+					description: t("ignition.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Generación de imágenes tropicalizadas",
-					description:
-						"Utilizando parámetros visuales, Ignition genera imágenes basados en la localización del usuario, sin crear imágenes de stock.",
+					title: t("ignition.func.title2"),
+					description: t("ignition.func.desc2"),
 				},
 				{
 					id: 3,
-					title: "Generación de imágenes adaptadas",
-					description:
-						"Ignition genera imágenes adaptadas a marcas, por ejemplo generar cerveza de una marca en especifico.",
+					title: t("ignition.func.title3"),
+					description: t("ignition.func.desc3"),
 				},
 			],
 		},
@@ -123,55 +114,49 @@ export async function getWorks(url: URL) {
 				color: "bg-gradient-to-r from-[#5a769b] to-[#697385] bg-clip-text",
 			},
 			tags: [TAGS.REACTJS, TAGS.DJANGO, TAGS.TAILWIND],
-			description: t("work3.desc"),
+			description: t("flamerly.desc"),
 			type: {
 				type: "private",
 				colorType: "bg-orange-600 text-white",
 			},
-			date: "Mayo 2023",
+			date: t("flamerly.date"),
 			responsabilities: [
 				{
-					title: "Creación de APIs con DJango",
-					description:
-						"Creación de endpoints para la generación de respuestas de los modelos de OpenAI al estilo de ChatGPT.",
+					title: t("flamerly.resp.title1"),
+					description: t("flamerly.resp.desc1"),
 					type: "Backend",
 				},
 				{
-					title: "Creación de frontend con Reactjs",
-					description:
-						"Creación de la parte gráfica de la aplicación utilizando Reactjs, manejo de estados utilizando Redux y RTQ. Los estilos de la aplicación se crearon utilizando Tailwincss",
+					title: t("flamerly.resp.title2"),
+					description: t("flamerly.resp.desc2"),
 					type: "Frontend",
 				},
 				{
-					title: "Creación de chatbot utilizando OpenAI",
-					description:
-						"Creación de un chatbot utilizando los modelos de OpenAI (chat completions) y crear respuestas basadas en archivos privados de la empresa.",
+					title: t("flamerly.resp.title3"),
+					description: t("flamerly.resp.desc3"),
 					type: "IA",
 				},
 				{
-					title: "Creación de lambdas de AWS",
-					description:
-						"Creación de lambdas en AWS para el manejo de las operaciones en base de datos y control de usuarios con AWS Cognito.",
+					title: t("flamerly.resp.title4"),
+					description: t("flamerly.resp.desc4"),
 					type: "Cloud",
 				},
 				{
-					title: "Creación y mantenimiento de base de datos para mensajes y usuarios",
-					description:
-						"Creación y mantenimiento de base de datos donde se guardan los mensajes generados por los usuarios.",
+					title: t("flamerly.resp.title5"),
+					description: t("flamerly.resp.desc5"),
 					type: "Database",
 				},
 			],
 			functionalities: [
 				{
 					id: 1,
-					title: "Chatbot",
-					description: "Flamerly puede responder preguntas generales.",
+					title: t("flamerly.func.title1"),
+					description: t("flamerly.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Chatbot empresarial",
-					description:
-						"Flamerly está entrenado para responder preguntas específicas con información privada.",
+					title: t("flamerly.func.title2"),
+					description: t("flamerly.func.desc2"),
 				},
 			],
 		},
@@ -185,30 +170,27 @@ export async function getWorks(url: URL) {
 				color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
 			},
 			tags: [TAGS.MOODLE, TAGS.MYSQL],
-			description: t("work4.desc"),
+			description: t("duagt.desc"),
 			type: {
 				type: "private",
 				colorType: "bg-teal-600 white",
 			},
-			date: "Enero 2024",
+			date: t("duagt.date"),
 			functionalities: [
 				{
 					id: 1,
-					title: "Control de estudiantes",
-					description:
-						"El proyecto permite un control de estudiantes y inscripción a diferentes cursos.",
+					title: t("duagt.func.title1"),
+					description: t("duagt.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Control de maestros",
-					description:
-						"El proyecto permite el control de maestros y su generación de contenido para diferentes cursos.",
+					title: t("duagt.func.title2"),
+					description: t("duagt.func.desc2"),
 				},
 				{
 					id: 3,
-					title: "Generación de reportes",
-					description:
-						"El proyecto permite generar reportes de estudiantes, maestros, notas, rendimiento de estudiantes y rendimiento de la aplicación.",
+					title: t("duagt.func.title3"),
+					description: t("duagt.func.desc3"),
 				},
 			],
 		},
@@ -230,44 +212,39 @@ export async function getProjects(url: URL) {
 				color: "bg-gradient-to-r from-[#72746a] to-[#636363] bg-clip-text",
 			},
 			tags: [TAGS.NEXTJS, TAGS.AISDK, TAGS.TYPESCRIPT],
-			description: t("proj1.desc"),
+			description: t("structura.desc"),
 			type: {
 				type: "open",
 				repo: "https://github.com/vasquezluis/structura",
 				url: "https://structura-hackathon.vercel.app/",
 				colorType: "bg-orange-600 text-white",
 			},
-			date: "Julio 2024",
+			date: t("structura.date"),
 			functionalities: [
 				{
 					id: 1,
-					title: "Lenguaje natural",
-					description:
-						"Structura puede comprender el lenguaje natural para la generación de contenido utilizando el modelo gpt3.5 de OpenAI.",
+					title: t("structura.func.title1"),
+					description: t("structura.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Generación de estructuras SQL",
-					description:
-						"Structura genera contenido SQL basado en la descripción del proyecto del usuario. Structura solo necesita el contexto del proyecto para generar una estructura inicial.",
+					title: t("structura.func.title2"),
+					description: t("structura.func.desc2"),
 				},
 				{
 					id: 3,
-					title: "Generación código SQL",
-					description:
-						"Structura genera código SQL basado en la descripción del proyecto del usuario.",
+					title: t("structura.func.title3"),
+					description: t("structura.func.desc3"),
 				},
 				{
 					id: 4,
-					title: "Generación descripción",
-					description:
-						"Structura una descripción del código SQL generado, ayudando al usuario a entender el contenido.",
+					title: t("structura.func.title4"),
+					description: t("structura.func.desc4"),
 				},
 				{
 					id: 5,
-					title: "Generación mapa mental",
-					description:
-						"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
+					title: t("structura.func.title5"),
+					description: t("structura.func.desc5"),
 				},
 			],
 		},
@@ -281,32 +258,29 @@ export async function getProjects(url: URL) {
 				color: "bg-gradient-to-r from-[#257441] to-[#195d75] bg-clip-text",
 			},
 			tags: [TAGS.REACTJS, TAGS.SOCKETIO, TAGS.NODEJS],
-			description: t("proj2.desc"),
+			description: t("tictactoe.desc"),
 			type: {
 				type: "open",
 				repo: "https://github.com/vasquezluis/tic-tac-toe-client",
 				// url: "https://structura-hackathon.vercel.app/",
 				colorType: "bg-orange-600 text-white",
 			},
-			date: "Septiembre 2024",
+			date: t("tictactoe.date"),
 			functionalities: [
 				{
 					id: 1,
-					title: "Multijugador",
-					description:
-						"Este juego tiene la capacidad de manejar dos jugadores para jugar tic-tac-toe",
+					title: t("tictactoe.func.title1"),
+					description: t("tictactoe.func.desc1"),
 				},
 				{
 					id: 2,
-					title: "Tiempo real",
-					description:
-						"Este proyecto tiene la capacidad de manejar los datos en tiempo real de los jugadores en la partida. Sin tener que recargar la página para obtener cambios.",
+					title: t("tictactoe.func.title2"),
+					description: t("tictactoe.func.desc2"),
 				},
 				{
 					id: 3,
-					title: "Salas",
-					description:
-						"El proyecto tiene la capacidad de manejar diferentes salas, con un máximo de 2 jugadores. Los jugadores pueden crear salas o unirse a salas con un código.",
+					title: t("tictactoe.func.title3"),
+					description: t("tictactoe.func.desc3"),
 				},
 			],
 		},

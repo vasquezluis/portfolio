@@ -1,7 +1,6 @@
 ---
 import "@fontsource-variable/onest"
 import Background from "@/components/Background.astro"
-
 import { ViewTransitions } from "astro:transitions"
 
 interface Props {
@@ -138,7 +137,7 @@ const structuredData = {
 		<!-- Structured Data -->
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-		<!-- View Transitions -->
+		<!-- View transitions -->
 		<ViewTransitions />
 
 		<!-- Preload critical resources -->

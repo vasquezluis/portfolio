@@ -9,9 +9,9 @@ const translatePath = useTranslatedPath(lang)
 	<button id="dropbtn" class="dropbtn"
 		>{
 			lang === "es" ? (
-				<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" />
+				<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" loading="eager" />
 			) : (
-				<img src="/icons/english.svg" alt="English icon" class="size-8" />
+				<img src="/icons/english.svg" alt="English icon" class="size-8" loading="lazy" />
 			)
 		}</button
 	>
@@ -20,9 +20,9 @@ const translatePath = useTranslatedPath(lang)
 			Object.entries(languages).map(([langPrefix]) => (
 				<a href={translatePath("/", langPrefix)} title={`${langPrefix} version`}>
 					{langPrefix === "es" ? (
-						<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" />
+						<img src="/icons/spanish.svg" alt="Spanish icon" class="size-8" loading="eager" />
 					) : (
-						<img src="/icons/english.svg" alt="English icon" class="size-8" />
+						<img src="/icons/english.svg" alt="English icon" class="size-8" loading="lazy" />
 					)}
 					{langPrefix}
 				</a>
