@@ -5,91 +5,31 @@ import Technology from "@/components/Technology.astro"
 const { t } = Astro.props
 
 const TECHS = [
-	{
-		title: "HTML",
-		icon: "/icons/techs/Html.svg",
-		styles: "border border-orange-500 bg-orange-500/40 text-neutral-200",
-	},
-	{
-		title: "CSS",
-		icon: "/icons/techs/Css.svg",
-		styles: "border border-purple-600 bg-purple-600/40 text-neutral-200",
-	},
-	{
-		title: "JavaScript",
-		icon: "/icons/techs/Javascript.svg",
-		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
-	},
-	{
-		title: "TypeScript",
-		icon: "/icons/techs/Typescript.svg",
-		styles: "border border-blue-800 bg-blue-800/40 text-neutral-200",
-	},
-	{
-		title: "Node.js",
-		icon: "/icons/techs/Nodejs.svg",
-		styles: "border border-emerald-500 bg-emerald-500/40 text-neutral-200",
-	},
-	{
-		title: "ReactJS",
-		icon: "/icons/techs/React.svg",
-		styles: "border border-sky-500 bg-sky-500/40 text-neutral-200",
-	},
-	{
-		title: "Nextjs",
-		icon: "/icons/techs/Nextjs.svg",
-		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
-	},
-	{
-		title: "PostgreSQL",
-		icon: "/icons/techs/postgres.svg",
-		styles: "border border-neutral-200/50 bg-gray-600/40 text-neutral-200",
-	},
-	{
-		title: "Firebase",
-		icon: "/icons/techs/Firebase.svg",
-		styles: "border border-yellow-500 bg-yellow-500/40 text-neutral-200",
-	},
-	{
-		title: "Git",
-		icon: "/icons/techs/Git.svg",
-		styles: "border border-orange-500 bg-orange-500/40 text-neutral-200",
-	},
-	{
-		title: "GitHub",
-		icon: "/icons/techs/Github.svg",
-		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
-	},
-	{
-		title: "Linux",
-		icon: "/icons/techs/Linux.svg",
-		styles: "border border-neutral-500 bg-neutral-500/40 text-neutral-200",
-	},
-	{
-		title: "Docker",
-		icon: "/icons/techs/Docker.svg",
-		styles: "border border-blue-500 bg-blue-900/40 text-neutral-200",
-	},
-	{
-		title: "AWS",
-		icon: "/icons/techs/Aws.svg",
-		styles: "border border-orange-500 bg-yellow-900 text-neutral-200",
-	},
-	{
-		title: "Python",
-		icon: "/icons/techs/Python.svg",
-		styles: "border border-blue-800 bg-blue-800/40 text-neutral-200",
-	},
+	{ title: "HTML", icon: "/icons/techs/Html.svg", styles: "--tech-color: #f97316" },
+	{ title: "CSS", icon: "/icons/techs/Css.svg", styles: "--tech-color: #8b5cf6" },
+	{ title: "JavaScript", icon: "/icons/techs/Javascript.svg", styles: "--tech-color: #eab308" },
+	{ title: "TypeScript", icon: "/icons/techs/Typescript.svg", styles: "--tech-color: #2563eb" },
+	{ title: "Node.js", icon: "/icons/techs/Nodejs.svg", styles: "--tech-color: #10b981" },
+	{ title: "ReactJS", icon: "/icons/techs/React.svg", styles: "--tech-color: #38bdf8" },
+	{ title: "Next.js", icon: "/icons/techs/Nextjs-white.svg", styles: "--tech-color: #9ca3af" },
+	{ title: "PostgreSQL", icon: "/icons/techs/postgres.svg", styles: "--tech-color: #3b82f6" },
+	{ title: "Firebase", icon: "/icons/techs/Firebase.svg", styles: "--tech-color: #facc15" },
+	{ title: "Git", icon: "/icons/techs/Git.svg", styles: "--tech-color: #9ca3af" },
+	{ title: "GitHub", icon: "/icons/techs/Github.svg", styles: "--tech-color: #9ca3af" },
+	{ title: "Linux", icon: "/icons/techs/Linux.svg", styles: "--tech-color: #d1d5db" },
+	{ title: "Docker", icon: "/icons/techs/Docker.svg", styles: "--tech-color: #2563eb" },
+	{ title: "AWS", icon: "/icons/techs/Aws.svg", styles: "--tech-color: #f59e0b" },
+	{ title: "Python", icon: "/icons/techs/Python.svg", styles: "--tech-color: #1e3a8a" },
 ]
 ---
 
 <Container id="technologies">
-	<h2 class="mb-6 flex items-center gap-x-3 text-2xl font-semibold">
-		<img src="/icons/Settings.svg" alt="Settings icon" class="size-6" loading="lazy" />
+	<h2 class="mb-8 flex items-center gap-x-3 text-3xl font-bold tracking-tight text-white">
+		<img src="/icons/Settings.svg" alt="Settings icon" class="size-7" loading="lazy" />
 		{t("techs.title")}
 	</h2>
 
-	<div class="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-6">
+	<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
 		{
 			TECHS.map(({ title, icon, styles }) => (
 				<Technology title={title} icon={icon} styles={styles} />
@@ -97,3 +37,10 @@ const TECHS = [
 		}
 	</div>
 </Container>
+
+<style is:inline>
+	.group:hover img {
+		filter: drop-shadow(0 0 6px var(--tech-color));
+		transition: filter 0.3s ease;
+	}
+</style>
