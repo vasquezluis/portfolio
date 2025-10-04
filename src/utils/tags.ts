@@ -64,4 +64,14 @@ export const TAGS = {
 		class: "bg-emerald-800 text-white", // Verde
 		icon: "/icons/techs/Nodejs.svg",
 	},
+	NESTJS: {
+		label: "Nest.js",
+		class: "bg-red-950 text-white", // rojo
+		icon: "/icons/techs/nestjs.svg",
+	},
+	POSTGRESQL: {
+		label: "PostgreSQL",
+		class: "bg-blue-950 text-white", // azul
+		icon: "/icons/techs/postgres.svg",
+	},
 }

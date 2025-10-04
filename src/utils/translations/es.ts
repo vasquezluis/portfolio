@@ -28,7 +28,7 @@ export const languagesES = {
 	"exp2.date": "Mayo 2024 - actualidad",
 	"exp2.title": "Freelance",
 	"exp2.desc":
-		"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo control de inventarios y ventas. Desarollo de formularios en tiempo real personalizados.",
+		"Desarrollo de aplicaciones web a modo de Freelance. Desarrollo de aplicaciones de tipo ERP. Desarollo de formularios en tiempo real personalizados y escuelas virtuales. Despliegue de aplicaciones con Docker y Github Actions en VPS.",
 	// ? ------------ PROYECTOS ------------
 	"proj.title": "Proyectos",
 	"proj.tabWo": "Trabajos",
@@ -52,7 +52,7 @@ export const languagesES = {
 	"dolce.func.desc4":
 		"La plataforma cuenta con un 'Firebase Function' el cual revisa constantemente la expiración de la sesión del usuario.",
 	"ignition.desc":
-		"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs + TypeScript, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y Microsoft Active Directory.",
+		"Proyecto de generación y modificación de imágenes usando Inteligencia Artificial y Midjourney. Frontend en Reactjs, Base de datos MySQL RDS, Nodejs, AWS S3, AWS Lambdas, AWS Cognito y Microsoft Active Directory.",
 	"ignition.date": "Diciembre 2023",
 	"ignition.func.title1": "Generación de imágenes",
 	"ignition.func.desc1": "Ignition genera imágenes utilizando Midjourney como base.",
@@ -94,18 +94,17 @@ export const languagesES = {
 	"flamerly.resp.title5": "Creación y mantenimiento de base de datos para mensajes y usuarios",
 	"flamerly.resp.desc5":
 		"Creación y mantenimiento de base de datos donde se guardan los mensajes generados por los usuarios.",
-	"duagt.desc":
-		"Proyecto hecho con Moodle para la administración de 3 escuelas. La plataforma está hecha con Moodle para la gestión de administradores, directores, maestros, estudiantes y cursos",
-	"duagt.date": "Enero 2024",
-	"duagt.func.title1": "Control de estudiantes",
-	"duagt.func.desc1":
-		"El proyecto permite un control de estudiantes y inscripción a diferentes cursos.",
-	"duagt.func.title2": "Control de maestros",
-	"duagt.func.desc2":
-		"El proyecto permite el control de maestros y su generación de contenido para diferentes cursos.",
-	"duagt.func.title3": "Generación de reportes",
-	"duagt.func.desc3":
-		"El proyecto permite generar reportes de estudiantes, maestros, notas, rendimiento de estudiantes y rendimiento de la aplicación.",
+	"pamotos.desc":
+		"Proyecto web tipo ERP para el control de productos, stock, sucursales, usuario y ventas para el taller de reparación Pamotos. Con ontrol de servicios de mantenimiento para motocicletas y generación de estadísticas en Excel.",
+	"pamotos.date": "Abril 2025",
+	"pamotos.func.title1": "Control de productos",
+	"pamotos.func.desc1": "El proyecto permite el control de productos, stock y sucursales.",
+	"pamotos.func.title2": "Control ventas, servicios y compras",
+	"pamotos.func.desc2":
+		"El proyecto permite registrar venta de productos, venta de servicios de mantenimiento y compra de productos a proveedores.",
+	"pamotos.func.title3": "Generación de reportes",
+	"pamotos.func.desc3":
+		"El proyecto permite generar reportes diarios de las transacciones realizadas, reportes de ventas con rango de tiempo y generación de reportes en Excel.",
 	"structura.desc":
 		"Proyecto basado en generación de contenido con Inteligencia Artificial utilizando Vercel AI SDK y GPT3 de OpenAI. Capaz de generar contenido estructurado orientado a base de datos tipo SQL usando lenguaje natural.",
 	"structura.date": "Julio 2024",

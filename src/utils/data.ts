@@ -5,7 +5,7 @@ import { TAGS } from "@/utils/tags"
 import dolceComprasImg from "../../public/images/dolce-compras.webp"
 import ignitionImg from "../../public/images/ignition.webp"
 import flamerlyImg from "../../public/images/flamerly.webp"
-import duagtImg from "../../public/images/duagt.webp"
+import pamotosImg from "../../public/images/pamotos.webp"
 import structuraImg from "../../public/images/structura.webp"
 import tictactoeImg from "../../public/images/tic-tac-toe.webp"
 
@@ -16,6 +16,40 @@ export async function getWorks(url: URL) {
 	return [
 		{
 			id: 1,
+			imageUrl: pamotosImg,
+			url: "pamotos",
+			title: {
+				text: "Pamotos ERP",
+				slug: "pamotos",
+				color: "bg-gradient-to-r from-[#14cfd9] via-[#1abd15] to-[#1abd15] bg-clip-text",
+			},
+			tags: [TAGS.NESTJS, TAGS.REACTJS, TAGS.POSTGRESQL],
+			description: t("pamotos.desc"),
+			type: {
+				type: "private",
+				colorType: "bg-teal-600 white",
+			},
+			date: t("pamotos.date"),
+			functionalities: [
+				{
+					id: 1,
+					title: t("pamotos.func.title1"),
+					description: t("pamotos.func.desc1"),
+				},
+				{
+					id: 2,
+					title: t("pamotos.func.title2"),
+					description: t("pamotos.func.desc2"),
+				},
+				{
+					id: 3,
+					title: t("pamotos.func.title3"),
+					description: t("pamotos.func.desc3"),
+				},
+			],
+		},
+		{
+			id: 2,
 			imageUrl: dolceComprasImg,
 			url: "dolcecompras",
 			title: {
@@ -54,7 +88,7 @@ export async function getWorks(url: URL) {
 			],
 		},
 		{
-			id: 2,
+			id: 3,
 			imageUrl: ignitionImg,
 			url: "ignition",
 			title: {
@@ -105,7 +139,7 @@ export async function getWorks(url: URL) {
 			],
 		},
 		{
-			id: 3,
+			id: 4,
 			imageUrl: flamerlyImg,
 			url: "flamerly",
 			title: {
@@ -157,40 +191,6 @@ export async function getWorks(url: URL) {
 					id: 2,
 					title: t("flamerly.func.title2"),
 					description: t("flamerly.func.desc2"),
-				},
-			],
-		},
-		{
-			id: 4,
-			imageUrl: duagtImg,
-			url: "escuela-duagt",
-			title: {
-				text: "Escuela virtual DUAGT",
-				slug: "escuela-duagt",
-				color: "bg-gradient-to-r from-[#6cd69f] via-[#bdb19d] to-[#dc7998] bg-clip-text",
-			},
-			tags: [TAGS.MOODLE, TAGS.MYSQL],
-			description: t("duagt.desc"),
-			type: {
-				type: "private",
-				colorType: "bg-teal-600 white",
-			},
-			date: t("duagt.date"),
-			functionalities: [
-				{
-					id: 1,
-					title: t("duagt.func.title1"),
-					description: t("duagt.func.desc1"),
-				},
-				{
-					id: 2,
-					title: t("duagt.func.title2"),
-					description: t("duagt.func.desc2"),
-				},
-				{
-					id: 3,
-					title: t("duagt.func.title3"),
-					description: t("duagt.func.desc3"),
 				},
 			],
 		},
