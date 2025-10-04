@@ -28,7 +28,7 @@ export const languagesEN = {
 	"exp2.date": "May 2024 - Present",
 	"exp2.title": "Freelance",
 	"exp2.desc":
-		"Freelance development of web applications. Built inventory and sales control systems. Developed custom real-time forms.",
+		"Freelance development of web applications. Built ERP-style systems. Developed custom real-time forms and virtual schools. Apps deployment using Docker and Github Actions in VPS.",
 	// ? ------------ PROJECTS ------------
 	"proj.title": "Projects",
 	"proj.tabWo": "Works",
@@ -37,7 +37,7 @@ export const languagesEN = {
 	"proj.func": "Functionality",
 	"proj.resp": "Responsibilities",
 	"dolce.desc":
-		"Dashboard-type project allowing users to request ice cream-related products and utensils. Built with Next.js, TypeScript, Tailwind CSS, Firebase Authentication, Firebase Realtime Database, Firebase Functions, and Firebase Email Trigger.",
+		"Dashboard-type project allowing users to request ice cream-related products and utensils. Built with Next.js, TypeScript, Firebase Authentication, Firebase Realtime Database, Firebase Functions, and Firebase Email Trigger.",
 	"dolce.date": "May 2024",
 	"dolce.func.title1": "Realtime database",
 	"dolce.func.desc1": "DolceCompras platform allows real-time data visualization using Firebase.",
@@ -89,16 +89,17 @@ export const languagesEN = {
 		"Developed AWS Lambdas for database operations and user control with AWS Cognito.",
 	"flamerly.resp.title5": "Message/user database",
 	"flamerly.resp.desc5": "Created and maintained a database to store user messages.",
-	"duagt.desc":
-		"Project built with Moodle for managing three schools. The platform supports administrators, principals, teachers, students, and course management.",
-	"duagt.date": "January 2024",
-	"duagt.func.title1": "Student management",
-	"duagt.func.desc1": "The project allows managing student enrollment and courses.",
-	"duagt.func.title2": "Teacher management",
-	"duagt.func.desc2": "Teachers can be managed along with their course content creation.",
-	"duagt.func.title3": "Report generation",
-	"duagt.func.desc3":
-		"Generates reports for students, teachers, grades, performance, and system usage.",
+	"pamotos.desc":
+		"ERP-style web project for managing products, inventories, branches, users and sales for Pamotos repair shop. It includes monitoring motorcycle maintenance service and generating statistics in Excel.",
+	"pamotos.date": "April 2025",
+	"pamotos.func.title1": "Products management",
+	"pamotos.func.desc1": "The project allows managing products, inventory and branches",
+	"pamotos.func.title2": "Sales, services and purchases management",
+	"pamotos.func.desc2":
+		"The project allows to record sales, maintenance service sales and product purchases from suppliers.",
+	"pamotos.func.title3": "Report generation",
+	"pamotos.func.desc3":
+		"The project generates daily reports of transactions, sales reports with time range and reports in Excel.",
 	"structura.desc":
 		"Content generation project using AI (Vercel AI SDK and OpenAI GPT-3). It creates structured content tailored for SQL-type databases using natural language.",
 	"structura.date": "July 2024",
