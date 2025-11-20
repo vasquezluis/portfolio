@@ -13,7 +13,7 @@ export const languagesEN = {
 	"hero.title": "Hi, I'm Luis Vásquez",
 	"hero.desc1": "FullStack Web Developer",
 	"hero.desc2":
-		" with experience in scalable applications using ReactJS, Node.js, Python, and PostgreSQL. Experienced in cloud tools like AWS, Firebase, and personal VPS. Focused on efficient solutions and continuous learning to contribute to ",
+		" with experience in scalable applications using ReactJS, Node.js, Python, and PostgreSQL. Experienced in cloud tools like AWS, Firebase, and VPS (self-host). Focused on efficient solutions and continuous learning to contribute to ",
 	"hero.desc3": "innovative and challenging projects.",
 	"hero.cv": "/cv-luisvasquez-en.pdf",
 	"hero.resume": "Resume",
@@ -128,6 +128,10 @@ export const languagesEN = {
 		"Supports multiple rooms with up to 2 players. Players can create or join rooms using a code.",
 	// ? ------------ TECHNOLOGIES ------------
 	"techs.title": "Technologies",
+	"techs.frontend": "Frontend",
+	"techs.backend": "Backend",
+	"techs.database": "Databases",
+	"techs.devops": "DevOps y tools",
 	// ? ------------ STUDIES ------------
 	"stud.title": "Studies",
 	"stud1.desc": "Bachelor’s Degree in Information Systems Technology",
