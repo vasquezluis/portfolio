@@ -4,8 +4,10 @@ import Technology from "@/components/Technology.astro"
 const { t } = Astro.props
 const TECH_CATEGORIES = [
 	{
-		title: t("techs.frontend"),
-		color: "text-blue-400",
+		title: {
+			icon: "/icons/window.svg",
+			text: t("techs.frontend"),
+		},
 		technologies: [
 			{ title: "HTML", icon: "/icons/techs/Html.svg", styles: "--tech-color: #f97316" },
 			{ title: "CSS", icon: "/icons/techs/Css.svg", styles: "--tech-color: #8b5cf6" },
@@ -16,7 +18,10 @@ const TECH_CATEGORIES = [
 		],
 	},
 	{
-		title: t("techs.backend"),
+		title: {
+			icon: "/icons/backend.svg",
+			text: t("techs.backend"),
+		},
 		color: "text-green-400",
 		technologies: [
 			{ title: "Node.js", icon: "/icons/techs/Nodejs.svg", styles: "--tech-color: #10b981" },
@@ -24,7 +29,10 @@ const TECH_CATEGORIES = [
 		],
 	},
 	{
-		title: t("techs.database"),
+		title: {
+			icon: "/icons/database.svg",
+			text: t("techs.database"),
+		},
 		color: "text-purple-400",
 		technologies: [
 			{ title: "PostgreSQL", icon: "/icons/techs/postgres.svg", styles: "--tech-color: #3b82f6" },
@@ -32,7 +40,10 @@ const TECH_CATEGORIES = [
 		],
 	},
 	{
-		title: t("techs.devops"),
+		title: {
+			icon: "/icons/devops.svg",
+			text: t("techs.devops"),
+		},
 		color: "text-orange-400",
 		technologies: [
 			{ title: "Git", icon: "/icons/techs/Git.svg", styles: "--tech-color: #9ca3af" },
@@ -55,7 +66,11 @@ const TECH_CATEGORIES = [
 		{
 			TECH_CATEGORIES.map((category) => (
 				<div class="tech-category-clean">
-					<h3 class:list={`mb-3 text-lg font-semibold ${category.color}`}>{category.title}</h3>
+					<h3 class="mb-3 flex items-center gap-x-1 text-sm font-semibold text-neutral-300">
+						<img src={category.title.icon} alt={`${category.title.text} icon`} class="size-4" />
+						<span>{category.title.text}</span>
+					</h3>
+
 					<div class="flex flex-wrap gap-2">
 						{category.technologies.map(({ title, icon, styles }) => (
 							<Technology title={title} icon={icon} styles={styles} />
