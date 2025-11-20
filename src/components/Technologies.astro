@@ -1,25 +1,58 @@
 ---
 import Container from "@/components/Container.astro"
 import Technology from "@/components/Technology.astro"
-
 const { t } = Astro.props
-
-const TECHS = [
-	{ title: "HTML", icon: "/icons/techs/Html.svg", styles: "--tech-color: #f97316" },
-	{ title: "CSS", icon: "/icons/techs/Css.svg", styles: "--tech-color: #8b5cf6" },
-	{ title: "JavaScript", icon: "/icons/techs/Javascript.svg", styles: "--tech-color: #eab308" },
-	{ title: "TypeScript", icon: "/icons/techs/Typescript.svg", styles: "--tech-color: #2563eb" },
-	{ title: "Node.js", icon: "/icons/techs/Nodejs.svg", styles: "--tech-color: #10b981" },
-	{ title: "ReactJS", icon: "/icons/techs/React.svg", styles: "--tech-color: #38bdf8" },
-	{ title: "Next.js", icon: "/icons/techs/Nextjs-white.svg", styles: "--tech-color: #9ca3af" },
-	{ title: "PostgreSQL", icon: "/icons/techs/postgres.svg", styles: "--tech-color: #3b82f6" },
-	{ title: "Firebase", icon: "/icons/techs/Firebase.svg", styles: "--tech-color: #facc15" },
-	{ title: "Git", icon: "/icons/techs/Git.svg", styles: "--tech-color: #9ca3af" },
-	{ title: "GitHub", icon: "/icons/techs/Github.svg", styles: "--tech-color: #9ca3af" },
-	{ title: "Linux", icon: "/icons/techs/Linux.svg", styles: "--tech-color: #d1d5db" },
-	{ title: "Docker", icon: "/icons/techs/Docker.svg", styles: "--tech-color: #2563eb" },
-	{ title: "AWS", icon: "/icons/techs/Aws.svg", styles: "--tech-color: #f59e0b" },
-	{ title: "Python", icon: "/icons/techs/Python.svg", styles: "--tech-color: #1e3a8a" },
+const TECH_CATEGORIES = [
+	{
+		title: {
+			icon: "/icons/window.svg",
+			text: t("techs.frontend"),
+		},
+		technologies: [
+			{ title: "HTML", icon: "/icons/techs/Html.svg", styles: "--tech-color: #f97316" },
+			{ title: "CSS", icon: "/icons/techs/Css.svg", styles: "--tech-color: #8b5cf6" },
+			{ title: "JavaScript", icon: "/icons/techs/Javascript.svg", styles: "--tech-color: #eab308" },
+			{ title: "TypeScript", icon: "/icons/techs/Typescript.svg", styles: "--tech-color: #2563eb" },
+			{ title: "ReactJS", icon: "/icons/techs/React.svg", styles: "--tech-color: #38bdf8" },
+			{ title: "Next.js", icon: "/icons/techs/Nextjs-white.svg", styles: "--tech-color: #9ca3af" },
+		],
+	},
+	{
+		title: {
+			icon: "/icons/backend.svg",
+			text: t("techs.backend"),
+		},
+		color: "text-green-400",
+		technologies: [
+			{ title: "Node.js", icon: "/icons/techs/Nodejs.svg", styles: "--tech-color: #10b981" },
+			{ title: "Python", icon: "/icons/techs/Python.svg", styles: "--tech-color: #1e3a8a" },
+		],
+	},
+	{
+		title: {
+			icon: "/icons/database.svg",
+			text: t("techs.database"),
+		},
+		color: "text-purple-400",
+		technologies: [
+			{ title: "PostgreSQL", icon: "/icons/techs/postgres.svg", styles: "--tech-color: #3b82f6" },
+			{ title: "Firebase", icon: "/icons/techs/Firebase.svg", styles: "--tech-color: #facc15" },
+		],
+	},
+	{
+		title: {
+			icon: "/icons/devops.svg",
+			text: t("techs.devops"),
+		},
+		color: "text-orange-400",
+		technologies: [
+			{ title: "Git", icon: "/icons/techs/Git.svg", styles: "--tech-color: #9ca3af" },
+			{ title: "GitHub", icon: "/icons/techs/Github.svg", styles: "--tech-color: #9ca3af" },
+			{ title: "Docker", icon: "/icons/techs/Docker.svg", styles: "--tech-color: #2563eb" },
+			{ title: "AWS", icon: "/icons/techs/Aws.svg", styles: "--tech-color: #f59e0b" },
+			{ title: "Linux", icon: "/icons/techs/Linux.svg", styles: "--tech-color: #d1d5db" },
+		],
+	},
 ]
 ---
 
@@ -29,10 +62,21 @@ const TECHS = [
 		{t("techs.title")}
 	</h2>
 
-	<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+	<div class="space-y-6">
 		{
-			TECHS.map(({ title, icon, styles }) => (
-				<Technology title={title} icon={icon} styles={styles} />
+			TECH_CATEGORIES.map((category) => (
+				<div class="tech-category-clean">
+					<h3 class="mb-3 flex items-center gap-x-1 text-sm font-semibold text-neutral-300">
+						<img src={category.title.icon} alt={`${category.title.text} icon`} class="size-4" />
+						<span>{category.title.text}</span>
+					</h3>
+
+					<div class="flex flex-wrap gap-2">
+						{category.technologies.map(({ title, icon, styles }) => (
+							<Technology title={title} icon={icon} styles={styles} />
+						))}
+					</div>
+				</div>
 			))
 		}
 	</div>
@@ -42,5 +86,9 @@ const TECHS = [
 	.group:hover img {
 		filter: drop-shadow(0 0 6px var(--tech-color));
 		transition: filter 0.3s ease;
+	}
+
+	.tech-category-clean {
+		margin-bottom: 1.5rem;
 	}
 </style>

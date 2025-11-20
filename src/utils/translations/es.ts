@@ -13,7 +13,7 @@ export const languagesES = {
 	"hero.title": "Hola, Soy Luis Vásquez",
 	"hero.desc1": "Desarrollador Web Fullstack",
 	"hero.desc2":
-		" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y PostgreSQL. Experiencia en herramientas cloud como AWS, Firebase y VPS propio. Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
+		" con experiencia en aplicaciones escalables usando ReactJS, Node.js, Python y PostgreSQL. Experiencia en herramientas cloud como AWS, Firebase y VPS (self-host). Enfocado en soluciones eficientes y en continuo aprendizaje para contribuir a ",
 	"hero.desc3": "proyectos innovadores y desafiantes.",
 	"hero.cv": "/cv-luisvasquez-es.pdf",
 	"hero.resume": "Curriculum",
@@ -137,6 +137,10 @@ export const languagesES = {
 		"El proyecto tiene la capacidad de manejar diferentes salas, con un máximo de 2 jugadores. Los jugadores pueden crear salas o unirse a salas con un código.",
 	// ? ------------ TECNOLOGIAS ------------
 	"techs.title": "Tecnologías",
+	"techs.frontend": "Frontend",
+	"techs.backend": "Backend",
+	"techs.database": "Bases de datos",
+	"techs.devops": "DevOps y herramientas",
 	// ? ------------ ESTUDIOS ------------
 	"stud.title": "Estudios",
 	"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
