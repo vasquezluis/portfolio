@@ -3,29 +3,6 @@ import Container from "@/components/Container.astro"
 import { Image } from "astro:assets"
 import meImg from "../../public/images/me.webp"
 
-const learningTechnologies = [
-	{
-		title: ".NET",
-		icon: "/icons/techs/dotnet.svg",
-		styles: "--tech-color: #512bd4",
-	},
-	{
-		title: "Bash",
-		icon: "/icons/techs/bash.svg",
-		styles: "--tech-color: #4EAA25",
-	},
-	{
-		title: "Nginx",
-		icon: "/icons/techs/nginx.svg",
-		styles: "--tech-color: #009639",
-	},
-	{
-		title: "Github Actions",
-		icon: "/icons/techs/Github.svg",
-		styles: "--tech-color: #2088FF",
-	},
-]
-
 const { t } = Astro.props
 ---
 
@@ -76,57 +53,4 @@ const { t } = Astro.props
 			</div>
 		</div>
 	</section>
-
-	<div class="learning-section">
-		<div class="mb-4 flex items-center">
-			<div class="flex h-8 w-8 items-center rounded-lg">
-				<svg class="size-6" fill="currentColor" viewBox="0 0 20 20">
-					<path
-						d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-					></path>
-				</svg>
-			</div>
-			<h4 class="text-lg font-semibold">{t("about.learning")}</h4>
-		</div>
-
-		<div class="flex flex-wrap gap-3">
-			{
-				learningTechnologies.map(({ title, icon, styles }) => (
-					<div
-						class="learning-card group relative flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-neutral-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-						style={styles}
-					>
-						<div class="from-[var(--tech-color)]/10 absolute inset-0 rounded-lg bg-gradient-to-r to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-						<div class="relative flex items-center gap-2">
-							<img
-								class="size-6 transition-transform duration-300 group-hover:scale-110"
-								alt={`${title} logo`}
-								src={icon}
-								loading="lazy"
-							/>
-							<span class="cursor-default whitespace-nowrap font-semibold tracking-wide">
-								{title}
-							</span>
-						</div>
-					</div>
-				))
-			}
-		</div>
-	</div>
 </Container>
-
-<style is:inline>
-	.learning-card {
-		backdrop-filter: blur(10px);
-		min-width: fit-content;
-	}
-
-	.learning-card:hover {
-		border-color: rgba(255, 255, 255, 0.2);
-		box-shadow: 0 0 20px rgba(var(--tech-color-rgb, 96, 165, 250), 0.2);
-	}
-
-	.learning-section {
-		margin-top: 2rem;
-	}
-</style>

@@ -25,6 +25,7 @@ const TECH_CATEGORIES = [
 		color: "text-green-400",
 		technologies: [
 			{ title: "Node.js", icon: "/icons/techs/Nodejs.svg", styles: "--tech-color: #10b981" },
+			{ title: "NestJS", icon: "/icons/techs/nestjs.svg", styles: "--tech-color: #EA2845" },
 			{ title: "Python", icon: "/icons/techs/Python.svg", styles: "--tech-color: #1e3a8a" },
 		],
 	},
@@ -36,6 +37,7 @@ const TECH_CATEGORIES = [
 		color: "text-purple-400",
 		technologies: [
 			{ title: "PostgreSQL", icon: "/icons/techs/postgres.svg", styles: "--tech-color: #3b82f6" },
+			{ title: "MySQL", icon: "/icons/techs/MySQL.svg", styles: "--tech-color: #2563eb" },
 			{ title: "Firebase", icon: "/icons/techs/Firebase.svg", styles: "--tech-color: #facc15" },
 		],
 	},
@@ -46,13 +48,21 @@ const TECH_CATEGORIES = [
 		},
 		color: "text-orange-400",
 		technologies: [
+			{ title: "AWS", icon: "/icons/techs/Aws.svg", styles: "--tech-color: #f59e0b" },
+			{ title: "Docker", icon: "/icons/techs/Docker.svg", styles: "--tech-color: #2563eb" },
+			{ title: "Linux", icon: "/icons/techs/Linux.svg", styles: "--tech-color: #d1d5db" },
+			{ title: "Bash", icon: "/icons/techs/bash.svg", styles: "--tech-color: #4EAA25" },
 			{ title: "Git", icon: "/icons/techs/Git.svg", styles: "--tech-color: #9ca3af" },
 			{ title: "GitHub", icon: "/icons/techs/Github.svg", styles: "--tech-color: #9ca3af" },
-			{ title: "Docker", icon: "/icons/techs/Docker.svg", styles: "--tech-color: #2563eb" },
-			{ title: "AWS", icon: "/icons/techs/Aws.svg", styles: "--tech-color: #f59e0b" },
-			{ title: "Linux", icon: "/icons/techs/Linux.svg", styles: "--tech-color: #d1d5db" },
 		],
 	},
+]
+
+const LEARNINGTECHNOLOGIES = [
+	{ title: "Kubernetes", icon: "/icons/techs/kubernetes.svg", styles: "--tech-color: #2563eb" },
+	{ title: ".NET", icon: "/icons/techs/dotnet.svg", styles: "--tech-color: #512bd4" },
+	{ title: "Github Actions", icon: "/icons/techs/Github.svg", styles: "--tech-color: #2088FF" },
+	{ title: "Nginx", icon: "/icons/techs/nginx.svg", styles: "--tech-color: #009639" },
 ]
 ---
 
@@ -80,6 +90,20 @@ const TECH_CATEGORIES = [
 			))
 		}
 	</div>
+
+	<div class="mt-10">
+		<div class="mb-4 flex items-center">
+			<h4 class="text-md font-semibold">{t("about.learning")}</h4>
+		</div>
+
+		<div class="flex flex-wrap gap-3">
+			{
+				LEARNINGTECHNOLOGIES.map(({ title, icon, styles }) => (
+					<Technology title={title} icon={icon} styles={styles} />
+				))
+			}
+		</div>
+	</div>
 </Container>
 
 <style is:inline>
@@ -90,5 +114,15 @@ const TECH_CATEGORIES = [
 
 	.tech-category-clean {
 		margin-bottom: 1.5rem;
+	}
+
+	.learning-card {
+		backdrop-filter: blur(10px);
+		min-width: fit-content;
+	}
+
+	.learning-card:hover {
+		border-color: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 0 20px rgba(var(--tech-color-rgb, 96, 165, 250), 0.2);
 	}
 </style>
