@@ -140,9 +140,11 @@ export const languagesEN = {
 	// ? ------------ ABOUT ------------
 	"about.title": "Hi, I'm Luis Vásquez",
 	"about.span1":
-		"When I’m not coding, I enjoy games like Elden Ring 👺, Stardew Valley 🐷, and Project Zomboid 💀 — all of which inspire me a lot.",
-	"about.span2": "I’m also a fan of Stephen King 📚 and Linkin Park 🎶.",
+		"When I’m not coding, I enjoy games like Elden Ring 👺, Stardew Valley 🐷, and The Witcher 3 🐺 — all of which inspire me a lot.",
+	"about.span2": "I love reading Stephen King books 📚 and listening to Linkin Park 🎶.",
 	"about.span3":
+		"I enjoy learning cybersecurity CTF 🚩 (Capture The Flag) techniques at Hack The Box and TryHackMe.",
+	"about.span4":
 		"I'm passionate about continuous learning and staying up to date with new technologies 👀.",
 	"about.learning": "Currently Learning",
 	// ? ------------ FOOTER / ERROR ------------

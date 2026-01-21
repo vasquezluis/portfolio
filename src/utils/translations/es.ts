@@ -149,9 +149,11 @@ export const languagesES = {
 	// ? ------------ ACERCA DE ------------
 	"about.title": "Hola, soy Luis Vásquez",
 	"about.span1":
-		"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y Project Zomboid 💀, los cuales me inspiran mucho.",
-	"about.span2": "También soy fan de Stephen King 📚 y Linkin Park 🎶.",
+		"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y The Witcher 3 🐺, los cuales me inspiran mucho.",
+	"about.span2": "Me gusta leer libros de Stephen King 📚 y escuchar Linkin Park 🎶.",
 	"about.span3":
+		"Me gusta aprender ciberseguridad CTF 🚩 (Capture The Flag) en Hack The Box y TryHackMe.",
+	"about.span4":
 		"Me apasiona aprender constantemente y mantenerme actualizado con nuevas tecnologías 👀.",
 	"about.learning": "Estoy Aprendiendo",
 	"foot.right": "2024",
