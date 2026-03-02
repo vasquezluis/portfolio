@@ -11,13 +11,27 @@ export interface ProjectType {
 	colorType: string
 }
 
-export interface ResponsabilitiesType {
+export interface Responsabilities {
+	id: number
 	title: string
 	description: string
 	type: string
 }
 
-export interface ProjectFunctionality {
+export interface Functionality {
+	id: number
+	title: string
+	description: string
+}
+
+export interface Challenge {
+	id: number
+	title: string
+	description: string
+}
+
+export interface Issue {
+	id: number
 	title: string
 	description: string
 }
@@ -36,8 +50,10 @@ export interface Project {
 	description: string
 	type: ProjectType
 	date: string
-	responsabilities?: ResponsabilitiesType[] | undefined
+	responsabilities?: Responsabilities[] | undefined
 	functionalities?: ProjectFunctionality[] | undefined
+	challenges?: ChallengeFunctionality[] | undefined
+	issues?: IssueFunctionality[] | undefined
 }
 
 export interface TagsProps {

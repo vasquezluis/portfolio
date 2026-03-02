@@ -7,7 +7,8 @@ import ignitionImg from "../../public/images/ignition.webp"
 import flamerlyImg from "../../public/images/flamerly.webp"
 import pamotosImg from "../../public/images/pamotos.webp"
 import structuraImg from "../../public/images/structura.webp"
-import tictactoeImg from "../../public/images/tic-tac-toe.webp"
+import nimbusRagImg from "../../public/images/nimbus-rag.png"
+import type { Project } from "@/types"
 
 export async function getWorks(url: URL) {
 	const lang = getLangFromUrl(url)
@@ -197,7 +198,7 @@ export async function getWorks(url: URL) {
 	]
 }
 
-export async function getProjects(url: URL) {
+export async function getProjects(url: URL): Promise<Project[]> {
 	const lang = getLangFromUrl(url)
 	const t = useTranslations(lang)
 
@@ -250,37 +251,56 @@ export async function getProjects(url: URL) {
 		},
 		{
 			id: 2,
-			imageUrl: tictactoeImg,
-			url: "tic-tac-toe",
+			imageUrl: nimbusRagImg,
+			url: "nimbus-rag",
 			title: {
-				text: "Tic-Tac-Toe",
-				slug: "tic-tac-toe",
-				color: "bg-gradient-to-r from-[#257441] to-[#195d75] bg-clip-text",
+				text: "Nimbus RAG",
+				slug: "nimbus-rag",
+				color: "bg-gradient-to-r from-gray-500 to-white bg-clip-text",
 			},
-			tags: [TAGS.REACTJS, TAGS.SOCKETIO, TAGS.NODEJS],
-			description: t("tictactoe.desc"),
+			tags: [TAGS.NEXTJS, TAGS.PYTHON, TAGS.LANGCHAIN],
+			description: t("nimbusrag.desc"),
 			type: {
 				type: "open",
-				repo: "https://github.com/vasquezluis/tic-tac-toe-client",
+				repo: "https://github.com/vasquezluis/nimbushr",
 				// url: "https://structura-hackathon.vercel.app/",
 				colorType: "bg-orange-600 text-white",
 			},
-			date: t("tictactoe.date"),
+			date: t("nimbusrag.date"),
 			functionalities: [
 				{
 					id: 1,
-					title: t("tictactoe.func.title1"),
-					description: t("tictactoe.func.desc1"),
+					title: t("nimbusrag.func.title1"),
+					description: t("nimbusrag.func.desc1"),
 				},
 				{
 					id: 2,
-					title: t("tictactoe.func.title2"),
-					description: t("tictactoe.func.desc2"),
+					title: t("nimbusrag.func.title2"),
+					description: t("nimbusrag.func.desc2"),
 				},
 				{
 					id: 3,
-					title: t("tictactoe.func.title3"),
-					description: t("tictactoe.func.desc3"),
+					title: t("nimbusrag.func.title3"),
+					description: t("nimbusrag.func.desc3"),
+				},
+			],
+			challenges: [
+				{
+					id: 1,
+					title: t("nimbusrag.chall.title1"),
+					description: t("nimbusrag.chall.desc1"),
+				},
+				{
+					id: 2,
+					title: t("nimbusrag.chall.title2"),
+					description: t("nimbusrag.chall.desc2"),
+				},
+			],
+			issues: [
+				{
+					id: 1,
+					title: t("nimbusrag.issue.title1"),
+					description: t("nimbusrag.issue.desc1"),
 				},
 			],
 		},

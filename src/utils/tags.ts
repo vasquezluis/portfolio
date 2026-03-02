@@ -74,4 +74,14 @@ export const TAGS = {
 		class: "bg-blue-950 text-white", // azul
 		icon: "/icons/techs/postgres.svg",
 	},
+	PYTHON: {
+		label: "Python",
+		class: "bg-blue-950 text-white", // azul
+		icon: "/icons/techs/Python.svg",
+	},
+	LANGCHAIN: {
+		label: "Langchain",
+		class: "bg-[#333332] text-white", // Gris oscuro
+		icon: "/icons/techs/langchain.svg",
+	},
 }
