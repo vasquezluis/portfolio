@@ -123,39 +123,55 @@ export const languagesES = {
 	"structura.func.title5": "Generación mapa mental",
 	"structura.func.desc5":
 		"Structura genera un mapa mental sobre el código generado para ayudar al usuario a entender el código generado.",
-	"tictactoe.desc":
-		"Proyecto basado en el juego tic-tac-toe, multijugador, en tiempo real, capaz de manejar varias salas de dos jugadores cada una. Creado con Reactjs, Nodejs, Web Sockets, Tailwindcss y Zustand.",
-	"tictactoe.date": "Septiembre 2024",
-	"tictactoe.func.title1": "Multijugador",
-	"tictactoe.func.desc1":
-		"Este juego tiene la capacidad de manejar dos jugadores para jugar tic-tac-toe",
-	"tictactoe.func.title2": "Tiempo real",
-	"tictactoe.func.desc2":
-		"Este proyecto tiene la capacidad de manejar los datos en tiempo real de los jugadores en la partida. Sin tener que recargar la página para obtener cambios.",
-	"tictactoe.func.title3": "Salas",
-	"tictactoe.func.desc3":
-		"El proyecto tiene la capacidad de manejar diferentes salas, con un máximo de 2 jugadores. Los jugadores pueden crear salas o unirse a salas con un código.",
+
+	// ? ------------ NIMBUSRAG ------------
+	"nimbusrag.desc":
+		"Sistema RAG para Nimbus (Nimbus es una empresa ficticia), búsqueda de información con información privada, implementación de base de datos vectorial y grafos. Creado con Python, Langchain, ChromaDB, NetworkX, Next.js y modelos de OpenAI.",
+	"nimbusrag.date": "Febrero 2026",
+	"nimbusrag.func.title1": "Consumo de información",
+	"nimbusrag.func.desc1":
+		"El sistema carga y consume datos de archivos PDF, Excel, texto y Markdown para su conocimiento.",
+	"nimbusrag.func.title2": "Vectores y grafos",
+	"nimbusrag.func.desc2":
+		"El sistema recupera información utilizando vectores con información relevante y grafos con estructuras relevantes para crear una respuesta correcta.",
+	"nimbusrag.func.title3": "Lenguaje natural",
+	"nimbusrag.func.desc3":
+		"El sistema RAG funciona usando lenguaje natural para hacer preguntas sobre los documentos cargados.",
+	"nimbusrag.chall.title1": "Creación de chunks",
+	"nimbusrag.chall.desc1":
+		"El primer reto fue crear chunks significativos en la carga de diferentes archivos, creación de metadata y optimización de información.",
+	"nimbusrag.chall.title2": "Creación de grafos",
+	"nimbusrag.chall.desc2":
+		"Un reto significativo fue la estructura de grafos para mejorar la calidad de las respuestas. El sistema debe ser capaz de crear grafos que representen de manera correcta los nodos y conexciones de información.",
+	"nimbusrag.issue.title1": "Grafos",
+	"nimbusrag.issue.desc1":
+		"La estructura de los grafos no cumple al 100% la estructura del flujo de los datos. Lo cual provoca que con preguntas muy generales, el sistema no encuentre los grafos correctos para la respuesta.",
+
 	// ? ------------ TECNOLOGIAS ------------
 	"techs.title": "Tecnologías",
 	"techs.frontend": "Frontend",
 	"techs.backend": "Backend",
 	"techs.database": "Bases de datos",
 	"techs.devops": "DevOps y herramientas",
+
 	// ? ------------ ESTUDIOS ------------
 	"stud.title": "Estudios",
 	"stud1.desc": "Licenciatura en tecnología de sistemas informáticos",
 	"stud2.desc": "Técnico universitario en sistemas e informática",
 	"stud3.desc": "Bachillerato en computación",
+
 	// ? ------------ ACERCA DE ------------
 	"about.title": "Hola, soy Luis Vásquez",
 	"about.span1":
-		"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Stardew Valley 🐷 y The Witcher 3 🐺, los cuales me inspiran mucho.",
+		"Cuando no estoy escribiendo código, disfruto de videojuegos como Elden Ring 👺, Hollow Knight 👻 y The Witcher 3 🐺, los cuales me inspiran mucho.",
 	"about.span2": "Me gusta leer libros de Stephen King 📚 y escuchar Linkin Park 🎶.",
 	"about.span3":
 		"Me gusta aprender ciberseguridad CTF 🚩 (Capture The Flag) en Hack The Box y TryHackMe.",
 	"about.span4":
 		"Me apasiona aprender constantemente y mantenerme actualizado con nuevas tecnologías 👀.",
 	"about.learning": "Estoy Aprendiendo",
-	"foot.right": "2024",
+
+	// ? ------------ FOOTER / ERROR ------------
+	"foot.right": "2026",
 	"404.text": "404 página no encontrada",
 }

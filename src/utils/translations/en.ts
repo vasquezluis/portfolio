@@ -116,37 +116,54 @@ export const languagesEN = {
 	"structura.func.title5": "Mind map generation",
 	"structura.func.desc5":
 		"Creates a mind map of the SQL code to help users understand the structure.",
-	"tictactoe.desc":
-		"Real-time multiplayer tic-tac-toe game, capable of managing multiple rooms with two players each. Built with React.js, Node.js, WebSockets, Tailwind CSS, and Zustand.",
-	"tictactoe.date": "September 2024",
-	"tictactoe.func.title1": "Multiplayer",
-	"tictactoe.func.desc1": "The game supports two-player sessions of tic-tac-toe.",
-	"tictactoe.func.title2": "Real-time updates",
-	"tictactoe.func.desc2": "Handles real-time player data without requiring page reloads.",
-	"tictactoe.func.title3": "Rooms",
-	"tictactoe.func.desc3":
-		"Supports multiple rooms with up to 2 players. Players can create or join rooms using a code.",
+
+	// ? ------------ NIMBUSRAG ------------
+	"nimbusrag.desc":
+		"RAG system for Nimbus (Nimbus is a fictional company), information retrieval using private data, vector store and graph structures. Built with Python, LangChain, ChromaDB, NetworkX, Next.js, and OpenAI models.",
+	"nimbusrag.date": "February 2026",
+	"nimbusrag.func.title1": "Information Ingestion",
+	"nimbusrag.func.desc1":
+		"The system loads and processes data from PDF, Excel, text, and Markdown files as its knowledge base.",
+	"nimbusrag.func.title2": "Vectors and Graphs",
+	"nimbusrag.func.desc2":
+		"The system retrieves information using vectors containing relevant data and graphs with meaningful structures to generate accurate responses.",
+	"nimbusrag.func.title3": "Natural Language",
+	"nimbusrag.func.desc3":
+		"The RAG system operates using natural language to ask questions about the uploaded documents.",
+	"nimbusrag.chall.title1": "Chunk Creation",
+	"nimbusrag.chall.desc1":
+		"The first challenge was creating meaningful chunks when ingesting different file types, generating metadata, and optimizing the information.",
+	"nimbusrag.chall.title2": "Graph Construction",
+	"nimbusrag.chall.desc2":
+		"A significant challenge was designing graph structures to improve response quality. The system must be able to generate graphs that accurately represent nodes and information connections.",
+	"nimbusrag.issue.title1": "Graphs",
+	"nimbusrag.issue.desc1":
+		"The graph structure does not fully represent the data flow structure. As a result, when handling very general queries, the system may fail to identify the correct graphs to generate an answer.",
+
 	// ? ------------ TECHNOLOGIES ------------
 	"techs.title": "Technologies",
 	"techs.frontend": "Frontend",
 	"techs.backend": "Backend",
 	"techs.database": "Databases",
 	"techs.devops": "DevOps y tools",
+
 	// ? ------------ STUDIES ------------
 	"stud.title": "Studies",
 	"stud1.desc": "Bachelor’s Degree in Information Systems Technology",
 	"stud2.desc": "Associate Degree in Systems and IT",
 	"stud3.desc": "High School Diploma in Computer Science",
+
 	// ? ------------ ABOUT ------------
 	"about.title": "Hi, I'm Luis Vásquez",
 	"about.span1":
-		"When I’m not coding, I enjoy games like Elden Ring 👺, Stardew Valley 🐷, and The Witcher 3 🐺 — all of which inspire me a lot.",
+		"When I’m not coding, I enjoy games like Elden Ring 👺, Hollow Knight 👻 and The Witcher 3 🐺 — all of which inspire me a lot.",
 	"about.span2": "I love reading Stephen King books 📚 and listening to Linkin Park 🎶.",
 	"about.span3":
 		"I enjoy learning cybersecurity CTF 🚩 (Capture The Flag) techniques at Hack The Box and TryHackMe.",
 	"about.span4":
 		"I'm passionate about continuous learning and staying up to date with new technologies 👀.",
 	"about.learning": "Currently Learning",
+
 	// ? ------------ FOOTER / ERROR ------------
 	"foot.right": "2024",
 	"404.text": "404 page not found",
